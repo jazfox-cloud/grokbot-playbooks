@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AdSlot from './AdSlot.astro';
+import { siteConfig, type Locale, localePath } from '../config/site';
+import {
+  getAllCases,
+  localeContent,
+  uniqueCategories,
+  caseSearchBlob,
+} from '../lib/cases';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const cases = await getAllCases();
+const categories = uniqueCategories(cases, locale);
+const ui =
+  locale === 'zh'
+    ? {
+        eyebrow: '实战案例库',
+        search: '搜索标题、摘要、连接器、作者…',
+        all: '全部',
+        empty: '没有匹配的 Playbook，试试别的关键词或分类。',
+        by: '来自',
+        connectors: '连接器',
+      }
+    : {
+        eyebrow: 'Playbook library',
+        search: 'Search titles, summaries, connectors, authors…',
+        all: 'All',
+        empty: 'No playbooks match. Try another keyword or category.',
+        by: 'via',
+        connectors: 'Connectors',
+      };
+
+const cards = cases.map((entry) => {
+  const loc = localeContent(entry, locale);
+  return {
+    slug: entry.data.slug,
+    href: localePath(locale, `cases/${entry.data.slug}`),
+    title: loc.title,
+    summary: loc.summary,
+    category: loc.category,
+    connectors: entry.data.connectors,
+    author: entry.data.source.authorHandle,
+    search: caseSearchBlob(entry, locale),
+  };
+});
+---
+
+<BaseLayout
+  locale={locale}
+  description={siteConfig.description[locale]}
+  enPath="/"
+  zhPath="/zh/"
+>
+  <section class="wrap hero">
+    <span class="hero__eyebrow">{ui.eyebrow}</span>
+    <h1>{siteConfig.name}</h1>
+    <p class="hero__lead">{siteConfig.tagline[locale]}</p>
+  </section>
+
+  <AdSlot locale={locale} />
+
+  <section class="wrap" data-home-catalog>
+    <div class="toolbar">
+      <div class="search">
+        <span class="search__icon" aria-hidden="true">⌕</span>
+        <label class="visually-hidden" for="case-search" style="position:absolute;left:-9999px"
+          >{ui.search}</label
+        >
+        <input id="case-search" type="search" placeholder={ui.search} autocomplete="off" />
+      </div>
+      <div class="pills" role="group" aria-label={locale === 'zh' ? '分类' : 'Categories'}>
+        <button class="pill" type="button" data-category="*" aria-pressed="true">{ui.all}</button>
+        {
+          categories.map((cat) => (
+            <button class="pill" type="button" data-category={cat} aria-pressed="false">
+              {cat}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="grid" id="case-grid">
+      {
+        cards.map((card) => (
+          <a
+            class="card"
+            href={card.href}
+            data-card
+            data-category={card.category}
+            data-search={card.search}
+          >
+            <div class="card__meta">
+              <span class="badge">{card.category}</span>
+              {card.connectors.slice(0, 2).map((c) => (
+                <span class="badge badge--ghost">{c}</span>
+              ))}
+            </div>
+            <h2>{card.title}</h2>
+            <p>{card.summary}</p>
+            <div class="card__footer">
+              <span>
+                {ui.by} {card.author}
+              </span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+        ))
+      }
+      <div class="empty" data-empty hidden>{ui.empty}</div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function setupCatalog() {
+    const root = document.querySelector('[data-home-catalog]');
+    if (!root || root.getAttribute('data-ready') === '1') return;
+    root.setAttribute('data-ready', '1');
+
+    const input = root.querySelector<HTMLInputElement>('#case-search');
+    const pills = Array.from(root.querySelectorAll<HTMLButtonElement>('.pill[data-category]'));
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-card]'));
+    const empty = root.querySelector<HTMLElement>('[data-empty]');
+    let category = '*';
+
+    const apply = () => {
+      const q = (input?.value ?? '').trim().toLowerCase();
+      let visible = 0;
+      for (const card of cards) {
+        const catOk = category === '*' || card.dataset.category === category;
+        const text = card.dataset.search ?? '';
+        const qOk = !q || text.includes(q);
+        const show = catOk && qOk;
+        card.toggleAttribute('hidden', !show);
+        if (show) visible += 1;
+      }
+      empty?.toggleAttribute('hidden', visible !== 0);
+    };
+
+    input?.addEventListener('input', apply);
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        category = pill.dataset.category ?? '*';
+        pills.forEach((p) => p.setAttribute('aria-pressed', String(p === pill)));
+        apply();
+      });
+    });
+    apply();
+  }
+
+  setupCatalog();
+  document.addEventListener('astro:page-load', setupCatalog);
+</script>

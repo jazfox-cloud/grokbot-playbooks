@@ -1,0 +1,19 @@
+---
+import { siteConfig } from '../config/site';
+
+interface Props {
+  label?: string;
+  locale?: 'en' | 'zh';
+}
+
+const { label, locale = 'en' } = Astro.props;
+---
+
+{
+  siteConfig.ads.enabled && (
+    <aside class="ad-slot" aria-label={locale === 'zh' ? '广告位' : 'Advertisement'}>
+      <div class="ad-slot__label">{locale === 'zh' ? '广告' : 'Ad'}</div>
+      <div>{label ?? (locale === 'zh' ? '广告占位' : 'Ad placeholder')}</div>
+    </aside>
+  )
+}

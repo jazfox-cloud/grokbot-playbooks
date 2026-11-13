@@ -1,0 +1,44 @@
+{
+  "slug": "unfollow-audit",
+  "publishedAt": "2026-10-28",
+  "order": 12,
+  "tags": ["x", "audit", "cleanup"],
+  "connectors": ["X / social", "Routine (batch)", "Confirm-before-change"],
+  "en": {
+    "title": "Overnight follow-list audit with batch unfollow",
+    "category": "Personal",
+    "summary": "A boring chore done while you sleep: audit accounts you follow, flag inactive or non-interactive ones, sort with links—then unfollow in capped batches with approval on the risky step.",
+    "whyItWorks": "Mass cleanup is tedious and rate-limited. Separating the audit report from capped, confirmation-gated unfollow batches turns an hour-long chore into a supervised overnight job.",
+    "workflowSteps": [
+      "Paste the audit prompt so the bot flags: no posts in 6+ months, never posted, no interaction with you in 30 days.",
+      "Ask for a sorted list with links and last-post context.",
+      "Review the list; remove anyone you still want to keep.",
+      "Allow unfollow of at most 100 per day, asking before each batch.",
+      "Stop if platform limits or errors appear; resume next day."
+    ],
+    "promptTemplate": "Audit every account I follow. Flag: no posts in 6+ months, never posted, no interaction with me in 30 days. Sort by last post, with links.\n\nPower move: unfollow max 100/day and ask before each batch. Respect platform limits on fast mass-unfollows. Do nothing irreversible without my yes.",
+    "connectorsAndRoutines": "X/social connector for the follow graph audit. Batch routine overnight or daily with confirm-before-unfollow. Keep the risky unfollow step approval-gated."
+  },
+  "zh": {
+    "title": "隔夜关注列表审计与分批取关",
+    "category": "个人",
+    "summary": "一件无聊家务，趁你睡觉做完：审计你关注的账号，标出不活跃或无互动者并附链接排序——再按上限分批取关，风险步骤需批准。",
+    "whyItWorks": "大规模清理又烦又有频率限制。把审计报告与有上限、需确认的取关批次分开，能把一小时苦差变成有监督的隔夜任务。",
+    "workflowSteps": [
+      "粘贴审计提示，让 Bot 标记：6 个月以上无帖、从未发帖、30 天内与你无互动。",
+      "要求按最近发帖排序的列表，并附链接。",
+      "人工审阅，剔除仍想保留的人。",
+      "每天最多取关 100，且每批前询问。",
+      "若触达平台限制或出错则停下，次日再继续。"
+    ],
+    "promptTemplate": "审计我关注的每个账号。标记：6 个月以上无帖、从未发帖、30 天内与我无互动。按最近发帖排序并附链接。\n\n进阶：每天最多取关 100，且每批前询问。遵守平台对快速批量取关的限制。未经我说可以，不做不可逆操作。",
+    "connectorsAndRoutines": "用 X/社交连接器做关注关系审计。隔夜或每日分批例行，取关前确认。风险取关步骤必须批准。"
+  },
+  "source": {
+    "authorHandle": "@BNguyen66900",
+    "authorName": "BoaQ",
+    "postUrl": "https://x.com/BNguyen66900/status/2115248510165794963",
+    "postedAt": "2026-10-28T01:05:18.000Z",
+    "excerpt": "Take: this is the real Grok Bot use case. Not flashy. A boring, hour-long chore done while you sleep, with your approval on the risky step."
+  }
+}

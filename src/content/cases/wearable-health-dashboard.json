@@ -1,0 +1,44 @@
+{
+  "slug": "wearable-health-dashboard",
+  "publishedAt": "2026-10-17",
+  "order": 9,
+  "tags": ["health", "wearables", "email"],
+  "connectors": ["Bot inbox", "Wearable export / email", "Routine (daily)"],
+  "en": {
+    "title": "Wearable data → bot email health dashboard",
+    "category": "Health",
+    "summary": "Send wearable data (e.g. RingConn) straight to your Grok Bot email address and get back a dashboard plus recommendations to improve health habits.",
+    "whyItWorks": "Exports already leave the wearable as email or files. Pointing them at the bot inbox turns passive data dumps into a readable daily briefing without building a custom app.",
+    "workflowSteps": [
+      "Enable export or email delivery from your wearable account to your Grok Bot inbox.",
+      "Instruct the bot to parse sleep, activity, and recovery-style fields into a fixed dashboard layout.",
+      "Ask for a short recommendations section tied only to patterns visible in the data you sent.",
+      "Add a daily routine that summarizes the latest export if mail arrived.",
+      "Review recommendations yourself before changing medication, training, or clinical plans."
+    ],
+    "promptTemplate": "You receive wearable exports at this inbox.\n\nWhen new data arrives, produce:\n1) Dashboard — sleep, activity, resting indicators (only fields present in the export)\n2) Changes vs the previous export (if available)\n3) 3 practical recommendations grounded in the data\n\nLabel speculation clearly. Do not diagnose disease or prescribe treatment. Ask me before any external share.",
+    "connectorsAndRoutines": "Wearable → email/export into the bot inbox is the primary connector. Optional daily routine to render the dashboard when new mail lands. Keep medical decisions human-owned."
+  },
+  "zh": {
+    "title": "可穿戴数据 → Bot 邮箱健康看板",
+    "category": "健康",
+    "summary": "把可穿戴设备数据（如 RingConn）直接发到 Grok Bot 邮箱，收回一份看板以及改善健康习惯的建议。",
+    "whyItWorks": "设备本来就会以邮件或文件导出。指向 Bot 收件箱，就能把被动数据堆变成可读的每日简报，无需自建应用。",
+    "workflowSteps": [
+      "在可穿戴账号里开启导出或邮件投递到 Grok Bot 收件箱。",
+      "要求 Bot 把睡眠、活动、恢复类字段解析成固定看板布局。",
+      "只要一份建议区，且仅依据你发来的数据中可见的模式。",
+      "加每日例行：若有新邮件则汇总最新导出。",
+      "在调整用药、训练或诊疗计划前，自行审阅建议。"
+    ],
+    "promptTemplate": "本收件箱会收到可穿戴导出。\n\n有新数据时输出：\n1）看板 — 睡眠、活动、静息相关指标（仅使用导出中存在的字段）\n2）相对上次导出的变化（若有）\n3）3 条基于数据的可行建议\n\n推测请明确标注。不要诊断疾病或开处方。对外分享前先问我。",
+    "connectorsAndRoutines": "主连接是可穿戴 → 邮件/导出进入 Bot 收件箱。可选每日例行在新邮件到达时生成看板。医疗决策由人负责。"
+  },
+  "source": {
+    "authorHandle": "@ragnarh",
+    "authorName": "Ragnar Heil (MVP)",
+    "postUrl": "https://x.com/ragnarh/status/2111360069077991454",
+    "postedAt": "2026-10-17T07:34:02.000Z",
+    "excerpt": "Excellent Grok @bot use case: sending my wearable @RingConn_ 3 data directly to my #GrokBot email address, receive a dashboard and recommendations to improve your health"
+  }
+}

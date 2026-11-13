@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig, type Locale } from '../config/site';
+import { absoluteUrl, htmlLang, hreflangLinks, pageTitle } from '../lib/seo';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+  enPath: string;
+  zhPath: string;
+  ogType?: string;
+}
+
+const {
+  locale,
+  title,
+  description = siteConfig.description[locale],
+  enPath,
+  zhPath,
+  ogType = 'website',
+} = Astro.props;
+
+const site = Astro.site?.toString() ?? 'https://grokbot-playbooks.pages.dev';
+const canonicalPath = locale === 'zh' ? zhPath : enPath;
+const canonical = absoluteUrl(canonicalPath, site);
+const fullTitle = pageTitle(title, locale);
+const alternates = hreflangLinks(site, enPath, zhPath);
+const lang = htmlLang(locale);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_US'} />
+    <meta property="og:locale:alternate" content={locale === 'zh' ? 'en_US' : 'zh_CN'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:opsz,wght@9..144,550;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header locale={locale} enPath={enPath} zhPath={zhPath} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

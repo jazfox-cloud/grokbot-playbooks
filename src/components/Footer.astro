@@ -1,0 +1,23 @@
+---
+import { siteConfig, type Locale } from '../config/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      © {year} {siteConfig.name}.
+      {
+        locale === 'zh'
+          ? '案例整理自公开 X 帖文；提示词模板可按需改写。'
+          : 'Playbooks curated from public X posts; prompt templates are yours to adapt.'
+      }
+    </p>
+  </div>
+</footer>

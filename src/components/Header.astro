@@ -1,0 +1,25 @@
+---
+import { siteConfig, type Locale, localePath } from '../config/site';
+
+interface Props {
+  locale: Locale;
+  enPath: string;
+  zhPath: string;
+}
+
+const { locale, enPath, zhPath } = Astro.props;
+const tagline = siteConfig.tagline[locale];
+---
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href={localePath(locale)}>
+      <span class="brand__name">{siteConfig.name}</span>
+      <span class="brand__tag">{tagline}</span>
+    </a>
+    <nav class="lang-switch" aria-label={locale === 'zh' ? '语言' : 'Language'}>
+      <a href={enPath} aria-current={locale === 'en' ? 'page' : undefined} hreflang="en">EN</a>
+      <a href={zhPath} aria-current={locale === 'zh' ? 'page' : undefined} hreflang="zh-Hans">中文</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const locale = 'en';
+---
+
+<BaseLayout locale={locale} title="Not found" description="Page not found" enPath="/404/" zhPath="/zh/">
+  <div class="wrap not-found">
+    <h1>404</h1>
+    <p>This playbook route does not exist.</p>
+    <p>
+      <a href="/">{siteConfig.name}</a>
+      {' · '}
+      <a href="/zh/">中文首页</a>
+    </p>
+  </div>
+</BaseLayout>

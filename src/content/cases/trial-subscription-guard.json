@@ -1,0 +1,44 @@
+{
+  "slug": "trial-subscription-guard",
+  "publishedAt": "2026-11-02",
+  "order": 7,
+  "tags": ["subscriptions", "trials", "finance"],
+  "connectors": ["Routine (before renewal)", "Confirm-before-change", "Gmail"],
+  "en": {
+    "title": "Free-trial guard + unused subscription finder",
+    "category": "Finance",
+    "summary": "Run a “try it, don’t pay for it” flow: start a free trial, then cancel or remind before billing—and pair it with unused-subscription cleanup. Bots confirm before changing anything.",
+    "whyItWorks": "Trials convert when reminders fail. Separating watch/remind from cancel—and requiring confirmation—cuts accidental charges without giving the bot unchecked control.",
+    "workflowSteps": [
+      "Create a trial-guard bot with fields: service name, trial end date, cancel URL/path, and remind-me-before window.",
+      "When you start a trial, log it with the bot immediately.",
+      "Schedule a routine before the bill date to remind or prepare cancellation steps.",
+      "Pair a second prompt to list unused subscriptions you might cancel.",
+      "Require explicit confirmation before the bot marks anything canceled or drafts a cancel action."
+    ],
+    "promptTemplate": "You manage free trials and unused subscriptions.\n\nMode A — Trial guard:\nWhen I log a trial, store: service, start date, end/bill date, cancel path, remind N days before.\nOn schedule, remind me and outline cancel steps. Never cancel without my yes.\n\nMode B — Unused subscriptions:\nHelp me list plans I may not use. For each, ask before any cancel draft.\n\nAlways confirm before changing anything.",
+    "connectorsAndRoutines": "Use a before-renewal routine for reminders. Optional Gmail/bot inbox for trial confirmations and receipts. Every cancel path is confirm-before-change."
+  },
+  "zh": {
+    "title": "免费试用守卫 + 闲置订阅清理",
+    "category": "财务",
+    "summary": "跑一套「先试用、别白付钱」：开通免费试用后，在扣费前取消或提醒；再搭配闲置订阅清理。Bot 改动前必须确认。",
+    "whyItWorks": "试用常因忘记提醒而扣费。把盯梢/提醒与取消分开，并强制确认，既能少误扣，又不把控制权裸交给 Bot。",
+    "workflowSteps": [
+      "创建试用守卫 Bot，字段含：服务名、试用结束日、取消路径、提前提醒窗口。",
+      "每次开通试用立刻登记到 Bot。",
+      "在账单日前安排例行，提醒或准备取消步骤。",
+      "再用第二套提示列出可能闲置、可取消的订阅。",
+      "Bot 标记取消或起草取消动作前，必须得到你的明确确认。"
+    ],
+    "promptTemplate": "你负责管理免费试用与闲置订阅。\n\n模式 A — 试用守卫：\n我登记试用时，记录：服务、开始日、结束/扣费日、取消路径、提前 N 天提醒。\n到期前按日程提醒并列出取消步骤。未经我说「可以」不得取消。\n\n模式 B — 闲置订阅：\n帮我列出可能不用的方案。每一项在起草取消前都要询问。\n\n任何变更前必须确认。",
+    "connectorsAndRoutines": "用续费前例行做提醒。可选 Gmail/Bot 收件箱承接试用确认与收据。所有取消路径均为确认后执行。"
+  },
+  "source": {
+    "authorHandle": "@wonoh74",
+    "authorName": "Won Oh",
+    "postUrl": "https://x.com/wonoh74/status/2117119660386652274",
+    "postedAt": "2026-11-02T05:00:35.000Z",
+    "excerpt": "Grok Bot workflow: the \"Try it, don't pay for it\" template starts a free trial for you, then cancels it or reminds you before it bills. Pair it with \"Find unused subscriptions\" to cancel plans you pick. Bots confirm before changing anything. #GrokBot"
+  }
+}

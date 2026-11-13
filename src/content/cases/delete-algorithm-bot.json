@@ -1,0 +1,44 @@
+{
+  "slug": "delete-algorithm-bot",
+  "publishedAt": "2026-10-14",
+  "order": 5,
+  "tags": ["simplification", "process", "routines"],
+  "connectors": ["Chat", "Routine (morning)", "Process review"],
+  "en": {
+    "title": "Elon’s 5-step delete algorithm bot",
+    "category": "Productivity",
+    "summary": "Point a Grok Bot at routines, calendars, and team paperwork; it runs a delete-first algorithm: question requirements, delete, simplify, accelerate, automate last.",
+    "whyItWorks": "People automate bloat. Forcing question → delete → simplify → accelerate → automate-last reverses that order so you cut noise before you script it.",
+    "workflowSteps": [
+      "Create a bot whose only job is to apply the five steps to whatever you paste.",
+      "Feed it one target at a time: morning routine, calendar block, or a team process.",
+      "Require output in the fixed order: question requirements → delete → simplify → accelerate → automate last.",
+      "Accept or reject each proposed deletion before anything is changed in real tools.",
+      "Re-run weekly on the same process to catch complexity creeping back."
+    ],
+    "promptTemplate": "You delete for a living using this algorithm, in order:\n1) Question every requirement\n2) Delete what you can\n3) Simplify what remains\n4) Accelerate the simplified flow\n5) Automate last\n\nI will paste a routine, calendar, or process. Respond with five labeled sections matching the steps. Flag assumptions. Do not invent metrics. Ask before recommending irreversible deletions.",
+    "connectorsAndRoutines": "Use ad-hoc chat for deep cuts, plus an optional morning routine that reviews today’s calendar with the same five steps. Keep destructive changes confirmation-gated."
+  },
+  "zh": {
+    "title": "「先删除」五步算法 Bot",
+    "category": "效率",
+    "summary": "把日程、日历和团队文书丢给 Grok Bot，按删除优先算法处理：质疑需求、删除、简化、加速，最后才自动化。",
+    "whyItWorks": "人们常先自动化臃肿流程。强制按「质疑 → 删除 → 简化 → 加速 → 最后自动化」能先砍噪音，再谈脚本。",
+    "workflowSteps": [
+      "创建一个 Bot，唯一任务是对你粘贴的内容套用这五步。",
+      "一次只喂一个目标：晨间流程、日历块或团队流程。",
+      "要求输出固定顺序：质疑需求 → 删除 → 简化 → 加速 → 最后自动化。",
+      "在真实工具改动前，逐条接受或拒绝删除建议。",
+      "同一流程每周复查，防止复杂度回流。"
+    ],
+    "promptTemplate": "你以删除为业，严格按此顺序：\n1）质疑每条需求\n2）能删则删\n3）简化剩余\n4）加速已简化流程\n5）最后才自动化\n\n我会粘贴例行、日历或流程。请用与五步对应的五个标题回复。标出假设。不要编造指标。涉及不可逆删除前先询问。",
+    "connectorsAndRoutines": "深度精简用即时对话；可选晨间例行，用同一五步审视当日日历。破坏性改动必须确认后执行。"
+  },
+  "source": {
+    "authorHandle": "@wikiwayne",
+    "authorName": "Wayne Lowry",
+    "postUrl": "https://x.com/wikiwayne/status/2110158756025663813",
+    "postedAt": "2026-10-14T00:00:26.000Z",
+    "excerpt": "I built a Grok Bot that deletes things for a living.\n\nIt runs Elon's 5-step algorithm on anything you throw at it: question every requirement, delete, simplify, accelerate, automate last.\n\nWhat I point it at:\n&gt; My morning routine and calendar\n&gt; Team processes and paperwork"
+  }
+}
