@@ -1,0 +1,80 @@
+---
+interface Props {
+  label: string;
+  copiedLabel: string;
+  targetId: string;
+}
+
+const { label, copiedLabel, targetId } = Astro.props;
+---
+
+<button
+  class="copy-btn"
+  type="button"
+  data-copy-for={targetId}
+  data-label={label}
+  data-copied-label={copiedLabel}
+  data-copied="false"
+>
+  {label}
+</button>
+
+<script>
+  function fallbackCopy(text: string): boolean {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try {
+      // Fallback when Clipboard API is unavailable (older browsers / insecure contexts).
+      const exec = Reflect.get(document, 'execCommand') as
+        | ((commandId: string) => boolean)
+        | undefined;
+      ok = typeof exec === 'function' ? exec.call(document, 'copy') : false;
+    } catch {
+      ok = false;
+    }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  async function copyText(text: string): Promise<boolean> {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        return fallbackCopy(text);
+      }
+    }
+    return fallbackCopy(text);
+  }
+
+  function bind() {
+    document.querySelectorAll<HTMLButtonElement>('[data-copy-for]').forEach((btn) => {
+      if (btn.dataset.bound === '1') return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', async () => {
+        const id = btn.dataset.copyFor;
+        const el = id ? document.getElementById(id) : null;
+        const text = el?.textContent ?? '';
+        const ok = await copyText(text);
+        if (!ok) return;
+        const original = btn.dataset.label ?? 'Copy';
+        btn.dataset.copied = 'true';
+        btn.textContent = btn.dataset.copiedLabel ?? 'Copied!';
+        window.setTimeout(() => {
+          btn.dataset.copied = 'false';
+          btn.textContent = original;
+        }, 1600);
+      });
+    });
+  }
+
+  bind();
+  document.addEventListener('astro:page-load', bind);
+</script>

@@ -1,0 +1,44 @@
+{
+  "slug": "email-inbox-triggers",
+  "publishedAt": "2026-10-30",
+  "order": 8,
+  "tags": ["email", "triggers", "routines"],
+  "connectors": ["Bot inbox", "Email trigger", "Routine (on email)"],
+  "en": {
+    "title": "Forward-to-bot inbox triggers",
+    "category": "Operations",
+    "summary": "Your Grok Bot has its own email inbox—an email can trigger a routine. Forward a receipt, invoice, or messy meeting notes and the matching workflow runs. No app to open: just hit Forward.",
+    "whyItWorks": "The bottleneck is opening another app. Email-forward triggers meet work where it already lives, so intake becomes a single gesture.",
+    "workflowSteps": [
+      "Locate your bot’s email address / inbox.",
+      "Define 2–3 email-triggered routines (e.g. receipt filing, invoice parse, meeting-notes cleanup).",
+      "Teach the bot how to detect which routine fits (subject keywords, sender, or a tag you add when forwarding).",
+      "Forward a sample of each type and verify the routine output.",
+      "Standardize a forward habit: add a short prefix like [receipt] / [invoice] / [notes] when helpful."
+    ],
+    "promptTemplate": "You have an email inbox that triggers routines.\n\nRoutines:\n1) [receipt] — extract merchant, date, amount, category; return a one-line ledger entry.\n2) [invoice] — extract vendor, due date, amount, pay status; list open questions.\n3) [notes] — turn messy meeting notes into decisions, owners, and next actions.\n\nOn each inbound email: detect routine (from tag/subject/body), run it, reply with structured output. If unsure which routine, ask one clarifying question.",
+    "connectorsAndRoutines": "Bot inbox + on-email routines are the core. Optional Gmail filters that auto-forward labeled mail. Keep payment or send-external actions behind confirmation."
+  },
+  "zh": {
+    "title": "转发即触发：Bot 邮箱例行",
+    "category": "运营",
+    "summary": "Grok Bot 自带邮箱——邮件可触发例行。转发收据、发票或凌乱会议纪要，对应工作流就会跑起来。不用开应用：按一下转发即可。",
+    "whyItWorks": "瓶颈往往是再开一个应用。用邮件转发触发，能在工作已有入口承接，把录入变成一个动作。",
+    "workflowSteps": [
+      "找到 Bot 的邮箱地址/收件箱。",
+      "定义 2–3 条邮件触发例行（如收据归档、发票解析、会议纪要整理）。",
+      "教会 Bot 如何判断走哪条（主题关键词、发件人或转发时加的标签）。",
+      "各转发一封样例，核对输出。",
+      "养成转发习惯：需要时加 [receipt] / [invoice] / [notes] 前缀。"
+    ],
+    "promptTemplate": "你拥有可触发例行的邮箱收件箱。\n\n例行：\n1）[receipt] — 提取商户、日期、金额、类别；返回一行流水。\n2）[invoice] — 提取供应商、到期日、金额、支付状态；列出待确认问题。\n3）[notes] — 把凌乱会议纪要整理为决策、负责人与下一步。\n\n每封入站邮件：识别例行（标签/主题/正文），执行并回复结构化结果。若不确定，只问一个澄清问题。",
+    "connectorsAndRoutines": "核心是 Bot 收件箱 + 来信触发例行。可选 Gmail 过滤器自动转发已标记邮件。支付或对外发送动作保留确认。"
+  },
+  "source": {
+    "authorHandle": "@AgentLabTuts",
+    "authorName": "AgentLab Tutorials",
+    "postUrl": "https://x.com/AgentLabTuts/status/2116132826383061081",
+    "postedAt": "2026-10-30T11:39:16.000Z",
+    "excerpt": "Grok Bot tip: your bot has its own email inbox, and an email to it can trigger a routine. Forward a receipt, an invoice or messy meeting notes, and the right workflow runs on it. No app to open, just hit Forward. #GrokBot #AI"
+  }
+}

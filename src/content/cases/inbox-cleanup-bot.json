@@ -1,0 +1,44 @@
+{
+  "slug": "inbox-cleanup-bot",
+  "publishedAt": "2026-11-01",
+  "order": 11,
+  "tags": ["email", "spam", "security"],
+  "connectors": ["Gmail", "Bot inbox", "Confirm-before-delete"],
+  "en": {
+    "title": "Inbox bot that trashes junk, spam & phishing",
+    "category": "Productivity",
+    "summary": "Stand up an inbox bot for mountain-of-email days: it targets junk, spam, phishing, and more—so cleanup is a guided pass instead of endless manual sorting.",
+    "whyItWorks": "Triage is repetitive and easy to postpone. A bot that classifies low-value and risky mail first shrinks the pile to what still needs a human read.",
+    "workflowSteps": [
+      "Connect or forward mailbox access the bot is allowed to classify.",
+      "Define trash-worthy categories: junk, spam, phishing, and any extra buckets you want.",
+      "Require a review list (sender, subject, reason) before mass trash actions.",
+      "Approve batches; escalate anything that looks like a real bill, person, or account notice.",
+      "Re-run on a schedule or whenever the unread count feels overwhelming."
+    ],
+    "promptTemplate": "You are my inbox cleanup bot.\n\nClassify messages into: keep, junk, spam, phishing, needs-human.\nFor junk/spam/phishing candidates, list sender, subject, and reason.\nNever permanently delete without my batch approval.\nIf phishing is suspected, highlight urgency and recommended next human checks.\nDo not click links or enter credentials.",
+    "connectorsAndRoutines": "Gmail (or bot inbox forwards) plus confirm-before-delete on trash batches. Optional daily routine for a short triage digest. Phishing handling stays advisory."
+  },
+  "zh": {
+    "title": "清理垃圾/骚扰/钓鱼的收件箱 Bot",
+    "category": "效率",
+    "summary": "为邮件堆积如山的日子搭一个收件箱 Bot：对准垃圾、骚扰、钓鱼等——清理变成有引导的批次，而不是无尽手工分类。",
+    "whyItWorks": "分拣重复又容易拖延。先让 Bot 标出低价值与高风险邮件，剩下的才需要人读。",
+    "workflowSteps": [
+      "连接或转发 Bot 被允许分类的邮箱。",
+      "定义可丢弃类别：垃圾、骚扰、钓鱼，以及你想要的额外桶。",
+      "批量丢弃前要求审阅清单（发件人、主题、原因）。",
+      "按批批准；疑似真实账单、真人来信或账户通知则升级人工。",
+      "按日程重跑，或在未读数失控时再跑。"
+    ],
+    "promptTemplate": "你是我的收件箱清理 Bot。\n\n将邮件分为：保留、垃圾、骚扰、钓鱼、需人工。\n对垃圾/骚扰/钓鱼候选，列出发件人、主题与原因。\n未经我批次批准，不得永久删除。\n若疑似钓鱼，标出紧迫性与建议的人工检查。\n不要点击链接或输入凭据。",
+    "connectorsAndRoutines": "Gmail（或 Bot 收件箱转发）+ 丢弃批次确认。可选每日例行输出短分拣摘要。钓鱼处理仅作建议。"
+  },
+  "source": {
+    "authorHandle": "@lianlian00",
+    "authorName": "Lian",
+    "postUrl": "https://x.com/lianlian00/status/2116808359777357849",
+    "postedAt": "2026-11-01T08:23:36.000Z",
+    "excerpt": "Created an inbox bot. Anyone struggling with a mountain of emails can try this!\n\nIt trashes junk, spam, phishing and much more. Check out the article!"
+  }
+}

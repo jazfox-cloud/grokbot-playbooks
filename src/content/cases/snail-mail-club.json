@@ -1,0 +1,44 @@
+{
+  "slug": "snail-mail-club",
+  "publishedAt": "2026-10-23",
+  "order": 1,
+  "tags": ["operations", "subscribers", "tracking"],
+  "connectors": ["Bot inbox", "Gmail", "Routine (on message)"],
+  "en": {
+    "title": "Snail mail club subscriber tracker",
+    "category": "Operations",
+    "summary": "Keep a growing snail-mail club list straight: resubscribes, cancellations, new members, addresses, and dates—without the spreadsheet chaos.",
+    "whyItWorks": "Membership churn and address changes pile up fast. Routing those updates through a dedicated Grok Bot turns messy back-and-forth into a single intake path so status, addresses, and dates stay in one place.",
+    "workflowSteps": [
+      "List the membership events you need to track: new subscribers, resubscribes, cancellations, address changes, and key dates.",
+      "Create a Grok Bot whose job is only club roster ops—ask it to maintain a structured member record (name, address, status, last update).",
+      "Point club email or form replies at the bot (forward or bot inbox) so every change lands in one thread.",
+      "Have the bot confirm the interpreted change (status + address + date) before you treat it as final.",
+      "Ask for a weekly roster digest: active, canceled, and pending updates."
+    ],
+    "promptTemplate": "You are my snail-mail club roster assistant.\n\nMaintain a structured member list with: name, mailing address, status (active / canceled / pending), subscribe date, last change date, and notes.\n\nWhen I send a message about a member (new signup, resubscribe, cancel, address change):\n1) Parse the intent and fields.\n2) Show the proposed record update.\n3) Ask me to confirm before saving.\n4) After confirm, acknowledge the new status.\n\nOn request, output a roster summary grouped by status.",
+    "connectorsAndRoutines": "Use the bot inbox or Gmail forward for signup/cancel emails. Optional daily or weekly routine: “Summarize roster changes since last digest.” Keep human confirm on status changes that affect mailing."
+  },
+  "zh": {
+    "title": "实体信件社订阅者追踪",
+    "category": "运营",
+    "summary": "把不断增长的实体信件社名单理顺：续订、退订、新会员、地址与日期，不再靠混乱表格硬扛。",
+    "whyItWorks": "会员变动与地址更新来得很快。把这些变更统一交给专用 Grok Bot 处理，能把零散沟通收成一条入口，状态、地址和日期都落在同一处。",
+    "workflowSteps": [
+      "先列出要跟踪的会员事件：新订阅、续订、退订、地址变更和关键日期。",
+      "创建只负责社群名册的 Grok Bot，要求它维护结构化会员记录（姓名、地址、状态、最近更新）。",
+      "把社群邮件或表单回复指向该 Bot（转发或 Bot 收件箱），让所有变更进同一通道。",
+      "让 Bot 在你确认前复述即将写入的变更（状态 + 地址 + 日期）。",
+      "定期索取名册摘要：在订、已退、待处理更新。"
+    ],
+    "promptTemplate": "你是我的实体信件社名册助手。\n\n请维护结构化会员列表，字段包括：姓名、邮寄地址、状态（在订/已退/待处理）、订阅日期、最近变更日期、备注。\n\n当我发来与会员相关的消息（新订、续订、退订、改地址）时：\n1）解析意图与字段；\n2）展示拟更新的记录；\n3）请我确认后再保存；\n4）确认后回执新状态。\n\n按要求输出按状态分组的名册摘要。",
+    "connectorsAndRoutines": "用 Bot 收件箱或 Gmail 转发承接订阅/退订邮件。可选每日或每周例行：「汇总自上份摘要以来的名册变更」。涉及邮寄的状态变更保留人工确认。"
+  },
+  "source": {
+    "authorHandle": "@Tyler_a_Downs",
+    "authorName": "Tyler Downs",
+    "postUrl": "https://x.com/Tyler_a_Downs/status/2113659960743604332",
+    "postedAt": "2026-10-23T15:52:59.000Z",
+    "excerpt": "Grok Bot running a snail mail club is such a fun use case, that is really different than some other use cases I'm seeing , Grokbot really is for everyone"
+  }
+}

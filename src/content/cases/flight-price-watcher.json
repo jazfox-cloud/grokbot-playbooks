@@ -1,0 +1,44 @@
+{
+  "slug": "flight-price-watcher",
+  "publishedAt": "2026-10-18",
+  "order": 4,
+  "tags": ["travel", "alerts", "routines"],
+  "connectors": ["Routine (scheduled)", "Notifications", "Template"],
+  "en": {
+    "title": "Scheduled flight fare drop watcher",
+    "category": "Finance",
+    "summary": "Stop refreshing fares by hand: copy a Grok Bot template that checks your route on a schedule and pings you when the price drops.",
+    "whyItWorks": "Fare checks are repetitive and easy to forget. A scheduled routine does the boring poll; you only act when the bot surfaces a drop worth reviewing.",
+    "workflowSteps": [
+      "Pick origin, destination, date window, cabin, and a “notify me below” price threshold.",
+      "Create or open a Grok Bot flight-watcher template and paste those route details.",
+      "Attach a scheduled routine (daily or several times per week) to re-check the same route.",
+      "Require the bot to compare against your threshold and only alert on drops or large swings.",
+      "When alerted, confirm manually before booking—treat the bot as a watcher, not a purchaser."
+    ],
+    "promptTemplate": "You are my flight fare watcher.\n\nRoute:\n- From: [ORIGIN]\n- To: [DESTINATION]\n- Dates: [WINDOW]\n- Cabin: [ECONOMY/OTHER]\n- Alert if price is at or below: [THRESHOLD]\n- Also alert on a drop of [X]% vs last check\n\nOn each scheduled run:\n1) Check current fare options for this route.\n2) Compare to last recorded fare and my threshold.\n3) If no meaningful change, reply briefly: “No alert.”\n4) If alert criteria hit, summarize best options with price and why it triggered.\nDo not book anything. Ask before any paid action.",
+    "connectorsAndRoutines": "Use a scheduled routine (daily or custom interval) for the fare check. Pair with notification/ping so you are not polling the chat yourself. Keep booking decisions human-approved."
+  },
+  "zh": {
+    "title": "定时机票降价盯梢",
+    "category": "财务",
+    "summary": "别再手刷票价：复制一份 Grok Bot 模板，按日程检查航线，降价时再通知你。",
+    "whyItWorks": "查价重复又容易忘。用定时例行去做枯燥轮询，你只在 Bot 发现值得看的降幅时再出手。",
+    "workflowSteps": [
+      "确定出发地、目的地、日期窗口、舱位，以及「低于多少通知我」的阈值。",
+      "创建或打开机票盯梢模板，把航线细节贴进去。",
+      "挂上定时例行（每天或每周数次）复查同一航线。",
+      "要求 Bot 对照阈值，仅在降价或大幅波动时告警。",
+      "收到告警后人工确认再购票——Bot 负责盯，不负责下单。"
+    ],
+    "promptTemplate": "你是我的机票价格盯梢助手。\n\n航线：\n- 出发：[ORIGIN]\n- 到达：[DESTINATION]\n- 日期：[WINDOW]\n- 舱位：[ECONOMY/OTHER]\n- 价格 ≤ [THRESHOLD] 时通知\n- 相对上次检查下跌 [X]% 也通知\n\n每次定时运行：\n1）检查该航线当前票价选项；\n2）对比上次记录与我的阈值；\n3）若无实质变化，简短回复「无需告警」；\n4）若触发条件，汇总最佳选项、价格与触发原因。\n不要代为下单。任何付费动作前先问我。",
+    "connectorsAndRoutines": "用定时例行（每日或自定义间隔）跑查价。配合通知/提醒，避免自己刷对话。购票决策保留人工确认。"
+  },
+  "source": {
+    "authorHandle": "@AgentMPG",
+    "authorName": "AgentMPG",
+    "postUrl": "https://x.com/AgentMPG/status/2111619789588164619",
+    "postedAt": "2026-10-18T00:46:04.000Z",
+    "excerpt": "Stop refreshing flight prices. ✈️\n\nThis free Grok Bot template checks your route on a schedule and pings you when the fare drops. Copy the prompt, set the routine, done."
+  }
+}

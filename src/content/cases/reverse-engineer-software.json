@@ -1,0 +1,44 @@
+{
+  "slug": "reverse-engineer-software",
+  "publishedAt": "2026-10-16",
+  "order": 6,
+  "tags": ["development", "template", "rea"],
+  "connectors": ["Template", "REA connector", "Chat"],
+  "en": {
+    "title": "In-chat software reverse-engineering template",
+    "category": "Development",
+    "summary": "Use a Grok Bot template wired to REA (open-source reverse-engineering) so you can take a tool apart inside the chat—open the template, drop in the target, proceed.",
+    "whyItWorks": "Switching apps breaks focus. Connecting reverse-engineering inside the bot chat keeps questions, artifacts, and next steps in one thread.",
+    "workflowSteps": [
+      "Open the reverse-engineering Grok Bot template that connects REA.",
+      "Name the tool or binary you want to inspect and your goal (understand flow, map APIs, find config surfaces).",
+      "Ask for a high-level map first: modules, entry points, interesting strings.",
+      "Drill into one subsystem at a time; keep findings in the same chat.",
+      "End with a plain-language summary and open questions—not a claim of full coverage."
+    ],
+    "promptTemplate": "You are my reverse-engineering copilot connected to REA.\n\nTarget: [TOOL/BINARY]\nGoal: [e.g. map features, find config, understand data flow]\nConstraints: Explain in clear steps. Separate facts observed via REA from hypotheses. Do not claim complete coverage.\n\nStart with:\n1) High-level map\n2) Top 5 interesting entry points\n3) Suggested next probe\nThen wait for my direction before going deeper.",
+    "connectorsAndRoutines": "Primary connector is the REA-linked template inside chat—no separate app hop for the main loop. Use on-demand sessions rather than a fixed daily routine unless you are auditing the same binary repeatedly."
+  },
+  "zh": {
+    "title": "对话内软件逆向模板",
+    "category": "开发",
+    "summary": "使用接入 REA（开源逆向工具）的 Grok Bot 模板，在对话里拆解目标工具——打开模板、丢入目标、继续追问。",
+    "whyItWorks": "来回切应用会打断思路。把逆向能力接进 Bot 对话，问题、产物和下一步都留在同一线程。",
+    "workflowSteps": [
+      "打开已连接 REA 的逆向 Grok Bot 模板。",
+      "说明要检查的工具/二进制以及目标（理解流程、映射 API、找配置面）。",
+      "先要高层地图：模块、入口、有意思的字符串。",
+      "一次只深挖一个子系统，发现留在同一对话。",
+      "结束时给白话总结与未决问题——不要宣称已完整覆盖。"
+    ],
+    "promptTemplate": "你是接入 REA 的逆向副驾驶。\n\n目标：[TOOL/BINARY]\n目的：[如映射功能、找配置、理解数据流]\n约束：步骤清晰；区分 REA 观察到的事实与假设；不宣称完整覆盖。\n\n先输出：\n1）高层地图\n2）最值得看的 5 个入口\n3）建议的下一步探测\n然后等待我的指示再深入。",
+    "connectorsAndRoutines": "主连接是对话内的 REA 模板，主循环无需另开应用。按需开会即可；除非反复审计同一二进制，否则不必每日例行。"
+  },
+  "source": {
+    "authorHandle": "@ChaiWithAi",
+    "authorName": "Chai with AI ☕",
+    "postUrl": "https://x.com/ChaiWithAi/status/2111184500093026340",
+    "postedAt": "2026-10-16T19:56:23.000Z",
+    "excerpt": "I just built a Grok Bot template that reverse engineers software for you. ⚒️\n\nIt connects REA, the open-source reverse-engineering tool, so you can take apart any tool right inside the chat. No setup, no switching apps.\n\n→ Open the template\n→ Drop in the tool you want to"
+  }
+}

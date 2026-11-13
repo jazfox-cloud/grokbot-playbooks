@@ -1,0 +1,44 @@
+{
+  "slug": "str-ai-compliance-audit",
+  "publishedAt": "2026-10-31",
+  "order": 10,
+  "tags": ["wordpress", "schema", "short-term-rental"],
+  "connectors": ["Web audit", "WordPress edits (review-first)", "Chat"],
+  "en": {
+    "title": "Short-term rental site AI-agent compliance audit",
+    "category": "Operations",
+    "summary": "Have Grok Bot audit a short-term rental site for AI-agent friendliness—structured data, schema markup, and whether bots can read and act as guests and search engines expect—then prepare WordPress edits you review.",
+    "whyItWorks": "Agent and search readers need clear structure. Auditing schema and bot accessibility first, then staging edits for human review, keeps the site legible without unsupervised CMS changes.",
+    "workflowSteps": [
+      "Point the bot at your STR site URL and ask for an AI-agent compliance audit focused on structured data and schema.",
+      "Collect findings: missing markup, unclear policies, blocked crawlers, weak machine-readable facts (amenities, location, booking).",
+      "Tell the bot which WordPress changes to prepare based on the audit.",
+      "Review the proposed edit before publishing.",
+      "Re-run the audit after deploy to confirm the gaps you cared about are addressed."
+    ],
+    "promptTemplate": "Audit this short-term rental website for AI-agent compliance:\nURL: [SITE]\n\nCheck:\n- Structured data / schema markup presence and gaps\n- Whether bots appear welcomed to read key pages\n- Clarity of facts guests and search/AI agents need (amenities, location, booking path, policies)\n\nOutput: prioritized findings + recommended WordPress edits.\nWhen I approve a fix, prepare the edit text/diff for my review. Do not publish without my confirmation.",
+    "connectorsAndRoutines": "Web audit in chat, then review-first WordPress edit prep. Optional monthly routine to re-audit the live URL. Publishing stays manual."
+  },
+  "zh": {
+    "title": "短租网站 AI Agent 合规审计",
+    "category": "运营",
+    "summary": "让 Grok Bot 审计短租网站对 AI Agent 的友好度——结构化数据、schema，以及机器人是否能按访客与搜索引擎预期阅读与行动——再准备供你审阅的 WordPress 修改。",
+    "whyItWorks": "Agent 与搜索读者需要清晰结构。先审 schema 与可访问性，再把修改暂存给人审，能提升可读性又避免无人看管的 CMS 改动。",
+    "workflowSteps": [
+      "把短租站点 URL 交给 Bot，要求做聚焦结构化数据与 schema 的 AI Agent 合规审计。",
+      "汇总发现：缺失标记、政策不清、爬虫受阻、机器可读事实不足（设施、位置、预订）。",
+      "根据审计结果告诉 Bot 要准备哪些 WordPress 修改。",
+      "发布前审阅拟议编辑。",
+      "上线后再跑一遍审计，确认关心的缺口已处理。"
+    ],
+    "promptTemplate": "请审计此短租网站的 AI Agent 合规性：\nURL：[SITE]\n\n检查：\n- 结构化数据 / schema 是否存在及缺口\n- 关键页面是否欢迎机器人读取\n- 访客与搜索/AI Agent 需要的事实是否清晰（设施、位置、预订路径、政策）\n\n输出：按优先级排序的发现 + 建议的 WordPress 修改。\n我批准某项修复后，准备供审阅的编辑文本/差异。未经确认不得发布。",
+    "connectorsAndRoutines": "对话内网页审计，再以审阅优先方式准备 WordPress 修改。可选每月例行复查线上 URL。发布保持人工。"
+  },
+  "source": {
+    "authorHandle": "@LouZettler",
+    "authorName": "Lou Zettler",
+    "postUrl": "https://x.com/LouZettler/status/2116553219786629481",
+    "postedAt": "2026-10-31T15:29:45.000Z",
+    "excerpt": "Grok Bot audits my STR website for AI-agent compliance: structured data, schema markup, and whether bots are welcomed to read and act on the site the way guests and search engines expect.\n\nI tell Grok Bot what to change on the WordPress site. It prepares the edit. I review it."
+  }
+}
