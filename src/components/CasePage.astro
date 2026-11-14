@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from './AdSlot.astro';
 import AcceptanceChecklist from './AcceptanceChecklist.astro';
 import CopyButton from './CopyButton.astro';
+import SetupSteps from './SetupSteps.astro';
 import { type Locale, localePath } from '../config/site';
 import {
   getAllCases,
@@ -26,12 +27,20 @@ const promptId = `prompt-${entry.data.slug}`;
 const checklist = (loc.acceptanceChecklist ?? [])
   .map((item) => item.trim())
   .filter((item) => item.length > 0);
+// Same filter as SetupSteps: blank titles do not count as a setup list.
+const setupSteps = (loc.setupSteps ?? [])
+  .map((step) => ({
+    title: step.title.trim(),
+    detail: (step.detail ?? '').trim(),
+  }))
+  .filter((step) => step.title.length > 0);
 
 const ui =
   locale === 'zh'
     ? {
         why: '为什么有效',
         steps: '工作流步骤',
+        setup: '分步操作',
         prompt: '提示词 / 例行模板',
         checklist: '验收清单',
         reset: '重置',
@@ -48,6 +57,7 @@ const ui =
     : {
         why: 'Why it works',
         steps: 'Workflow steps',
+        setup: 'Step-by-step setup',
         prompt: 'Prompt / routine template',
         checklist: 'Acceptance checklist',
         reset: 'Reset',
@@ -92,12 +102,18 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
       <p>{loc.whyItWorks}</p>
     </section>
 
-    <section class="panel">
-      <h2>{ui.steps}</h2>
-      <ol class="steps">
-        {loc.workflowSteps.map((step) => <li>{step}</li>)}
-      </ol>
-    </section>
+    {
+      setupSteps.length === 0 && (
+        <section class="panel">
+          <h2>{ui.steps}</h2>
+          <ol class="steps">
+            {loc.workflowSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+      )
+    }
+
+    <SetupSteps steps={setupSteps} heading={ui.setup} slug={entry.data.slug} />
 
     <section class="panel">
       <h2>{ui.prompt}</h2>

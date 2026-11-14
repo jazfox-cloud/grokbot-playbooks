@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "You are my private internal knowledge librarian.\n\nOnly use materials I have provided (research notes, therapy tools, process docs). If something is not in the library, say so clearly.\n\nWhen I ask a question:\n1) Answer from the library first.\n2) Cite which note/tool you used.\n3) Suggest one follow-up question that would deepen the answer.\n\nWhen I send new material, summarize it in 3 bullets and file it under an existing or new collection label.",
     "connectorsAndRoutines": "Drop new notes into the bot chat or bot inbox as they appear. On-demand queries for day-to-day work; optional weekly indexing routine for newly added material. No external publish step required.",
+    "setupSteps": [
+      {
+        "title": "Gather notes you already trust",
+        "detail": "Research notes, PDFs, therapy tools, and process docs."
+      },
+      {
+        "title": "Create a private internal knowledge librarian",
+        "detail": "Not a public chatbot. Send it the prompt template on this page. Connectors this case lists: Bot inbox, Files / notes, and Routine (on demand)."
+      },
+      {
+        "title": "Upload or paste sources in batches and label them",
+        "detail": "Collections such as research, therapy tools, and process notes. New material is summarized in 3 bullets and filed under an existing or new collection label. Drop new notes into the bot chat or bot inbox."
+      },
+      {
+        "title": "Ask only against that library",
+        "detail": "The answer cites which note or tool it used, suggests one follow-up question, and says clearly when something is not in the library."
+      },
+      {
+        "title": "Optionally add the weekly indexing routine",
+        "detail": "“Index anything new I sent this week and list gaps.” There is no external publish step."
+      }
+    ],
     "acceptanceChecklist": [
       "An answer uses only research notes, therapy tools, or process docs you provided, and says clearly when something is not in the library.",
       "The answer cites which note or tool it used, then suggests one follow-up question.",
@@ -40,6 +62,28 @@
     ],
     "promptTemplate": "你是我的私有内部知识馆员。\n\n只使用我提供的材料（研究笔记、疗法工具、流程文档）。库中没有的内容请明确说明。\n\n当我提问时：\n1）优先依据知识库作答；\n2）注明用到了哪份笔记/工具；\n3）再给一个能加深答案的追问。\n\n当我发送新材料时，用 3 条要点摘要，并归入已有或新建集合标签。",
     "connectorsAndRoutines": "有新笔记就丢进 Bot 对话或 Bot 收件箱。日常按需查询；可选每周索引例行处理新增材料。无需对外发布步骤。",
+    "setupSteps": [
+      {
+        "title": "先收齐你已经信任的材料",
+        "detail": "研究笔记、PDF、疗法工具和流程文档。"
+      },
+      {
+        "title": "创建一个私有的内部知识馆员",
+        "detail": "不是对外聊天机器人。把本页的提示词模板发给它。本案例列出的连接器：Bot inbox、Files / notes、Routine (on demand)。"
+      },
+      {
+        "title": "分批上传或粘贴，并打上集合标签",
+        "detail": "例如研究、疗法工具、流程笔记。新材料收成 3 条要点，归入已有或新建的集合标签。新笔记丢进 Bot 对话或 Bot 收件箱。"
+      },
+      {
+        "title": "只对着这个库提问",
+        "detail": "回答会注明用到的笔记或工具，再给一个追问；库中没有的内容会明确说明。"
+      },
+      {
+        "title": "可选：加上每周索引例行",
+        "detail": "「索引本周新内容并列出缺口」。没有对外发布这一步。"
+      }
+    ],
     "acceptanceChecklist": [
       "回答只用你提供的研究笔记、疗法工具或流程文档；库中没有的内容会明确说明。",
       "回答会注明用到的笔记或工具，并再给一个追问。",

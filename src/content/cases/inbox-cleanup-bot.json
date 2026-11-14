@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "You are my inbox cleanup bot.\n\nClassify messages into: keep, junk, spam, phishing, needs-human.\nFor junk/spam/phishing candidates, list sender, subject, and reason.\nNever permanently delete without my batch approval.\nIf phishing is suspected, highlight urgency and recommended next human checks.\nDo not click links or enter credentials.",
     "connectorsAndRoutines": "Gmail (or bot inbox forwards) plus confirm-before-delete on trash batches. Optional daily routine for a short triage digest. Phishing handling stays advisory.",
+    "setupSteps": [
+      {
+        "title": "Connect or forward the mailbox the bot may classify",
+        "detail": "Connectors this case lists: Gmail, Bot inbox, and Confirm-before-delete. Gmail, or forwards into the bot inbox."
+      },
+      {
+        "title": "Send the prompt template on this page",
+        "detail": "Classify each message as keep, junk, spam, phishing, or needs-human. Add any extra trash-worthy buckets you want."
+      },
+      {
+        "title": "Require a review list before anything is trashed",
+        "detail": "Junk, spam, and phishing candidates list sender, subject, and reason. Nothing is permanently deleted until you approve that batch."
+      },
+      {
+        "title": "Escalate real mail and keep phishing advisory",
+        "detail": "A real bill, a person, or an account notice is for you to read. Suspected phishing is highlighted with urgency and recommended human checks. The bot does not click links or enter credentials."
+      },
+      {
+        "title": "Re-run when the pile grows",
+        "detail": "On a schedule, or whenever the unread count feels overwhelming. The optional daily routine returns a short triage digest."
+      }
+    ],
     "acceptanceChecklist": [
       "Each message is classified as keep, junk, spam, phishing, or needs-human.",
       "Junk, spam, and phishing candidates appear as a review list with sender, subject, and reason before anything is trashed.",
@@ -40,6 +62,28 @@
     ],
     "promptTemplate": "你是我的收件箱清理 Bot。\n\n将邮件分为：保留、垃圾、骚扰、钓鱼、需人工。\n对垃圾/骚扰/钓鱼候选，列出发件人、主题与原因。\n未经我批次批准，不得永久删除。\n若疑似钓鱼，标出紧迫性与建议的人工检查。\n不要点击链接或输入凭据。",
     "connectorsAndRoutines": "Gmail（或 Bot 收件箱转发）+ 丢弃批次确认。可选每日例行输出短分拣摘要。钓鱼处理仅作建议。",
+    "setupSteps": [
+      {
+        "title": "连接或转发 Bot 可以分类的邮箱",
+        "detail": "本案例列出的连接器：Gmail、Bot inbox、Confirm-before-delete。可以用 Gmail，或转发进 Bot 收件箱。"
+      },
+      {
+        "title": "把本页的提示词模板发出去",
+        "detail": "每封邮件分成：保留、垃圾、骚扰、钓鱼或需人工。你也可以再加自己的可丢弃类别。"
+      },
+      {
+        "title": "丢弃前先要一份审阅清单",
+        "detail": "垃圾、骚扰和钓鱼候选列出发件人、主题和原因。未经你按批批准，不会永久删除。"
+      },
+      {
+        "title": "真人邮件升级给你，钓鱼只作建议",
+        "detail": "看起来像真实账单、真人来信或账户通知的，交给你阅读。疑似钓鱼会标出紧迫性和建议的人工检查。Bot 不会点击链接或输入凭据。"
+      },
+      {
+        "title": "堆积起来时再跑一遍",
+        "detail": "按日程重跑，或在未读数失控时再跑。可选的每日例行会返回一份简短的分拣摘要。"
+      }
+    ],
     "acceptanceChecklist": [
       "每封邮件会被分成：保留、垃圾、骚扰、钓鱼或需人工。",
       "垃圾、骚扰和钓鱼候选会在丢弃前以审阅清单列出，包含发件人、主题和原因。",

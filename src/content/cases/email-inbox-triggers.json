@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "You have an email inbox that triggers routines.\n\nRoutines:\n1) [receipt] — extract merchant, date, amount, category; return a one-line ledger entry.\n2) [invoice] — extract vendor, due date, amount, pay status; list open questions.\n3) [notes] — turn messy meeting notes into decisions, owners, and next actions.\n\nOn each inbound email: detect routine (from tag/subject/body), run it, reply with structured output. If unsure which routine, ask one clarifying question.",
     "connectorsAndRoutines": "Bot inbox + on-email routines are the core. Optional Gmail filters that auto-forward labeled mail. Keep payment or send-external actions behind confirmation.",
+    "setupSteps": [
+      {
+        "title": "Locate your bot's email address",
+        "detail": "Connectors this case lists: Bot inbox, Email trigger, and Routine (on email). An email to that inbox can trigger a routine. You forward; you do not open another app."
+      },
+      {
+        "title": "Send the prompt template so the three routines are defined",
+        "detail": "[receipt] returns a one-line ledger entry with merchant, date, amount, and category. [invoice] returns vendor, due date, amount, pay status, and open questions. [notes] turns messy meeting notes into decisions, owners, and next actions."
+      },
+      {
+        "title": "Decide how the bot detects which routine fits",
+        "detail": "Subject keywords, sender, or a tag you add when forwarding, such as [receipt], [invoice], or [notes]."
+      },
+      {
+        "title": "Forward one sample of each type",
+        "detail": "A receipt, an invoice, and messy meeting notes. If the bot is unsure which routine fits, it asks one clarifying question."
+      },
+      {
+        "title": "Keep payment and send-external actions behind confirmation",
+        "detail": "Optional Gmail filters can auto-forward mail you have already labeled."
+      }
+    ],
     "acceptanceChecklist": [
       "Forwarding a receipt, an invoice, or messy meeting notes to the bot inbox runs the matching routine, without opening another app.",
       "A [receipt] message comes back as a one-line ledger entry with merchant, date, amount, and category.",
@@ -40,6 +62,28 @@
     ],
     "promptTemplate": "你拥有可触发例行的邮箱收件箱。\n\n例行：\n1）[receipt] — 提取商户、日期、金额、类别；返回一行流水。\n2）[invoice] — 提取供应商、到期日、金额、支付状态；列出待确认问题。\n3）[notes] — 把凌乱会议纪要整理为决策、负责人与下一步。\n\n每封入站邮件：识别例行（标签/主题/正文），执行并回复结构化结果。若不确定，只问一个澄清问题。",
     "connectorsAndRoutines": "核心是 Bot 收件箱 + 来信触发例行。可选 Gmail 过滤器自动转发已标记邮件。支付或对外发送动作保留确认。",
+    "setupSteps": [
+      {
+        "title": "找到 Bot 的邮箱地址",
+        "detail": "本案例列出的连接器：Bot inbox、Email trigger、Routine (on email)。发到该收件箱的邮件可以触发例行。你转发即可，不必再打开另一个应用。"
+      },
+      {
+        "title": "把提示词模板发出去，定好三条例行",
+        "detail": "[receipt] 回复为一行流水，包含商户、日期、金额和类别。[invoice] 回复供应商、到期日、金额、支付状态和待确认问题。[notes] 把凌乱会议纪要整理成决策、负责人和下一步。"
+      },
+      {
+        "title": "定好 Bot 如何判断走哪条例行",
+        "detail": "主题关键词、发件人，或转发时加的标签，例如 [receipt]、[invoice]、[notes]。"
+      },
+      {
+        "title": "三种各转发一封样例",
+        "detail": "一封收据、一封发票、一份凌乱的会议纪要。若无法判断该走哪条，Bot 只问一个澄清问题。"
+      },
+      {
+        "title": "支付和对外发送保留确认",
+        "detail": "可选：用 Gmail 过滤器自动转发你已经标记过的邮件。"
+      }
+    ],
     "acceptanceChecklist": [
       "把收据、发票或凌乱的会议纪要转发到 Bot 收件箱后，对应例行会运行，不必再打开另一个应用。",
       "带 [receipt] 的邮件会回复为一行流水，包含商户、日期、金额和类别。",
