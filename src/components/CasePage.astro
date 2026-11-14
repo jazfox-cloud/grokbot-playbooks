@@ -27,6 +27,13 @@ const promptId = `prompt-${entry.data.slug}`;
 const checklist = (loc.acceptanceChecklist ?? [])
   .map((item) => item.trim())
   .filter((item) => item.length > 0);
+// Same filter as SetupSteps: blank titles do not count as a setup list.
+const setupSteps = (loc.setupSteps ?? [])
+  .map((step) => ({
+    title: step.title.trim(),
+    detail: (step.detail ?? '').trim(),
+  }))
+  .filter((step) => step.title.length > 0);
 
 const ui =
   locale === 'zh'
@@ -95,14 +102,18 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
       <p>{loc.whyItWorks}</p>
     </section>
 
-    <section class="panel">
-      <h2>{ui.steps}</h2>
-      <ol class="steps">
-        {loc.workflowSteps.map((step) => <li>{step}</li>)}
-      </ol>
-    </section>
+    {
+      setupSteps.length === 0 && (
+        <section class="panel">
+          <h2>{ui.steps}</h2>
+          <ol class="steps">
+            {loc.workflowSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+      )
+    }
 
-    <SetupSteps steps={loc.setupSteps ?? []} heading={ui.setup} slug={entry.data.slug} />
+    <SetupSteps steps={setupSteps} heading={ui.setup} slug={entry.data.slug} />
 
     <section class="panel">
       <h2>{ui.prompt}</h2>
