@@ -17,7 +17,14 @@
       "Standardize a forward habit: add a short prefix like [receipt] / [invoice] / [notes] when helpful."
     ],
     "promptTemplate": "You have an email inbox that triggers routines.\n\nRoutines:\n1) [receipt] — extract merchant, date, amount, category; return a one-line ledger entry.\n2) [invoice] — extract vendor, due date, amount, pay status; list open questions.\n3) [notes] — turn messy meeting notes into decisions, owners, and next actions.\n\nOn each inbound email: detect routine (from tag/subject/body), run it, reply with structured output. If unsure which routine, ask one clarifying question.",
-    "connectorsAndRoutines": "Bot inbox + on-email routines are the core. Optional Gmail filters that auto-forward labeled mail. Keep payment or send-external actions behind confirmation."
+    "connectorsAndRoutines": "Bot inbox + on-email routines are the core. Optional Gmail filters that auto-forward labeled mail. Keep payment or send-external actions behind confirmation.",
+    "acceptanceChecklist": [
+      "Forwarding a receipt, an invoice, or messy meeting notes to the bot inbox runs the matching routine, without opening another app.",
+      "A [receipt] message comes back as a one-line ledger entry with merchant, date, amount, and category.",
+      "A [invoice] message comes back with vendor, due date, amount, pay status, and a list of open questions.",
+      "A [notes] message comes back as decisions, owners, and next actions.",
+      "If the bot is unsure which routine fits, it asks one clarifying question, and any payment or send-external action waits for your confirmation."
+    ]
   },
   "zh": {
     "title": "转发即触发：Bot 邮箱例行",
@@ -32,7 +39,14 @@
       "养成转发习惯：需要时加 [receipt] / [invoice] / [notes] 前缀。"
     ],
     "promptTemplate": "你拥有可触发例行的邮箱收件箱。\n\n例行：\n1）[receipt] — 提取商户、日期、金额、类别；返回一行流水。\n2）[invoice] — 提取供应商、到期日、金额、支付状态；列出待确认问题。\n3）[notes] — 把凌乱会议纪要整理为决策、负责人与下一步。\n\n每封入站邮件：识别例行（标签/主题/正文），执行并回复结构化结果。若不确定，只问一个澄清问题。",
-    "connectorsAndRoutines": "核心是 Bot 收件箱 + 来信触发例行。可选 Gmail 过滤器自动转发已标记邮件。支付或对外发送动作保留确认。"
+    "connectorsAndRoutines": "核心是 Bot 收件箱 + 来信触发例行。可选 Gmail 过滤器自动转发已标记邮件。支付或对外发送动作保留确认。",
+    "acceptanceChecklist": [
+      "把收据、发票或凌乱的会议纪要转发到 Bot 收件箱后，对应例行会运行，不必再打开另一个应用。",
+      "带 [receipt] 的邮件会回复为一行流水，包含商户、日期、金额和类别。",
+      "带 [invoice] 的邮件会回复供应商、到期日、金额、支付状态，以及待确认问题。",
+      "带 [notes] 的邮件会整理成决策、负责人和下一步。",
+      "若 Bot 无法判断该走哪条例行，只会问一个澄清问题；支付或对外发送会等你确认。"
+    ]
   },
   "source": {
     "authorHandle": "@AgentLabTuts",

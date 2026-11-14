@@ -17,7 +17,13 @@
       "Require explicit confirmation before the bot marks anything canceled or drafts a cancel action."
     ],
     "promptTemplate": "You manage free trials and unused subscriptions.\n\nMode A — Trial guard:\nWhen I log a trial, store: service, start date, end/bill date, cancel path, remind N days before.\nOn schedule, remind me and outline cancel steps. Never cancel without my yes.\n\nMode B — Unused subscriptions:\nHelp me list plans I may not use. For each, ask before any cancel draft.\n\nAlways confirm before changing anything.",
-    "connectorsAndRoutines": "Use a before-renewal routine for reminders. Optional Gmail/bot inbox for trial confirmations and receipts. Every cancel path is confirm-before-change."
+    "connectorsAndRoutines": "Use a before-renewal routine for reminders. Optional Gmail/bot inbox for trial confirmations and receipts. Every cancel path is confirm-before-change.",
+    "acceptanceChecklist": [
+      "Logging a trial stores the service, start date, end or bill date, cancel path, and the remind-before window you set.",
+      "The before-renewal routine reminds you and outlines the cancel steps, and it does not cancel unless you say yes.",
+      "The unused-subscription pass lists plans you may not be using and asks before it drafts a cancellation.",
+      "The bot asks you to confirm before it changes anything."
+    ]
   },
   "zh": {
     "title": "免费试用守卫 + 闲置订阅清理",
@@ -32,7 +38,13 @@
       "Bot 标记取消或起草取消动作前，必须得到你的明确确认。"
     ],
     "promptTemplate": "你负责管理免费试用与闲置订阅。\n\n模式 A — 试用守卫：\n我登记试用时，记录：服务、开始日、结束/扣费日、取消路径、提前 N 天提醒。\n到期前按日程提醒并列出取消步骤。未经我说「可以」不得取消。\n\n模式 B — 闲置订阅：\n帮我列出可能不用的方案。每一项在起草取消前都要询问。\n\n任何变更前必须确认。",
-    "connectorsAndRoutines": "用续费前例行做提醒。可选 Gmail/Bot 收件箱承接试用确认与收据。所有取消路径均为确认后执行。"
+    "connectorsAndRoutines": "用续费前例行做提醒。可选 Gmail/Bot 收件箱承接试用确认与收据。所有取消路径均为确认后执行。",
+    "acceptanceChecklist": [
+      "登记一次试用后，会记下服务、开始日、结束或扣费日、取消路径，以及你设定的提前提醒窗口。",
+      "续费前的例行会提醒你并列出取消步骤，未经你说可以就不会取消。",
+      "闲置订阅这一步会列出你可能没在用的方案，并在起草取消前询问。",
+      "Bot 在改动任何内容之前都会先请你确认。"
+    ]
   },
   "source": {
     "authorHandle": "@wonoh74",

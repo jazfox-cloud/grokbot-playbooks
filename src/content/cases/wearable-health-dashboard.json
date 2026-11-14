@@ -17,7 +17,14 @@
       "Review recommendations yourself before changing medication, training, or clinical plans."
     ],
     "promptTemplate": "You receive wearable exports at this inbox.\n\nWhen new data arrives, produce:\n1) Dashboard — sleep, activity, resting indicators (only fields present in the export)\n2) Changes vs the previous export (if available)\n3) 3 practical recommendations grounded in the data\n\nLabel speculation clearly. Do not diagnose disease or prescribe treatment. Ask me before any external share.",
-    "connectorsAndRoutines": "Wearable → email/export into the bot inbox is the primary connector. Optional daily routine to render the dashboard when new mail lands. Keep medical decisions human-owned."
+    "connectorsAndRoutines": "Wearable → email/export into the bot inbox is the primary connector. Optional daily routine to render the dashboard when new mail lands. Keep medical decisions human-owned.",
+    "acceptanceChecklist": [
+      "A wearable export sent to the bot inbox comes back as a dashboard of sleep, activity, and resting indicators, using only fields present in that export.",
+      "When a previous export is available, the reply includes what changed versus that export.",
+      "The reply includes 3 practical recommendations grounded in the data you sent, and speculation is labeled clearly.",
+      "The bot does not diagnose a disease or prescribe treatment, asks before any external share, and leaves medication, training, and clinical-plan changes for you to review.",
+      "When the optional daily routine runs and new mail has arrived, it summarizes the latest export."
+    ]
   },
   "zh": {
     "title": "可穿戴数据 → Bot 邮箱健康看板",
@@ -32,7 +39,14 @@
       "在调整用药、训练或诊疗计划前，自行审阅建议。"
     ],
     "promptTemplate": "本收件箱会收到可穿戴导出。\n\n有新数据时输出：\n1）看板 — 睡眠、活动、静息相关指标（仅使用导出中存在的字段）\n2）相对上次导出的变化（若有）\n3）3 条基于数据的可行建议\n\n推测请明确标注。不要诊断疾病或开处方。对外分享前先问我。",
-    "connectorsAndRoutines": "主连接是可穿戴 → 邮件/导出进入 Bot 收件箱。可选每日例行在新邮件到达时生成看板。医疗决策由人负责。"
+    "connectorsAndRoutines": "主连接是可穿戴 → 邮件/导出进入 Bot 收件箱。可选每日例行在新邮件到达时生成看板。医疗决策由人负责。",
+    "acceptanceChecklist": [
+      "发到 Bot 收件箱的可穿戴导出会返回看板，包含睡眠、活动和静息相关指标，且只用该导出里实际有的字段。",
+      "若有上一次导出，回复会包含相对那次导出的变化。",
+      "回复包含 3 条基于你所发数据的可行建议，推测会被明确标出。",
+      "Bot 不会诊断疾病或开处方，对外分享前会先问你，用药、训练或诊疗计划的调整留给你自己审阅。",
+      "可选的每日例行在有新邮件到达时，会汇总最新的一次导出。"
+    ]
   },
   "source": {
     "authorHandle": "@ragnarh",

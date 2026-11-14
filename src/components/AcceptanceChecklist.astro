@@ -1,0 +1,97 @@
+---
+import type { Locale } from '../config/site';
+
+interface Props {
+  items: string[];
+  locale: Locale;
+  slug: string;
+  heading: string;
+  resetLabel: string;
+}
+
+const { items, locale, slug, heading, resetLabel } = Astro.props;
+const visible = items.map((item) => item.trim()).filter((item) => item.length > 0);
+const headingId = `acceptance-${slug}`;
+// Per case and per locale. EN and ZH lists are separate strings, so a check
+// on one language must not mark the other. Value is a JSON array of indexes.
+const storageKey = `grokbot-playbooks:acceptance:${slug}:${locale}`;
+---
+
+{
+  visible.length > 0 && (
+    <section class="panel checklist" aria-labelledby={headingId}>
+      <form class="checklist__form" data-checklist data-storage-key={storageKey} autocomplete="off">
+        <div class="checklist__head">
+          <h2 id={headingId}>{heading}</h2>
+          <button type="reset" class="checklist__reset">{resetLabel}</button>
+        </div>
+        <ul class="checklist__list">
+          {visible.map((item, index) => (
+            <li>
+              <label>
+                <input type="checkbox" data-checklist-item value={String(index)} />
+                <span>{item}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </form>
+    </section>
+  )
+}
+
+<script is:inline>
+  (function () {
+    function read(key) {
+      try {
+        var raw = localStorage.getItem(key);
+        if (!raw) return [];
+        var parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function write(key, indexes) {
+      try {
+        if (!indexes.length) localStorage.removeItem(key);
+        else localStorage.setItem(key, JSON.stringify(indexes));
+      } catch (err) {
+        /* private mode or blocked storage: checks still toggle */
+      }
+    }
+
+    function bind(root) {
+      if (root.getAttribute('data-bound') === '1') return;
+      root.setAttribute('data-bound', '1');
+      var key = root.getAttribute('data-storage-key');
+      if (!key) return;
+      var boxes = root.querySelectorAll('input[type="checkbox"][data-checklist-item]');
+      var saved = {};
+      read(key).forEach(function (n) {
+        saved[String(n)] = true;
+      });
+      boxes.forEach(function (box) {
+        if (saved[box.value]) box.checked = true;
+        box.addEventListener('change', function () {
+          var indexes = [];
+          boxes.forEach(function (item) {
+            if (item.checked) indexes.push(Number(item.value));
+          });
+          write(key, indexes);
+        });
+      });
+      root.addEventListener('reset', function () {
+        write(key, []);
+      });
+    }
+
+    function bindAll() {
+      document.querySelectorAll('[data-checklist]').forEach(bind);
+    }
+
+    bindAll();
+    document.addEventListener('astro:page-load', bindAll);
+  })();
+</script>

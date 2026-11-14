@@ -17,7 +17,14 @@
       "Re-run the audit after deploy to confirm the gaps you cared about are addressed."
     ],
     "promptTemplate": "Audit this short-term rental website for AI-agent compliance:\nURL: [SITE]\n\nCheck:\n- Structured data / schema markup presence and gaps\n- Whether bots appear welcomed to read key pages\n- Clarity of facts guests and search/AI agents need (amenities, location, booking path, policies)\n\nOutput: prioritized findings + recommended WordPress edits.\nWhen I approve a fix, prepare the edit text/diff for my review. Do not publish without my confirmation.",
-    "connectorsAndRoutines": "Web audit in chat, then review-first WordPress edit prep. Optional monthly routine to re-audit the live URL. Publishing stays manual."
+    "connectorsAndRoutines": "Web audit in chat, then review-first WordPress edit prep. Optional monthly routine to re-audit the live URL. Publishing stays manual.",
+    "acceptanceChecklist": [
+      "Giving the bot your short-term rental site URL returns prioritized findings on structured data and schema gaps, whether bots can read key pages, and how clear amenities, location, the booking path, and policies are.",
+      "The same audit lists recommended WordPress edits.",
+      "After you approve a fix, the bot prepares the edit text or diff for your review and does not publish without your confirmation.",
+      "Running the audit again after you deploy shows whether the gaps you cared about are addressed.",
+      "When the optional monthly routine runs, it re-audits the live URL."
+    ]
   },
   "zh": {
     "title": "短租网站 AI Agent 合规审计",
@@ -32,7 +39,14 @@
       "上线后再跑一遍审计，确认关心的缺口已处理。"
     ],
     "promptTemplate": "请审计此短租网站的 AI Agent 合规性：\nURL：[SITE]\n\n检查：\n- 结构化数据 / schema 是否存在及缺口\n- 关键页面是否欢迎机器人读取\n- 访客与搜索/AI Agent 需要的事实是否清晰（设施、位置、预订路径、政策）\n\n输出：按优先级排序的发现 + 建议的 WordPress 修改。\n我批准某项修复后，准备供审阅的编辑文本/差异。未经确认不得发布。",
-    "connectorsAndRoutines": "对话内网页审计，再以审阅优先方式准备 WordPress 修改。可选每月例行复查线上 URL。发布保持人工。"
+    "connectorsAndRoutines": "对话内网页审计，再以审阅优先方式准备 WordPress 修改。可选每月例行复查线上 URL。发布保持人工。",
+    "acceptanceChecklist": [
+      "把短租站点 URL 交给 Bot 后，会返回按优先级排列的发现：结构化数据与 schema 缺口、关键页面是否欢迎机器人读取，以及设施、位置、预订路径和政策是否清晰。",
+      "同一次审计会列出建议的 WordPress 修改。",
+      "你批准某项修复后，Bot 会准备供你审阅的编辑文本或差异，未经你确认不会发布。",
+      "你上线后再次运行审计时，会显示你关心的缺口是否已经处理。",
+      "可选的每月例行运行时，会重新审计线上 URL。"
+    ]
   },
   "source": {
     "authorHandle": "@LouZettler",
