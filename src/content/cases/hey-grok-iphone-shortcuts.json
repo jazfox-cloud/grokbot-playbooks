@@ -1,0 +1,53 @@
+{
+  "slug": "hey-grok-iphone-shortcuts",
+  "publishedAt": "2026-10-25",
+  "order": 13,
+  "tags": ["ios", "shortcuts", "voice"],
+  "connectors": ["iOS Shortcuts", "Vocal Shortcuts", "Siri", "Grok Bot iOS app"],
+  "en": {
+    "title": "Hands-free \"Hey Grok\" on iPhone with Shortcuts",
+    "category": "Mobile & Voice",
+    "summary": "iOS reserves wake words for Siri, so there was no hands-free way to open a Grok Bot voice chat.",
+    "whyItWorks": "iOS reserves wake words for Siri, so a Shortcut wrapping Grok Bot's \"Start Voice Chat with Bot\" action, triggered via Vocal Shortcuts, gets around that. Option B borrows Siri's wake word (\"Hey Siri, Grok Bot\"), so there is no always-on mic. \"Allow Running When Locked\" lets it start from the lock screen; one tap is still needed unless Face ID already unlocked it.",
+    "workflowSteps": [
+      "Update the Grok Bot app.",
+      "Shortcuts app → + → Add Action → search \"Grok Bot\" → choose \"Start Voice Chat with Bot\".",
+      "Option A (Vocal Shortcuts): Settings → Accessibility → Vocal Shortcuts → Set Up → pick that shortcut → type \"Hey Grok\" and say it 3 times.",
+      "Option B (follow-up, no always-on mic): rename the shortcut to \"Grok Bot\" and say \"Hey Siri, Grok Bot\".",
+      "In the shortcut's details, turn on \"Allow Running When Locked\"."
+    ],
+    "promptTemplate": "Shortcut action: \"Start Voice Chat with Bot\" (Grok Bot app) + \"Allow Running When Locked\". Trigger phrase: \"Hey Grok\" (Vocal Shortcuts) or \"Hey Siri, Grok Bot\".",
+    "connectorsAndRoutines": "No connectors. iOS Shortcuts + Vocal Shortcuts or Siri; Grok Bot iOS app. Author notes Option A keeps the mic on (orange dot), drains battery, can clash with calls/recording and false-trigger; Option B avoids that. Locked phone needs one tap unless Face ID already unlocked it."
+  },
+  "zh": {
+    "title": "iPhone 上免手动唤起 \"Hey Grok\"（快捷指令）",
+    "category": "移动端与语音",
+    "summary": "iOS 的唤醒词只留给 Siri，没法免手动直接打开 Grok Bot 语音对话。",
+    "whyItWorks": "iOS 的唤醒词只留给 Siri，用快捷指令包住 Grok Bot 的 \"Start Voice Chat with Bot\"，再经语音快捷指令触发，即可免手动唤起。方案 B 借用 Siri 的唤醒词（\"Hey Siri, Grok Bot\"），麦克风不用常开。打开 \"锁定时允许运行\" 后可从锁屏启动；Face ID 尚未解锁时仍需点一下。",
+    "workflowSteps": [
+      "把 Grok Bot App 更新到最新版。",
+      "快捷指令 App → + → 添加操作 → 搜索 \"Grok Bot\" → 选择 \"Start Voice Chat with Bot\"（与 Bot 开始语音对话）。",
+      "方案 A（语音快捷指令）：设置 → 辅助功能 → 语音快捷指令 → 设置 → 选该快捷指令 → 输入 \"Hey Grok\" 并念 3 遍。",
+      "方案 B（作者后续改进版，无常开麦克风）：把快捷指令改名为 \"Grok Bot\"，说 \"Hey Siri, Grok Bot\" 即可。",
+      "在快捷指令详情中打开 \"锁定时允许运行\"。"
+    ],
+    "promptTemplate": "快捷指令动作：\"Start Voice Chat with Bot\"（Grok Bot App）+ 锁定时允许运行。触发语：\"Hey Grok\"（语音快捷指令）或 \"Hey Siri, Grok Bot\"。",
+    "connectorsAndRoutines": "无需连接器。iOS 快捷指令 + 语音快捷指令或 Siri；Grok Bot iOS App。作者指出方案 A 麦克风常开（橙点）、耗电、可能与通话/录音冲突并误触发；方案 B 无此问题。锁屏时需点一下，Face ID 已解锁则完全免手动。"
+  },
+  "source": {
+    "authorHandle": "@Texas_Twins_Dad",
+    "authorName": "Texas Twins Dad",
+    "postUrl": "https://x.com/Texas_Twins_Dad/status/2114217410823688573",
+    "postedAt": "2026-10-25T04:48:05.000Z",
+    "excerpt": "iOS reserves wake words for Siri, so there was no hands-free way to open a Grok Bot voice chat."
+  },
+  "relatedPosts": [
+    {
+      "url": "https://x.com/Texas_Twins_Dad/status/2116748190649037285",
+      "label": {
+        "en": "Author's follow-up: Siri-based variant without always-on mic",
+        "zh": "作者改进版：无常开麦克风"
+      }
+    }
+  ]
+}

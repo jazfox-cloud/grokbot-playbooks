@@ -28,6 +28,17 @@ const cases = defineCollection({
       postedAt: z.string(),
       excerpt: z.string(),
     }),
+    relatedPosts: z
+      .array(
+        z.object({
+          url: z.string().url(),
+          label: z.object({
+            en: z.string(),
+            zh: z.string(),
+          }),
+        })
+      )
+      .optional(),
   }),
 });
 

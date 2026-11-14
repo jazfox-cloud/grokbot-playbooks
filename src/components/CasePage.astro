@@ -34,6 +34,7 @@ const ui =
         connectors: '连接器与例行',
         source: '来源帖文',
         open: '打开原帖',
+        relatedPosts: '相关帖子',
         related: '相关 Playbook',
         next: '下一篇',
         back: '返回案例库',
@@ -47,6 +48,7 @@ const ui =
         connectors: 'Connectors & routines',
         source: 'Source post',
         open: 'Open on X',
+        relatedPosts: 'Related posts',
         related: 'Related playbooks',
         next: 'Next',
         back: 'Back to library',
@@ -123,7 +125,20 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
       <blockquote style="margin:1rem 0 0;color:var(--ink-muted);border-left:3px solid var(--line);padding-left:1rem">
         {entry.data.source.excerpt}
       </blockquote>
-    </section>
+    </section>{
+      entry.data.relatedPosts && entry.data.relatedPosts.length > 0 && (
+        <section class="panel">
+          <h2>{ui.relatedPosts}</h2>
+          <div class="source-row">
+            {entry.data.relatedPosts.map((post) => (
+              <a href={post.url} target="_blank" rel="noopener noreferrer">
+                {post.label[locale]} →
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <section>
       <h2 style="font-family:var(--font-display);letter-spacing:-0.02em">{ui.related}</h2>
