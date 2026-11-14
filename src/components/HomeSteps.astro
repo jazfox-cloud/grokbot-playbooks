@@ -1,0 +1,82 @@
+---
+import type { Locale } from '../config/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const ui =
+  locale === 'zh'
+    ? {
+        title: '如何使用本站',
+        lead: '从案例库到能跑起来的 Grok Bot，按这五步来。',
+        steps: [
+          {
+            title: '找到案例',
+            body: '搜索或按分类筛选，打开和你要办的事相符的 Playbook。',
+          },
+          {
+            title: '复制提示词',
+            body: '复制提示词模板，把方括号里的占位换成你的具体情况。',
+          },
+          {
+            title: '在 Grok Bot 里配置',
+            body: '粘贴为指令或例行，并只接上该案例列出的连接器。',
+          },
+          {
+            title: '核对结果',
+            body: '用一个真实例子跑一遍，对照工作流步骤看输出。',
+          },
+          {
+            title: '按需调整',
+            body: '改措辞、阈值或确认语句，直到结果符合你的需要。',
+          },
+        ],
+      }
+    : {
+        title: 'How to use this site',
+        lead: 'Five steps from the library to a Grok Bot you can run.',
+        steps: [
+          {
+            title: 'Find a case',
+            body: 'Search or filter the library and open the playbook that fits the job.',
+          },
+          {
+            title: 'Copy the prompt',
+            body: 'Copy the prompt template and replace the bracketed placeholders with your details.',
+          },
+          {
+            title: 'Set it up in Grok Bot',
+            body: 'Paste it as an instruction or routine, and attach only the connectors that case lists.',
+          },
+          {
+            title: 'Check the result',
+            body: 'Run it on one real example and compare the output with the workflow steps.',
+          },
+          {
+            title: 'Adjust as needed',
+            body: 'Edit the wording, thresholds, or confirmation lines until the result matches what you want.',
+          },
+        ],
+      };
+---
+
+<section class="wrap home-flow" aria-labelledby="home-flow-title">
+  <h2 id="home-flow-title">{ui.title}</h2>
+  <p class="home-flow__lead">{ui.lead}</p>
+  <ol class="home-flow__list">
+    {
+      ui.steps.map((step, index) => (
+        <li>
+          <span class="home-flow__index" aria-hidden="true">
+            {index + 1}
+          </span>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>
