@@ -8,7 +8,7 @@
     "title": "Hands-free \"Hey Grok\" on iPhone with Shortcuts",
     "category": "Mobile & Voice",
     "summary": "iOS reserves wake words for Siri, so there was no hands-free way to open a Grok Bot voice chat.",
-    "whyItWorks": "Shortcut action: \"Start Voice Chat with Bot\" (Grok Bot app) + \"Allow Running When Locked\". Trigger phrase: \"Hey Grok\" (Vocal Shortcuts) or \"Hey Siri, Grok Bot\".",
+    "whyItWorks": "iOS reserves wake words for Siri, so a Shortcut wrapping Grok Bot's \"Start Voice Chat with Bot\" action, triggered via Vocal Shortcuts, gets around that. Option B borrows Siri's wake word (\"Hey Siri, Grok Bot\"), so there is no always-on mic. \"Allow Running When Locked\" lets it start from the lock screen; one tap is still needed unless Face ID already unlocked it.",
     "workflowSteps": [
       "Update the Grok Bot app.",
       "Shortcuts app → + → Add Action → search \"Grok Bot\" → choose \"Start Voice Chat with Bot\".",
@@ -23,7 +23,7 @@
     "title": "iPhone 上免手动唤起 \"Hey Grok\"（快捷指令）",
     "category": "移动端与语音",
     "summary": "iOS 的唤醒词只留给 Siri，没法免手动直接打开 Grok Bot 语音对话。",
-    "whyItWorks": "快捷指令动作：\"Start Voice Chat with Bot\"（Grok Bot App）+ 锁定时允许运行。触发语：\"Hey Grok\"（语音快捷指令）或 \"Hey Siri, Grok Bot\"。",
+    "whyItWorks": "iOS 的唤醒词只留给 Siri，用快捷指令包住 Grok Bot 的 \"Start Voice Chat with Bot\"，再经语音快捷指令触发，即可免手动唤起。方案 B 借用 Siri 的唤醒词（\"Hey Siri, Grok Bot\"），麦克风不用常开。打开 \"锁定时允许运行\" 后可从锁屏启动；Face ID 尚未解锁时仍需点一下。",
     "workflowSteps": [
       "把 Grok Bot App 更新到最新版。",
       "快捷指令 App → + → 添加操作 → 搜索 \"Grok Bot\" → 选择 \"Start Voice Chat with Bot\"（与 Bot 开始语音对话）。",
@@ -40,5 +40,14 @@
     "postUrl": "https://x.com/Texas_Twins_Dad/status/2114217410823688573",
     "postedAt": "2026-10-25T04:48:05.000Z",
     "excerpt": "iOS reserves wake words for Siri, so there was no hands-free way to open a Grok Bot voice chat."
-  }
+  },
+  "relatedPosts": [
+    {
+      "url": "https://x.com/Texas_Twins_Dad/status/2116748190649037285",
+      "label": {
+        "en": "Author's follow-up: Siri-based variant without always-on mic",
+        "zh": "作者改进版：无常开麦克风"
+      }
+    }
+  ]
 }
