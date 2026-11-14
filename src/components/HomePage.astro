@@ -1,12 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from './AdSlot.astro';
+import HomeStats from './HomeStats.astro';
+import HomeSteps from './HomeSteps.astro';
+import HomeValues from './HomeValues.astro';
 import { siteConfig, type Locale, localePath } from '../config/site';
 import {
   getAllCases,
   localeContent,
   uniqueCategories,
   caseSearchBlob,
+  computeCaseLibraryStats,
 } from '../lib/cases';
 
 interface Props {
@@ -15,6 +19,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const cases = await getAllCases();
+const libraryStats = computeCaseLibraryStats(cases);
 const categories = uniqueCategories(cases, locale);
 const ui =
   locale === 'zh'
@@ -61,6 +66,10 @@ const cards = cases.map((entry) => {
     <h1>{siteConfig.name}</h1>
     <p class="hero__lead">{siteConfig.tagline[locale]}</p>
   </section>
+
+  <HomeStats locale={locale} stats={libraryStats} />
+  <HomeSteps locale={locale} />
+  <HomeValues locale={locale} />
 
   <AdSlot locale={locale} />
 

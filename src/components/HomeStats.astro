@@ -1,0 +1,51 @@
+---
+import type { Locale } from '../config/site';
+import type { CaseLibraryStats } from '../lib/cases';
+
+interface Props {
+  locale: Locale;
+  stats: CaseLibraryStats;
+}
+
+const { locale, stats } = Astro.props;
+
+const ui =
+  locale === 'zh'
+    ? {
+        label: '案例库统计',
+        cases: '案例',
+        prompts: '可复制提示词',
+        connectors: '连接器',
+        authors: '作者',
+      }
+    : {
+        label: 'Library totals',
+        cases: 'Cases',
+        prompts: 'Copyable prompts',
+        connectors: 'Connectors',
+        authors: 'Authors',
+      };
+
+const numberLocale = locale === 'zh' ? 'zh-CN' : 'en';
+const format = (value: number) => value.toLocaleString(numberLocale);
+
+const items = [
+  { key: 'cases', label: ui.cases, value: format(stats.cases) },
+  { key: 'prompts', label: ui.prompts, value: format(stats.copyablePrompts) },
+  { key: 'connectors', label: ui.connectors, value: format(stats.connectors) },
+  { key: 'authors', label: ui.authors, value: format(stats.authors) },
+];
+---
+
+<section class="wrap home-stats" aria-label={ui.label}>
+  <dl class="home-stats__list">
+    {
+      items.map((item) => (
+        <div class="home-stats__item">
+          <dt>{item.label}</dt>
+          <dd data-home-stat={item.key}>{item.value}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>

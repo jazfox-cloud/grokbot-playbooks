@@ -1,0 +1,68 @@
+---
+import type { Locale } from '../config/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const ui =
+  locale === 'zh'
+    ? {
+        title: '这些 Playbook 提供什么',
+        cards: [
+          {
+            title: '可直接抄用的说明',
+            body: '每个案例都有工作流和提示词模板，复制后填上你的内容即可使用。',
+          },
+          {
+            title: '安全边界',
+            body: '发送、删除、付款或发布的步骤会写明需要你确认，做完之前会停下来问你。',
+          },
+          {
+            title: '原帖与作者署名',
+            body: '每篇都写明作者，并链接整理所依据的原始 X 帖文。',
+          },
+          {
+            title: '持续更新',
+            body: '目录和上面的数字在每次构建时从案例集合生成，新案例加入后会一起更新。',
+          },
+        ],
+      }
+    : {
+        title: 'What these playbooks give you',
+        cards: [
+          {
+            title: 'Copy-ready instructions',
+            body: 'Every case includes a workflow and a prompt template you can copy, then fill in.',
+          },
+          {
+            title: 'Safety boundaries',
+            body: 'Steps that send, delete, pay, or publish say when they need your confirmation, and they wait for it.',
+          },
+          {
+            title: 'Source and author credited',
+            body: 'Each playbook names the author and links the original X post it was drawn from.',
+          },
+          {
+            title: 'Continuously updated',
+            body: 'The catalog and the counts above are generated from the case collection at build time, and they update when new cases are added.',
+          },
+        ],
+      };
+---
+
+<section class="wrap home-values" aria-labelledby="home-values-title">
+  <h2 id="home-values-title">{ui.title}</h2>
+  <ul class="home-values__grid">
+    {
+      ui.cards.map((card) => (
+        <li>
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>

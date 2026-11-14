@@ -35,6 +35,54 @@ export function uniqueCategories(all: CaseEntry[], locale: Locale): string[] {
   return Array.from(set);
 }
 
+/**
+ * Homepage stats, derived only from the cases collection.
+ *
+ * - cases: one per collection entry
+ * - copyablePrompts: entries whose `en.promptTemplate` or `zh.promptTemplate`
+ *   is non-empty. That string is the copyable prompt. The schema has no
+ *   separate config field (`localeContent.promptTemplate` in content.config.ts).
+ * - connectors: distinct trimmed values of the top-level `connectors` array
+ * - authors: distinct `source.authorHandle` values; `source.authorName` is
+ *   used only when the handle is blank
+ */
+export interface CaseLibraryStats {
+  cases: number;
+  copyablePrompts: number;
+  connectors: number;
+  authors: number;
+}
+
+function filled(value: string | undefined): string {
+  return (value ?? '').trim();
+}
+
+export function computeCaseLibraryStats(cases: CaseEntry[]): CaseLibraryStats {
+  const connectors = new Set<string>();
+  const authors = new Set<string>();
+  let copyablePrompts = 0;
+
+  for (const entry of cases) {
+    const { en, zh, source } = entry.data;
+    if (filled(en.promptTemplate) || filled(zh.promptTemplate)) {
+      copyablePrompts += 1;
+    }
+    for (const name of entry.data.connectors) {
+      const trimmed = filled(name);
+      if (trimmed) connectors.add(trimmed);
+    }
+    const author = filled(source.authorHandle) || filled(source.authorName);
+    if (author) authors.add(author);
+  }
+
+  return {
+    cases: cases.length,
+    copyablePrompts,
+    connectors: connectors.size,
+    authors: authors.size,
+  };
+}
+
 export function caseSearchBlob(entry: CaseEntry, locale: Locale): string {
   const loc = localeContent(entry, locale);
   return [
