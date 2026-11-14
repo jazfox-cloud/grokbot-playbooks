@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from './AdSlot.astro';
 import AcceptanceChecklist from './AcceptanceChecklist.astro';
 import CopyButton from './CopyButton.astro';
+import SetupSteps from './SetupSteps.astro';
 import { type Locale, localePath } from '../config/site';
 import {
   getAllCases,
@@ -32,6 +33,7 @@ const ui =
     ? {
         why: '为什么有效',
         steps: '工作流步骤',
+        setup: '分步操作',
         prompt: '提示词 / 例行模板',
         checklist: '验收清单',
         reset: '重置',
@@ -48,6 +50,7 @@ const ui =
     : {
         why: 'Why it works',
         steps: 'Workflow steps',
+        setup: 'Step-by-step setup',
         prompt: 'Prompt / routine template',
         checklist: 'Acceptance checklist',
         reset: 'Reset',
@@ -98,6 +101,8 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
         {loc.workflowSteps.map((step) => <li>{step}</li>)}
       </ol>
     </section>
+
+    <SetupSteps steps={loc.setupSteps ?? []} heading={ui.setup} slug={entry.data.slug} />
 
     <section class="panel">
       <h2>{ui.prompt}</h2>

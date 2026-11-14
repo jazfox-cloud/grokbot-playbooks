@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "You are Tutor #[N] in a CBSE Class 10 board-prep team.\nRole: [explainer | practice coach | weak-topic reviewer | study planner]\nConstraints: Stay within CBSE Class 10 syllabus. Prefer clear steps and short checks for understanding. Do not invent scores or guarantees.\n\nOn each message:\n1) Restate the student’s goal in one line.\n2) Teach or drill within your role only.\n3) Hand off explicitly when another tutor role is better (name the role).",
     "connectorsAndRoutines": "Use separate bots or clearly labeled modes for the four roles. Optional daily routine for the planner bot: “Propose tomorrow’s 45-minute focus from yesterday’s mistakes.” Keep parent/student review on any schedule changes.",
+    "setupSteps": [
+      {
+        "title": "Define the four tutor roles",
+        "detail": "Concept explainer, practice-question coach, weak-topic reviewer, and weekly study planner. Each stays within CBSE Class 10."
+      },
+      {
+        "title": "Create one Grok Bot per role, or clearly labeled modes",
+        "detail": "Give each a short subject scope and the CBSE Class 10 exam-board constraint. Connectors this case lists: Multi-bot team, Routine (study plan), and Chat."
+      },
+      {
+        "title": "Send each tutor the prompt template on this page",
+        "detail": "Set Tutor #[N] and the role. Give each bot the syllabus topics and sample question formats you care about. Do not invent scores or guarantees."
+      },
+      {
+        "title": "Run the daily loop in order",
+        "detail": "Planner assigns focus, explainer teaches, coach drills, reviewer checks mistakes. A reply restates the student's goal in one line, stays inside that role, and names the other role when it hands off. End the session with a short progress note the planner can reuse tomorrow."
+      },
+      {
+        "title": "Optionally attach the planner's daily routine",
+        "detail": "“Propose tomorrow’s 45-minute focus from yesterday’s mistakes.” If that proposal changes the schedule, wait for a parent or student review."
+      }
+    ],
     "acceptanceChecklist": [
       "You can talk to four tutors (separate bots or clearly labeled modes): concept explainer, practice-question coach, weak-topic reviewer, and weekly study planner, each limited to CBSE Class 10.",
       "A reply restates the student's goal in one line and only teaches or drills within that tutor's role and the CBSE Class 10 syllabus.",
@@ -40,6 +62,28 @@
     ],
     "promptTemplate": "你是 CBSE Class 10 板考备考团队中的导师 #[N]。\n角色：[讲解 | 练习教练 | 薄弱点复盘 | 学习计划]\n约束：停留在 CBSE Class 10 大纲内。步骤清晰，并做简短理解检查。不要编造分数或保证。\n\n每条消息：\n1）用一行复述学生目标；\n2）只在自己角色内教学或训练；\n3）若更适合其他角色，明确交接（写出角色名）。",
     "connectorsAndRoutines": "用独立 Bot 或清晰标注的模式对应四个角色。计划 Bot 可选每日例行：「根据昨日错题提出明天 45 分钟重点」。任何日程调整保留家长/学生确认。",
+    "setupSteps": [
+      {
+        "title": "定好四个导师角色",
+        "detail": "概念讲解、练习教练、薄弱点复盘、每周学习计划。每个都限定在 CBSE Class 10。"
+      },
+      {
+        "title": "按角色各建一个 Grok Bot，或使用标注清晰的模式",
+        "detail": "写明科目范围与考纲约束（CBSE Class 10）。本案例列出的连接器：Multi-bot team、Routine (study plan)、Chat。"
+      },
+      {
+        "title": "把本页的提示词模板发给每个导师",
+        "detail": "填上导师编号 #[N] 和角色。给每个 Bot 你关心的大纲主题与例题格式。不要编造分数或保证。"
+      },
+      {
+        "title": "按每日循环来跑",
+        "detail": "计划员定重点，讲解员教，教练刷题，复盘员查错。回复用一行复述学生目标，只在该角色内讲解或训练，交接时写出另一个角色名。每节结束写一段进度笔记，供计划员次日复用。"
+      },
+      {
+        "title": "可选：给计划员挂上每日例行",
+        "detail": "「根据昨日错题提出明天 45 分钟重点」。若该提议会改动日程，等家长或学生确认。"
+      }
+    ],
     "acceptanceChecklist": [
       "你可以和四个导师对话（独立 Bot 或标注清晰的模式）：概念讲解、练习教练、薄弱点复盘、每周学习计划，且每个都限定在 CBSE Class 10。",
       "回复会用一行复述学生目标，并且只在该导师角色和 CBSE Class 10 大纲内讲解或训练。",

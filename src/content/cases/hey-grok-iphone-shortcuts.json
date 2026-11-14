@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "Shortcut action: \"Start Voice Chat with Bot\" (Grok Bot app) + \"Allow Running When Locked\". Trigger phrase: \"Hey Grok\" (Vocal Shortcuts) or \"Hey Siri, Grok Bot\".",
     "connectorsAndRoutines": "No connectors. iOS Shortcuts + Vocal Shortcuts or Siri; Grok Bot iOS app. Author notes Option A keeps the mic on (orange dot), drains battery, can clash with calls/recording and false-trigger; Option B avoids that. Locked phone needs one tap unless Face ID already unlocked it.",
+    "setupSteps": [
+      {
+        "title": "Update the Grok Bot app",
+        "detail": "No connectors. The shortcut uses iOS Shortcuts plus Vocal Shortcuts or Siri, and the Grok Bot iOS app."
+      },
+      {
+        "title": "Add the action \"Start Voice Chat with Bot\"",
+        "detail": "Shortcuts app → + → Add Action → search \"Grok Bot\" → choose \"Start Voice Chat with Bot\"."
+      },
+      {
+        "title": "Choose a trigger phrase",
+        "detail": "Option A (Vocal Shortcuts): Settings → Accessibility → Vocal Shortcuts → Set Up → pick that shortcut → type \"Hey Grok\" and say it 3 times. Option B: rename the shortcut to \"Grok Bot\" and say \"Hey Siri, Grok Bot\". Option B does not keep the mic always on."
+      },
+      {
+        "title": "Turn on \"Allow Running When Locked\"",
+        "detail": "In the shortcut's details. The shortcut can start from the lock screen, and still needs one tap unless Face ID has already unlocked the phone."
+      },
+      {
+        "title": "Say the phrase and check the voice chat",
+        "detail": "Saying \"Hey Grok\" (Vocal Shortcuts) or \"Hey Siri, Grok Bot\" should open a Grok Bot voice chat. Option A leaves the microphone on (orange dot) and can clash with calls, recording, and false triggers."
+      }
+    ],
     "acceptanceChecklist": [
       "Saying \"Hey Grok\" (Vocal Shortcuts) or \"Hey Siri, Grok Bot\" opens a Grok Bot voice chat.",
       "The shortcut that runs uses the Grok Bot app action \"Start Voice Chat with Bot\".",
@@ -39,6 +61,28 @@
     ],
     "promptTemplate": "快捷指令动作：\"Start Voice Chat with Bot\"（Grok Bot App）+ 锁定时允许运行。触发语：\"Hey Grok\"（语音快捷指令）或 \"Hey Siri, Grok Bot\"。",
     "connectorsAndRoutines": "无需连接器。iOS 快捷指令 + 语音快捷指令或 Siri；Grok Bot iOS App。作者指出方案 A 麦克风常开（橙点）、耗电、可能与通话/录音冲突并误触发；方案 B 无此问题。锁屏时需点一下，Face ID 已解锁则完全免手动。",
+    "setupSteps": [
+      {
+        "title": "把 Grok Bot App 更新到最新版",
+        "detail": "无需连接器。用 iOS 快捷指令，加上语音快捷指令或 Siri，以及 Grok Bot iOS App。"
+      },
+      {
+        "title": "添加动作「Start Voice Chat with Bot」",
+        "detail": "快捷指令 App → + → 添加操作 → 搜索「Grok Bot」→ 选择「Start Voice Chat with Bot」（与 Bot 开始语音对话）。"
+      },
+      {
+        "title": "选定触发语",
+        "detail": "方案 A（语音快捷指令）：设置 → 辅助功能 → 语音快捷指令 → 设置 → 选该快捷指令 → 输入「Hey Grok」并念 3 遍。方案 B：把快捷指令改名为「Grok Bot」，说「Hey Siri, Grok Bot」。方案 B 不会让麦克风一直开着。"
+      },
+      {
+        "title": "打开「锁定时允许运行」",
+        "detail": "在快捷指令详情里打开。快捷指令可从锁屏启动；除非 Face ID 已经解锁，否则仍需点一下。"
+      },
+      {
+        "title": "说出触发语，确认语音对话打开",
+        "detail": "说出「Hey Grok」（语音快捷指令）或「Hey Siri, Grok Bot」后，应打开 Grok Bot 语音对话。方案 A 会让麦克风保持开启（橙点），并可能与通话、录音冲突，也会误触发。"
+      }
+    ],
     "acceptanceChecklist": [
       "说出「Hey Grok」（语音快捷指令）或「Hey Siri, Grok Bot」后，会打开 Grok Bot 语音对话。",
       "实际运行的快捷指令使用 Grok Bot App 的动作「Start Voice Chat with Bot」。",
