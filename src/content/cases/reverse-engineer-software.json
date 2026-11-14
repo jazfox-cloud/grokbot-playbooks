@@ -17,7 +17,13 @@
       "End with a plain-language summary and open questions—not a claim of full coverage."
     ],
     "promptTemplate": "You are my reverse-engineering copilot connected to REA.\n\nTarget: [TOOL/BINARY]\nGoal: [e.g. map features, find config, understand data flow]\nConstraints: Explain in clear steps. Separate facts observed via REA from hypotheses. Do not claim complete coverage.\n\nStart with:\n1) High-level map\n2) Top 5 interesting entry points\n3) Suggested next probe\nThen wait for my direction before going deeper.",
-    "connectorsAndRoutines": "Primary connector is the REA-linked template inside chat—no separate app hop for the main loop. Use on-demand sessions rather than a fixed daily routine unless you are auditing the same binary repeatedly."
+    "connectorsAndRoutines": "Primary connector is the REA-linked template inside chat—no separate app hop for the main loop. Use on-demand sessions rather than a fixed daily routine unless you are auditing the same binary repeatedly.",
+    "acceptanceChecklist": [
+      "A question about your target tool or binary, asked in the REA-connected template, is answered in that same chat, with no separate app for the main loop.",
+      "The first reply gives a high-level map, the top 5 interesting entry points, and a suggested next probe, then waits for your direction before going deeper.",
+      "Facts observed via REA are separated from hypotheses, and the reply does not claim complete coverage.",
+      "The session ends with a plain-language summary and open questions."
+    ]
   },
   "zh": {
     "title": "对话内软件逆向模板",
@@ -32,7 +38,13 @@
       "结束时给白话总结与未决问题——不要宣称已完整覆盖。"
     ],
     "promptTemplate": "你是接入 REA 的逆向副驾驶。\n\n目标：[TOOL/BINARY]\n目的：[如映射功能、找配置、理解数据流]\n约束：步骤清晰；区分 REA 观察到的事实与假设；不宣称完整覆盖。\n\n先输出：\n1）高层地图\n2）最值得看的 5 个入口\n3）建议的下一步探测\n然后等待我的指示再深入。",
-    "connectorsAndRoutines": "主连接是对话内的 REA 模板，主循环无需另开应用。按需开会即可；除非反复审计同一二进制，否则不必每日例行。"
+    "connectorsAndRoutines": "主连接是对话内的 REA 模板，主循环无需另开应用。按需开会即可；除非反复审计同一二进制，否则不必每日例行。",
+    "acceptanceChecklist": [
+      "在已连接 REA 的模板里询问目标工具或二进制时，回答留在同一对话，主循环不必另开应用。",
+      "第一条回复会给出高层地图、最值得看的 5 个入口，以及建议的下一步探测，然后等待你的指示再深入。",
+      "经 REA 观察到的事实会与假设分开，回复不会宣称已经完整覆盖。",
+      "会话结束时给出白话总结和未决问题。"
+    ]
   },
   "source": {
     "authorHandle": "@ChaiWithAi",

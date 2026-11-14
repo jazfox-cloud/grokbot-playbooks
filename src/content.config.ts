@@ -9,6 +9,8 @@ const localeContent = z.object({
   workflowSteps: z.array(z.string()).min(3).max(5),
   promptTemplate: z.string(),
   connectorsAndRoutines: z.string(),
+  // Optional. Absent or empty renders no checklist on the case page.
+  acceptanceChecklist: z.array(z.string()).optional(),
 });
 
 const cases = defineCollection({

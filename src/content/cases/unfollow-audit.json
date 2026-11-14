@@ -17,7 +17,13 @@
       "Stop if platform limits or errors appear; resume next day."
     ],
     "promptTemplate": "Audit every account I follow. Flag: no posts in 6+ months, never posted, no interaction with me in 30 days. Sort by last post, with links.\n\nPower move: unfollow max 100/day and ask before each batch. Respect platform limits on fast mass-unfollows. Do nothing irreversible without my yes.",
-    "connectorsAndRoutines": "X/social connector for the follow graph audit. Batch routine overnight or daily with confirm-before-unfollow. Keep the risky unfollow step approval-gated."
+    "connectorsAndRoutines": "X/social connector for the follow graph audit. Batch routine overnight or daily with confirm-before-unfollow. Keep the risky unfollow step approval-gated.",
+    "acceptanceChecklist": [
+      "The audit flags accounts with no posts in 6+ months, accounts that never posted, and accounts with no interaction with you in 30 days.",
+      "Flagged accounts are sorted by last post, and each one has a link.",
+      "Unfollows stay at or under 100 per day, and the bot asks before each batch.",
+      "No account is unfollowed without your yes. If a platform limit or error appears, the run stops so you can resume the next day."
+    ]
   },
   "zh": {
     "title": "隔夜关注列表审计与分批取关",
@@ -32,7 +38,13 @@
       "若触达平台限制或出错则停下，次日再继续。"
     ],
     "promptTemplate": "审计我关注的每个账号。标记：6 个月以上无帖、从未发帖、30 天内与我无互动。按最近发帖排序并附链接。\n\n进阶：每天最多取关 100，且每批前询问。遵守平台对快速批量取关的限制。未经我说可以，不做不可逆操作。",
-    "connectorsAndRoutines": "用 X/社交连接器做关注关系审计。隔夜或每日分批例行，取关前确认。风险取关步骤必须批准。"
+    "connectorsAndRoutines": "用 X/社交连接器做关注关系审计。隔夜或每日分批例行，取关前确认。风险取关步骤必须批准。",
+    "acceptanceChecklist": [
+      "审计会标出 6 个月以上没有发帖的账号、从未发过帖的账号，以及 30 天内与你没有互动的账号。",
+      "被标出的账号按最近发帖排序，并且每条都带链接。",
+      "取关每天不超过 100 个，而且每批之前 Bot 都会询问。",
+      "未经你说可以，不会取关任何账号。若出现平台限制或错误，当次运行会停下，以便次日再继续。"
+    ]
   },
   "source": {
     "authorHandle": "@BNguyen66900",

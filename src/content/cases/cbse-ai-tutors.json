@@ -17,7 +17,14 @@
       "End each session with a short progress note the planner can reuse tomorrow."
     ],
     "promptTemplate": "You are Tutor #[N] in a CBSE Class 10 board-prep team.\nRole: [explainer | practice coach | weak-topic reviewer | study planner]\nConstraints: Stay within CBSE Class 10 syllabus. Prefer clear steps and short checks for understanding. Do not invent scores or guarantees.\n\nOn each message:\n1) Restate the student’s goal in one line.\n2) Teach or drill within your role only.\n3) Hand off explicitly when another tutor role is better (name the role).",
-    "connectorsAndRoutines": "Use separate bots or clearly labeled modes for the four roles. Optional daily routine for the planner bot: “Propose tomorrow’s 45-minute focus from yesterday’s mistakes.” Keep parent/student review on any schedule changes."
+    "connectorsAndRoutines": "Use separate bots or clearly labeled modes for the four roles. Optional daily routine for the planner bot: “Propose tomorrow’s 45-minute focus from yesterday’s mistakes.” Keep parent/student review on any schedule changes.",
+    "acceptanceChecklist": [
+      "You can talk to four tutors (separate bots or clearly labeled modes): concept explainer, practice-question coach, weak-topic reviewer, and weekly study planner, each limited to CBSE Class 10.",
+      "A reply restates the student's goal in one line and only teaches or drills within that tutor's role and the CBSE Class 10 syllabus.",
+      "When another role is a better fit, the reply names that role and hands off.",
+      "The reply does not invent scores or guarantees.",
+      "When the planner's daily routine runs, it proposes tomorrow's 45-minute focus from yesterday's mistakes. If that proposal changes the schedule, it waits for a parent or student review."
+    ]
   },
   "zh": {
     "title": "CBSE 十年级四人导师团",
@@ -32,7 +39,14 @@
       "每节结束写一段进度笔记，供计划员次日复用。"
     ],
     "promptTemplate": "你是 CBSE Class 10 板考备考团队中的导师 #[N]。\n角色：[讲解 | 练习教练 | 薄弱点复盘 | 学习计划]\n约束：停留在 CBSE Class 10 大纲内。步骤清晰，并做简短理解检查。不要编造分数或保证。\n\n每条消息：\n1）用一行复述学生目标；\n2）只在自己角色内教学或训练；\n3）若更适合其他角色，明确交接（写出角色名）。",
-    "connectorsAndRoutines": "用独立 Bot 或清晰标注的模式对应四个角色。计划 Bot 可选每日例行：「根据昨日错题提出明天 45 分钟重点」。任何日程调整保留家长/学生确认。"
+    "connectorsAndRoutines": "用独立 Bot 或清晰标注的模式对应四个角色。计划 Bot 可选每日例行：「根据昨日错题提出明天 45 分钟重点」。任何日程调整保留家长/学生确认。",
+    "acceptanceChecklist": [
+      "你可以和四个导师对话（独立 Bot 或标注清晰的模式）：概念讲解、练习教练、薄弱点复盘、每周学习计划，且每个都限定在 CBSE Class 10。",
+      "回复会用一行复述学生目标，并且只在该导师角色和 CBSE Class 10 大纲内讲解或训练。",
+      "若另一个角色更合适，回复会写出该角色名并交接。",
+      "回复不会编造分数或保证。",
+      "计划员的每日例行运行时，会根据昨日错题提出明天 45 分钟的重点。若该提议会改动日程，则等家长或学生确认。"
+    ]
   },
   "source": {
     "authorHandle": "@its_ramo_tech",

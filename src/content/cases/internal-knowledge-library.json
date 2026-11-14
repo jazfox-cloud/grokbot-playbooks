@@ -17,7 +17,14 @@
       "Add a short weekly routine: “Index anything new I sent this week and list gaps.”"
     ],
     "promptTemplate": "You are my private internal knowledge librarian.\n\nOnly use materials I have provided (research notes, therapy tools, process docs). If something is not in the library, say so clearly.\n\nWhen I ask a question:\n1) Answer from the library first.\n2) Cite which note/tool you used.\n3) Suggest one follow-up question that would deepen the answer.\n\nWhen I send new material, summarize it in 3 bullets and file it under an existing or new collection label.",
-    "connectorsAndRoutines": "Drop new notes into the bot chat or bot inbox as they appear. On-demand queries for day-to-day work; optional weekly indexing routine for newly added material. No external publish step required."
+    "connectorsAndRoutines": "Drop new notes into the bot chat or bot inbox as they appear. On-demand queries for day-to-day work; optional weekly indexing routine for newly added material. No external publish step required.",
+    "acceptanceChecklist": [
+      "An answer uses only research notes, therapy tools, or process docs you provided, and says clearly when something is not in the library.",
+      "The answer cites which note or tool it used, then suggests one follow-up question.",
+      "New material you send is summarized in 3 bullets and filed under an existing or new collection label.",
+      "When the optional weekly routine runs, it indexes what you sent that week and lists gaps.",
+      "Questions and new notes stay in the bot chat or bot inbox, with no external publish step."
+    ]
   },
   "zh": {
     "title": "研究与工具的内部知识库",
@@ -32,7 +39,14 @@
       "加一条简短每周例行：「索引本周新内容并列出缺口」。"
     ],
     "promptTemplate": "你是我的私有内部知识馆员。\n\n只使用我提供的材料（研究笔记、疗法工具、流程文档）。库中没有的内容请明确说明。\n\n当我提问时：\n1）优先依据知识库作答；\n2）注明用到了哪份笔记/工具；\n3）再给一个能加深答案的追问。\n\n当我发送新材料时，用 3 条要点摘要，并归入已有或新建集合标签。",
-    "connectorsAndRoutines": "有新笔记就丢进 Bot 对话或 Bot 收件箱。日常按需查询；可选每周索引例行处理新增材料。无需对外发布步骤。"
+    "connectorsAndRoutines": "有新笔记就丢进 Bot 对话或 Bot 收件箱。日常按需查询；可选每周索引例行处理新增材料。无需对外发布步骤。",
+    "acceptanceChecklist": [
+      "回答只用你提供的研究笔记、疗法工具或流程文档；库中没有的内容会明确说明。",
+      "回答会注明用到的笔记或工具，并再给一个追问。",
+      "你发来的新材料会收成 3 条要点，并归入已有或新建的集合标签。",
+      "可选的每周例行运行时，会索引你本周发来的内容并列出缺口。",
+      "提问和新笔记都留在 Bot 对话或 Bot 收件箱里，没有对外发布这一步。"
+    ]
   },
   "source": {
     "authorHandle": "@LoriRMiller",

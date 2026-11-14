@@ -17,7 +17,14 @@
       "Ask for a weekly roster digest: active, canceled, and pending updates."
     ],
     "promptTemplate": "You are my snail-mail club roster assistant.\n\nMaintain a structured member list with: name, mailing address, status (active / canceled / pending), subscribe date, last change date, and notes.\n\nWhen I send a message about a member (new signup, resubscribe, cancel, address change):\n1) Parse the intent and fields.\n2) Show the proposed record update.\n3) Ask me to confirm before saving.\n4) After confirm, acknowledge the new status.\n\nOn request, output a roster summary grouped by status.",
-    "connectorsAndRoutines": "Use the bot inbox or Gmail forward for signup/cancel emails. Optional daily or weekly routine: “Summarize roster changes since last digest.” Keep human confirm on status changes that affect mailing."
+    "connectorsAndRoutines": "Use the bot inbox or Gmail forward for signup/cancel emails. Optional daily or weekly routine: “Summarize roster changes since last digest.” Keep human confirm on status changes that affect mailing.",
+    "acceptanceChecklist": [
+      "A new signup, resubscribe, cancellation, or address change is parsed into a member record with name, mailing address, status (active, canceled, or pending), subscribe date, last change date, and notes.",
+      "The bot shows the proposed record update and asks you to confirm before saving.",
+      "After you confirm, it acknowledges the new status.",
+      "When you ask for a roster summary, members are grouped by status: active, canceled, and pending.",
+      "When the optional daily or weekly routine runs, it summarizes roster changes since the last digest."
+    ]
   },
   "zh": {
     "title": "实体信件社订阅者追踪",
@@ -32,7 +39,14 @@
       "定期索取名册摘要：在订、已退、待处理更新。"
     ],
     "promptTemplate": "你是我的实体信件社名册助手。\n\n请维护结构化会员列表，字段包括：姓名、邮寄地址、状态（在订/已退/待处理）、订阅日期、最近变更日期、备注。\n\n当我发来与会员相关的消息（新订、续订、退订、改地址）时：\n1）解析意图与字段；\n2）展示拟更新的记录；\n3）请我确认后再保存；\n4）确认后回执新状态。\n\n按要求输出按状态分组的名册摘要。",
-    "connectorsAndRoutines": "用 Bot 收件箱或 Gmail 转发承接订阅/退订邮件。可选每日或每周例行：「汇总自上份摘要以来的名册变更」。涉及邮寄的状态变更保留人工确认。"
+    "connectorsAndRoutines": "用 Bot 收件箱或 Gmail 转发承接订阅/退订邮件。可选每日或每周例行：「汇总自上份摘要以来的名册变更」。涉及邮寄的状态变更保留人工确认。",
+    "acceptanceChecklist": [
+      "新订、续订、退订或地址变更会被解析成会员记录，包含姓名、邮寄地址、状态（在订、已退或待处理）、订阅日期、最近变更日期和备注。",
+      "Bot 会展示拟更新的记录，并在保存前请你确认。",
+      "你确认之后，它会回执新状态。",
+      "索取名册摘要时，会员会按状态分组：在订、已退、待处理。",
+      "可选的每日或每周例行运行时，会汇总自上份摘要以来的名册变更。"
+    ]
   },
   "source": {
     "authorHandle": "@Tyler_a_Downs",
