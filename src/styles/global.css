@@ -285,6 +285,81 @@ img {
   gap: 0.85rem;
 }
 
+.home-start {
+  margin: 1.75rem 0 0;
+  color: var(--ink);
+  animation: rise 0.8s ease both;
+}
+
+.home-start h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+}
+
+.home-start__lead {
+  margin: 0 0 1rem;
+  max-width: 52ch;
+  color: var(--ink);
+}
+
+.home-start__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16.5rem), 1fr));
+  gap: 0.85rem;
+}
+
+.home-start__grid > li {
+  min-width: 0;
+  display: flex;
+}
+
+.home-start .card {
+  width: 100%;
+  min-width: 0;
+  color: var(--ink);
+}
+
+.home-start .card:hover,
+.home-start .card:focus-visible {
+  color: var(--ink);
+}
+
+.home-start .card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.home-start .card h3,
+.home-start .card p {
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.home-start .card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.home-start .card p {
+  margin: 0;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.home-start + .toolbar {
+  margin-top: 1.25rem;
+}
+
 .toolbar {
   display: grid;
   gap: 1rem;
@@ -784,5 +859,9 @@ img {
   .home-flow,
   .home-values {
     margin-top: 1.45rem;
+  }
+
+  .home-start .card h3 {
+    font-size: 1.2rem;
   }
 }

@@ -26,6 +26,29 @@ export async function getAllCases(): Promise<CaseEntry[]> {
   return cases.sort((a, b) => a.data.order - b.data.order);
 }
 
+/**
+ * Homepage "Start here" picks.
+ *
+ * A case is included only when `startHereRank` is a positive integer and
+ * `startHereBlurb` has non-empty `en` and `zh` text. Anything else is skipped.
+ * An empty result is valid: the homepage renders no section.
+ */
+export function selectStartHereCases(cases: CaseEntry[]): CaseEntry[] {
+  return cases
+    .filter((entry) => {
+      const rank = entry.data.startHereRank;
+      const blurb = entry.data.startHereBlurb;
+      if (typeof rank !== 'number' || !Number.isInteger(rank) || rank <= 0) return false;
+      if (!blurb) return false;
+      return blurb.en.trim().length > 0 && blurb.zh.trim().length > 0;
+    })
+    .sort((a, b) => {
+      const byRank = (a.data.startHereRank ?? 0) - (b.data.startHereRank ?? 0);
+      if (byRank !== 0) return byRank;
+      return a.data.order - b.data.order;
+    });
+}
+
 export function localeContent(entry: CaseEntry, locale: Locale) {
   return locale === 'zh' ? entry.data.zh : entry.data.en;
 }
