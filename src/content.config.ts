@@ -30,6 +30,10 @@ const cases = defineCollection({
     order: z.number(),
     tags: z.array(z.string()),
     connectors: z.array(z.string()),
+    // Optional editorial estimates. Not claims from the source post.
+    // Absent fields render no tag and do not fail the build.
+    difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
+    setupMinutes: z.number().int().positive().optional(),
     en: localeContent,
     zh: localeContent,
     source: z.object({

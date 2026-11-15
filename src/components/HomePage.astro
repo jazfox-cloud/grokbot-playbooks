@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from './AdSlot.astro';
+import CaseEstimates from './CaseEstimates.astro';
 import HomeStats from './HomeStats.astro';
 import HomeSteps from './HomeSteps.astro';
 import HomeValues from './HomeValues.astro';
@@ -49,6 +50,8 @@ const cards = cases.map((entry) => {
     summary: loc.summary,
     category: loc.category,
     connectors: entry.data.connectors,
+    difficulty: entry.data.difficulty,
+    setupMinutes: entry.data.setupMinutes,
     author: entry.data.source.authorHandle,
     search: caseSearchBlob(entry, locale),
   };
@@ -109,6 +112,11 @@ const cards = cases.map((entry) => {
               {card.connectors.slice(0, 2).map((c) => (
                 <span class="badge badge--ghost">{c}</span>
               ))}
+              <CaseEstimates
+                locale={locale}
+                difficulty={card.difficulty}
+                setupMinutes={card.setupMinutes}
+              />
             </div>
             <h2>{card.title}</h2>
             <p>{card.summary}</p>

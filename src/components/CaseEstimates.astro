@@ -1,0 +1,33 @@
+---
+import type { Locale } from '../config/site';
+import { difficultyLabel, setupTimeLabel, type Difficulty } from '../lib/cases';
+
+interface Props {
+  locale: Locale;
+  difficulty?: Difficulty;
+  setupMinutes?: number;
+}
+
+const { locale, difficulty, setupMinutes } = Astro.props;
+const difficultyText = difficulty ? difficultyLabel(difficulty, locale) : '';
+const timeText = typeof setupMinutes === 'number' ? setupTimeLabel(setupMinutes, locale) : '';
+const hint =
+  locale === 'zh'
+    ? '编辑估算，并非原帖中的说法'
+    : 'Editorial estimate, not a claim from the source post';
+---
+
+{
+  difficultyText && (
+    <span class="badge badge--estimate" title={hint}>
+      {difficultyText}
+    </span>
+  )
+}
+{
+  timeText && (
+    <span class="badge badge--estimate" title={hint}>
+      {timeText}
+    </span>
+  )
+}

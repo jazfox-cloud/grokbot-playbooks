@@ -4,6 +4,8 @@
   "order": 9,
   "tags": ["health", "wearables", "email"],
   "connectors": ["Bot inbox", "Wearable export / email", "Routine (daily)"],
+  "difficulty": "intermediate",
+  "setupMinutes": 35,
   "en": {
     "title": "Wearable data → bot email health dashboard",
     "category": "Health",

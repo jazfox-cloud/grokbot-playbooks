@@ -4,6 +4,8 @@
   "order": 13,
   "tags": ["ios", "shortcuts", "voice"],
   "connectors": ["iOS Shortcuts", "Vocal Shortcuts", "Siri", "Grok Bot iOS app"],
+  "difficulty": "intermediate",
+  "setupMinutes": 25,
   "en": {
     "title": "Hands-free \"Hey Grok\" on iPhone with Shortcuts",
     "category": "Mobile & Voice",

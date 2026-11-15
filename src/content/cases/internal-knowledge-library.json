@@ -4,6 +4,8 @@
   "order": 2,
   "tags": ["knowledge-base", "research", "workflow"],
   "connectors": ["Bot inbox", "Files / notes", "Routine (on demand)"],
+  "difficulty": "intermediate",
+  "setupMinutes": 40,
   "en": {
     "title": "Internal knowledge library for research & tools",
     "category": "Productivity",

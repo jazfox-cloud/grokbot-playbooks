@@ -4,6 +4,8 @@
   "order": 12,
   "tags": ["x", "audit", "cleanup"],
   "connectors": ["X / social", "Routine (batch)", "Confirm-before-change"],
+  "difficulty": "intermediate",
+  "setupMinutes": 35,
   "en": {
     "title": "Overnight follow-list audit with batch unfollow",
     "category": "Personal",

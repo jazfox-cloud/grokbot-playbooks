@@ -4,6 +4,8 @@
   "order": 14,
   "tags": ["webhook", "ios", "shortcuts", "alarm", "briefing"],
   "connectors": ["Grok Bot webhook", "iOS Shortcuts", "Alarm → Is Stopped"],
+  "difficulty": "advanced",
+  "setupMinutes": 45,
   "en": {
     "title": "Stop your iPhone alarm → Grok Bot starts your daily briefing (webhook trigger)",
     "category": "Triggers & Automation",

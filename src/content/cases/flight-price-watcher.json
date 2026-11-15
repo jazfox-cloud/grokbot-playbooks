@@ -4,6 +4,8 @@
   "order": 4,
   "tags": ["travel", "alerts", "routines"],
   "connectors": ["Routine (scheduled)", "Notifications", "Template"],
+  "difficulty": "intermediate",
+  "setupMinutes": 20,
   "en": {
     "title": "Scheduled flight fare drop watcher",
     "category": "Finance",
