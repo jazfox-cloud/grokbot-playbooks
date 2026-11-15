@@ -6,6 +6,11 @@
   "connectors": ["Chat", "Routine (morning)", "Process review"],
   "difficulty": "beginner",
   "setupMinutes": 15,
+  "startHereRank": 2,
+  "startHereBlurb": {
+    "en": "Paste one routine, calendar block, or process into chat and read five labeled steps; nothing in your tools changes until you accept each deletion.",
+    "zh": "一次只把一条晨间流程、日历块或团队流程贴进对话，先读完五个带标题的部分；在你逐条接受或拒绝之前，真实工具不会改动。"
+  },
   "en": {
     "title": "Elon’s 5-step delete algorithm bot",
     "category": "Productivity",

@@ -6,6 +6,11 @@
   "connectors": ["Template", "REA connector", "Chat"],
   "difficulty": "beginner",
   "setupMinutes": 10,
+  "startHereRank": 1,
+  "startHereBlurb": {
+    "en": "Open the template, name the tool, and stay in that chat: the main loop needs no separate app, and the first reply waits before going deeper.",
+    "zh": "打开已连接 REA 的模板并写明目标，问答都留在同一对话里：主循环不必另开应用，第一条回复会等你的指示再深入。"
+  },
   "en": {
     "title": "In-chat software reverse-engineering template",
     "category": "Development",

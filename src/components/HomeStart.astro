@@ -1,0 +1,60 @@
+---
+import CaseEstimates from './CaseEstimates.astro';
+import { localePath, type Locale } from '../config/site';
+import { localeContent, selectStartHereCases, type CaseEntry } from '../lib/cases';
+
+interface Props {
+  locale: Locale;
+  cases: CaseEntry[];
+}
+
+const { locale, cases } = Astro.props;
+const ui =
+  locale === 'zh'
+    ? {
+        title: '新手从这里开始',
+        lead: '先打开这几份 Playbook，再搜索整个案例库。',
+      }
+    : {
+        title: 'Start here',
+        lead: 'Open these playbooks before you search the full library.',
+      };
+
+const items = selectStartHereCases(cases).map((entry) => {
+  const loc = localeContent(entry, locale);
+  const blurb = entry.data.startHereBlurb;
+  return {
+    href: localePath(locale, `cases/${entry.data.slug}`),
+    title: loc.title,
+    blurb: blurb ? (locale === 'zh' ? blurb.zh : blurb.en) : '',
+    difficulty: entry.data.difficulty,
+    setupMinutes: entry.data.setupMinutes,
+  };
+});
+---
+
+{
+  items.length > 0 && (
+    <section class="home-start" aria-labelledby="home-start-title" data-home-start>
+      <h2 id="home-start-title">{ui.title}</h2>
+      <p class="home-start__lead">{ui.lead}</p>
+      <ul class="home-start__grid">
+        {items.map((item) => (
+          <li>
+            <a class="card home-start__card" href={item.href}>
+              <h3>{item.title}</h3>
+              <p>{item.blurb}</p>
+              <div class="card__meta">
+                <CaseEstimates
+                  locale={locale}
+                  difficulty={item.difficulty}
+                  setupMinutes={item.setupMinutes}
+                />
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

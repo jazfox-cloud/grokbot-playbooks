@@ -34,6 +34,17 @@ const cases = defineCollection({
     // Absent fields render no tag and do not fail the build.
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
     setupMinutes: z.number().int().positive().optional(),
+    // Optional homepage "Start here" placement. A case appears only when both
+    // are set: a positive rank (ascending) and a non-empty EN + ZH blurb.
+    // Absent or incomplete fields omit that case and do not fail the build.
+    // When no case qualifies, the homepage section is not rendered.
+    startHereRank: z.number().int().positive().optional(),
+    startHereBlurb: z
+      .object({
+        en: z.string().min(1),
+        zh: z.string().min(1),
+      })
+      .optional(),
     en: localeContent,
     zh: localeContent,
     source: z.object({

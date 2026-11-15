@@ -6,6 +6,11 @@
   "connectors": ["Web audit", "WordPress edits (review-first)", "Chat"],
   "difficulty": "beginner",
   "setupMinutes": 20,
+  "startHereRank": 3,
+  "startHereBlurb": {
+    "en": "Send your short-term rental site URL and read the prioritized findings; WordPress edits are prepared for your review and are not published without your confirmation.",
+    "zh": "把短租站点 URL 交给它，就能读到按优先级排列的发现；WordPress 修改会先准备好供你审阅，未经确认不会发布。"
+  },
   "en": {
     "title": "Short-term rental site AI-agent compliance audit",
     "category": "Operations",

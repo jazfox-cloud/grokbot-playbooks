@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from './AdSlot.astro';
 import CaseEstimates from './CaseEstimates.astro';
+import HomeStart from './HomeStart.astro';
 import HomeStats from './HomeStats.astro';
 import HomeSteps from './HomeSteps.astro';
 import HomeValues from './HomeValues.astro';
@@ -77,6 +78,7 @@ const cards = cases.map((entry) => {
   <AdSlot locale={locale} />
 
   <section class="wrap" data-home-catalog>
+    <HomeStart locale={locale} cases={cases} />
     <div class="toolbar">
       <div class="search">
         <span class="search__icon" aria-hidden="true">⌕</span>
