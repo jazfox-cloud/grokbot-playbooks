@@ -16,6 +16,16 @@ export function htmlLang(locale: Locale): string {
   return locale === 'zh' ? 'zh-Hans' : 'en';
 }
 
+export function ogImagePath(locale: Locale): string {
+  return locale === 'zh' ? '/og-zh.png' : '/og-en.png';
+}
+
+export function ogImageAlt(locale: Locale): string {
+  return locale === 'zh'
+    ? `${siteConfig.name}，非官方社区案例库`
+    : `${siteConfig.name}, an unofficial community playbook library`;
+}
+
 export function hreflangLinks(
   site: string,
   enPath: string,
