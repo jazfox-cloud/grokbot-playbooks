@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from './AdSlot.astro';
 import AcceptanceChecklist from './AcceptanceChecklist.astro';
+import CaseEstimates from './CaseEstimates.astro';
 import CopyButton from './CopyButton.astro';
 import SetupSteps from './SetupSteps.astro';
 import { type Locale, localePath } from '../config/site';
@@ -90,6 +91,11 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
       <div class="card__meta" style="margin-top:0.85rem">
         <span class="badge">{loc.category}</span>
         {entry.data.connectors.map((c) => <span class="badge badge--ghost">{c}</span>)}
+        <CaseEstimates
+          locale={locale}
+          difficulty={entry.data.difficulty}
+          setupMinutes={entry.data.setupMinutes}
+        />
       </div>
       <h1>{loc.title}</h1>
       <p class="detail-hero__summary">{loc.summary}</p>

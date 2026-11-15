@@ -4,6 +4,8 @@
   "order": 1,
   "tags": ["operations", "subscribers", "tracking"],
   "connectors": ["Bot inbox", "Gmail", "Routine (on message)"],
+  "difficulty": "intermediate",
+  "setupMinutes": 30,
   "en": {
     "title": "Snail mail club subscriber tracker",
     "category": "Operations",

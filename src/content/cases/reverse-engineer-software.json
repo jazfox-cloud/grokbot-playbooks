@@ -4,6 +4,8 @@
   "order": 6,
   "tags": ["development", "template", "rea"],
   "connectors": ["Template", "REA connector", "Chat"],
+  "difficulty": "beginner",
+  "setupMinutes": 10,
   "en": {
     "title": "In-chat software reverse-engineering template",
     "category": "Development",

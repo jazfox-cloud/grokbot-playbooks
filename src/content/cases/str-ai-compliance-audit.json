@@ -4,6 +4,8 @@
   "order": 10,
   "tags": ["wordpress", "schema", "short-term-rental"],
   "connectors": ["Web audit", "WordPress edits (review-first)", "Chat"],
+  "difficulty": "beginner",
+  "setupMinutes": 20,
   "en": {
     "title": "Short-term rental site AI-agent compliance audit",
     "category": "Operations",

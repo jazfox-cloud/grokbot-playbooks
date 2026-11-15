@@ -4,6 +4,8 @@
   "order": 8,
   "tags": ["email", "triggers", "routines"],
   "connectors": ["Bot inbox", "Email trigger", "Routine (on email)"],
+  "difficulty": "advanced",
+  "setupMinutes": 40,
   "en": {
     "title": "Forward-to-bot inbox triggers",
     "category": "Operations",

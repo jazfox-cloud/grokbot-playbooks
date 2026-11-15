@@ -4,6 +4,8 @@
   "order": 5,
   "tags": ["simplification", "process", "routines"],
   "connectors": ["Chat", "Routine (morning)", "Process review"],
+  "difficulty": "beginner",
+  "setupMinutes": 15,
   "en": {
     "title": "Elon’s 5-step delete algorithm bot",
     "category": "Productivity",

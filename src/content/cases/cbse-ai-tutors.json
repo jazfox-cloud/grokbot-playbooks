@@ -4,6 +4,8 @@
   "order": 3,
   "tags": ["education", "tutoring", "multi-bot"],
   "connectors": ["Multi-bot team", "Routine (study plan)", "Chat"],
+  "difficulty": "advanced",
+  "setupMinutes": 50,
   "en": {
     "title": "Four-bot tutor team for CBSE Class 10",
     "category": "Education",

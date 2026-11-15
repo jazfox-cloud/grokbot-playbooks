@@ -4,6 +4,8 @@
   "order": 11,
   "tags": ["email", "spam", "security"],
   "connectors": ["Gmail", "Bot inbox", "Confirm-before-delete"],
+  "difficulty": "intermediate",
+  "setupMinutes": 30,
   "en": {
     "title": "Inbox bot that trashes junk, spam & phishing",
     "category": "Productivity",

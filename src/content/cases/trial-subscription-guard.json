@@ -4,6 +4,8 @@
   "order": 7,
   "tags": ["subscriptions", "trials", "finance"],
   "connectors": ["Routine (before renewal)", "Confirm-before-change", "Gmail"],
+  "difficulty": "intermediate",
+  "setupMinutes": 30,
   "en": {
     "title": "Free-trial guard + unused subscription finder",
     "category": "Finance",

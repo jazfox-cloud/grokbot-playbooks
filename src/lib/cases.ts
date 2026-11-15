@@ -3,6 +3,24 @@ import type { Locale } from '../config/site';
 
 export type CaseEntry = CollectionEntry<'cases'>;
 
+export const DIFFICULTIES = ['beginner', 'intermediate', 'advanced'] as const;
+export type Difficulty = (typeof DIFFICULTIES)[number];
+
+const difficultyLabels: Record<Difficulty, Record<Locale, string>> = {
+  beginner: { en: 'Beginner', zh: '入门' },
+  intermediate: { en: 'Intermediate', zh: '进阶' },
+  advanced: { en: 'Advanced', zh: '高级' },
+};
+
+export function difficultyLabel(difficulty: Difficulty, locale: Locale): string {
+  return difficultyLabels[difficulty][locale];
+}
+
+/** Short tag for an editorial setup-time estimate. Not a claim from the source post. */
+export function setupTimeLabel(minutes: number, locale: Locale): string {
+  return locale === 'zh' ? `搭建 ${minutes} 分钟` : `${minutes} min setup`;
+}
+
 export async function getAllCases(): Promise<CaseEntry[]> {
   const cases = await getCollection('cases');
   return cases.sort((a, b) => a.data.order - b.data.order);
@@ -93,6 +111,12 @@ export function caseSearchBlob(entry: CaseEntry, locale: Locale): string {
     entry.data.source.authorHandle,
     entry.data.source.authorName,
     entry.data.tags.join(' '),
+    entry.data.difficulty
+      ? `${entry.data.difficulty} ${difficultyLabel(entry.data.difficulty, locale)}`
+      : '',
+    entry.data.setupMinutes
+      ? `${entry.data.setupMinutes} ${setupTimeLabel(entry.data.setupMinutes, locale)}`
+      : '',
   ]
     .join(' ')
     .toLowerCase();
