@@ -1,5 +1,6 @@
 ---
 import { siteConfig, type Locale, localePath } from '../config/site';
+import BrandMark from './BrandMark.astro';
 
 interface Props {
   locale: Locale;
@@ -14,8 +15,11 @@ const tagline = siteConfig.tagline[locale];
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href={localePath(locale)}>
-      <span class="brand__name">{siteConfig.name}</span>
-      <span class="brand__tag">{tagline}</span>
+      <BrandMark />
+      <span class="brand__copy">
+        <span class="brand__name">{siteConfig.name}</span>
+        <span class="brand__tag">{tagline}</span>
+      </span>
     </a>
     <nav class="lang-switch" aria-label={locale === 'zh' ? '语言' : 'Language'}>
       <a href={enPath} aria-current={locale === 'en' ? 'page' : undefined} hreflang="en">EN</a>
