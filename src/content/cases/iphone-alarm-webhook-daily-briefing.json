@@ -1,0 +1,102 @@
+{
+  "slug": "iphone-alarm-webhook-daily-briefing",
+  "publishedAt": "2026-11-05",
+  "order": 14,
+  "tags": ["webhook", "ios", "shortcuts", "alarm", "briefing"],
+  "connectors": ["Grok Bot webhook", "iOS Shortcuts", "Alarm → Is Stopped"],
+  "en": {
+    "title": "Stop your iPhone alarm → Grok Bot starts your daily briefing (webhook trigger)",
+    "category": "Triggers & Automation",
+    "summary": "Stopping your iPhone alarm starts a Grok Bot daily briefing through a webhook, with no app to open and no prompt to type.",
+    "whyItWorks": "A fixed-schedule briefing runs whether or not you're up. The author wanted Grok Bot to start the moment a real-world event happens, with no app opening or prompt typing.",
+    "workflowSteps": [
+      "Ask Grok Bot to create a daily briefing routine triggered by a webhook instead of a schedule; copy the webhook URL and Authorization header.",
+      "iPhone Shortcuts → new Automation → Alarm → Is Stopped → choose your morning alarm. Toggle the automation on and notifications off.",
+      "Add action \"Get Contents of URL\", paste the Grok Bot webhook URL, set method to POST.",
+      "Add header Authorization = Bearer <value>. Request Body: JSON, add a Text field key=source, text=iphone-alarm.",
+      "Save, and disable \"Ask Before Running\" if shown."
+    ],
+    "promptTemplate": "Routine ask: \"Create a daily briefing routine triggered by a webhook instead of a schedule.\" Shortcut: Get Contents of URL · POST · header Authorization: Bearer <value> · JSON body {\"source\": \"iphone-alarm\"}.",
+    "connectorsAndRoutines": "Grok Bot webhook-triggered routine + iOS Shortcuts personal automation (Alarm → Is Stopped). Briefing contents depend on the connectors your routine uses; the post names none. Author's other trigger ideas: leave work → prepare tomorrow's priorities; connect to CarPlay → commute briefing; arrive home → evening household routine; tap an NFC tag → start a specific bot workflow.",
+    "setupSteps": [
+      {
+        "title": "Create a webhook-triggered daily briefing routine",
+        "detail": "Ask Grok Bot to create a daily briefing routine triggered by a webhook instead of a schedule. Copy the webhook URL and Authorization header."
+      },
+      {
+        "title": "Automate Alarm → Is Stopped",
+        "detail": "iPhone Shortcuts → new Automation → Alarm → Is Stopped → choose your morning alarm. Toggle the automation on and notifications off."
+      },
+      {
+        "title": "POST the webhook URL",
+        "detail": "Add action \"Get Contents of URL\", paste the Grok Bot webhook URL, and set the method to POST."
+      },
+      {
+        "title": "Send Authorization and a JSON body",
+        "detail": "Add header Authorization = Bearer <value> (the value Grok Bot gave you). Request Body: JSON, add a Text field key=source, text=iphone-alarm."
+      },
+      {
+        "title": "Save and turn off Ask Before Running",
+        "detail": "Save, and disable \"Ask Before Running\" if shown. The briefing starts when the alarm is stopped. What the briefing contains depends on the connectors your routine uses; the post does not name them."
+      }
+    ],
+    "acceptanceChecklist": [
+      "A daily briefing routine was created and is triggered by a webhook instead of a schedule.",
+      "The Shortcut automation is set to Alarm → Is Stopped for your morning alarm, with the automation on and notifications off.",
+      "The action is \"Get Contents of URL\", method POST, with header Authorization = Bearer <value>.",
+      "The JSON body includes a Text field source=iphone-alarm.",
+      "\"Ask Before Running\" is off, and the briefing starts when the alarm is stopped."
+    ]
+  },
+  "zh": {
+    "title": "关掉 iPhone 闹钟 → Grok Bot 自动开始准备每日简报（Webhook 触发）",
+    "category": "触发器与自动化",
+    "summary": "关掉 iPhone 闹钟后，Webhook 会让 Grok Bot 开始准备每日简报，不用打开 App，也不用输入 Prompt。",
+    "whyItWorks": "固定时间的简报不管你起没起床都会跑。作者希望现实中的事件一发生，Grok Bot 就开工，不用打开 App、不用输入 Prompt。",
+    "workflowSteps": [
+      "让 Grok Bot 创建一个由 Webhook（而不是定时）触发的每日简报 Routine，拿到 Webhook URL 和 Authorization 请求头。",
+      "iPhone 快捷指令 → 新建自动化 → 闹钟 → 停止时 → 选择早晨闹钟。开启该自动化，关闭通知。",
+      "添加操作「获取 URL 内容」，粘贴 Grok Bot Webhook URL，方法设为 POST。",
+      "添加请求头 Authorization = Bearer <value>。请求体选 JSON，添加文本字段：键 source，值 iphone-alarm。",
+      "保存；如出现「运行前询问」则关闭。"
+    ],
+    "promptTemplate": "Routine 指令：「Create a daily briefing routine triggered by a webhook instead of a schedule.」快捷指令：获取 URL 内容 · POST · 请求头 Authorization: Bearer <value> · JSON 请求体 {\"source\": \"iphone-alarm\"}。",
+    "connectorsAndRoutines": "Grok Bot Webhook 触发 Routine + iOS 快捷指令个人自动化（闹钟 → 停止时）。简报内容取决于你的 Routine 所用连接器（原帖未指明）。作者提到的其他触发点：下班离开公司 → 准备明日优先事项；连上 CarPlay → 通勤简报；到家 → 晚间家务 Routine；碰一下 NFC 标签 → 启动指定 Bot 工作流。",
+    "setupSteps": [
+      {
+        "title": "创建由 Webhook 触发的每日简报 Routine",
+        "detail": "让 Grok Bot 创建一个由 Webhook（而不是定时）触发的每日简报 Routine，拿到 Webhook URL 和 Authorization 请求头。"
+      },
+      {
+        "title": "设置闹钟 → 停止时",
+        "detail": "iPhone 快捷指令 → 新建自动化 → 闹钟 → 停止时 → 选择早晨闹钟。开启该自动化，关闭通知。"
+      },
+      {
+        "title": "用 POST 调用 Webhook URL",
+        "detail": "添加操作「获取 URL 内容」，粘贴 Grok Bot Webhook URL，方法设为 POST。"
+      },
+      {
+        "title": "带上 Authorization 和 JSON 请求体",
+        "detail": "添加请求头 Authorization = Bearer <value>（Grok Bot 提供的值）。请求体选 JSON，添加文本字段：键 source，值 iphone-alarm。"
+      },
+      {
+        "title": "保存并关闭「运行前询问」",
+        "detail": "保存；如出现「运行前询问」则关闭。闹钟停止时简报开始。简报内容取决于你的 Routine 所用连接器，原帖未指明。"
+      }
+    ],
+    "acceptanceChecklist": [
+      "已创建由 Webhook（而不是定时）触发的每日简报 Routine。",
+      "快捷指令自动化设为闹钟 → 停止时，并选择了早晨闹钟；该自动化已开启，通知已关闭。",
+      "操作为「获取 URL 内容」，方法为 POST，请求头 Authorization 为 Bearer <value>。",
+      "JSON 请求体包含文本字段 source=iphone-alarm。",
+      "「运行前询问」已关闭，闹钟停止时简报开始。"
+    ]
+  },
+  "source": {
+    "authorHandle": "@Michael_Fenech_",
+    "authorName": "Michael | AI + Agents",
+    "postUrl": "https://x.com/Michael_Fenech_/status/2118383590446624846",
+    "postedAt": "2026-11-05T16:43:00.000Z",
+    "excerpt": "A fixed-schedule briefing runs whether or not you're up; the author wanted Grok Bot to start the moment a real-world event happens, with no app opening or prompt typing."
+  }
+}
