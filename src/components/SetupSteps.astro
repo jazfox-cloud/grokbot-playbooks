@@ -1,0 +1,37 @@
+---
+interface Step {
+  title: string;
+  detail?: string;
+}
+
+interface Props {
+  steps: Step[];
+  heading: string;
+  slug: string;
+}
+
+const { steps, heading, slug } = Astro.props;
+const visible = steps
+  .map((step) => ({
+    title: step.title.trim(),
+    detail: (step.detail ?? '').trim(),
+  }))
+  .filter((step) => step.title.length > 0);
+const headingId = `setup-${slug}`;
+---
+
+{
+  visible.length > 0 && (
+    <section class="panel" aria-labelledby={headingId}>
+      <h2 id={headingId}>{heading}</h2>
+      <ol class="setup-steps">
+        {visible.map((step) => (
+          <li>
+            <p class="setup-steps__title">{step.title}</p>
+            {step.detail.length > 0 && <p class="setup-steps__detail">{step.detail}</p>}
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}

@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "Audit every account I follow. Flag: no posts in 6+ months, never posted, no interaction with me in 30 days. Sort by last post, with links.\n\nPower move: unfollow max 100/day and ask before each batch. Respect platform limits on fast mass-unfollows. Do nothing irreversible without my yes.",
     "connectorsAndRoutines": "X/social connector for the follow graph audit. Batch routine overnight or daily with confirm-before-unfollow. Keep the risky unfollow step approval-gated.",
+    "setupSteps": [
+      {
+        "title": "Connect the connectors this case lists",
+        "detail": "X / social for the follow-graph audit, Routine (batch), and Confirm-before-change."
+      },
+      {
+        "title": "Send the audit prompt on this page",
+        "detail": "Flag accounts with no posts in 6+ months, accounts that never posted, and accounts with no interaction with you in 30 days."
+      },
+      {
+        "title": "Review the sorted list and remove keepers",
+        "detail": "Flagged accounts are sorted by last post, each with a link and last-post context. Remove anyone you still want to keep."
+      },
+      {
+        "title": "Unfollow in capped batches",
+        "detail": "At most 100 per day, and the bot asks before each batch. No account is unfollowed without your yes. Respect platform limits on fast mass-unfollows."
+      },
+      {
+        "title": "Stop if a limit or error appears",
+        "detail": "The run stops so you can resume the next day. An overnight or daily batch routine keeps the unfollow step approval-gated."
+      }
+    ],
     "acceptanceChecklist": [
       "The audit flags accounts with no posts in 6+ months, accounts that never posted, and accounts with no interaction with you in 30 days.",
       "Flagged accounts are sorted by last post, and each one has a link.",
@@ -39,6 +61,28 @@
     ],
     "promptTemplate": "审计我关注的每个账号。标记：6 个月以上无帖、从未发帖、30 天内与我无互动。按最近发帖排序并附链接。\n\n进阶：每天最多取关 100，且每批前询问。遵守平台对快速批量取关的限制。未经我说可以，不做不可逆操作。",
     "connectorsAndRoutines": "用 X/社交连接器做关注关系审计。隔夜或每日分批例行，取关前确认。风险取关步骤必须批准。",
+    "setupSteps": [
+      {
+        "title": "接上本案例列出的连接器",
+        "detail": "用 X / social 做关注关系审计，再加上 Routine (batch) 和 Confirm-before-change。"
+      },
+      {
+        "title": "把本页的审计提示词发出去",
+        "detail": "标记 6 个月以上没有发帖的账号、从未发过帖的账号，以及 30 天内与你没有互动的账号。"
+      },
+      {
+        "title": "审阅排序列表，划掉仍想保留的人",
+        "detail": "被标出的账号按最近发帖排序，每条带链接和最近发帖的上下文。去掉你还想关注的人。"
+      },
+      {
+        "title": "按上限分批取关",
+        "detail": "每天最多 100 个，每批之前 Bot 都会询问。未经你说可以，不会取关。遵守平台对快速批量取关的限制。"
+      },
+      {
+        "title": "出现限制或错误就停下",
+        "detail": "当次运行停下，以便次日再继续。隔夜或每日分批例行里，取关这一步必须批准。"
+      }
+    ],
     "acceptanceChecklist": [
       "审计会标出 6 个月以上没有发帖的账号、从未发过帖的账号，以及 30 天内与你没有互动的账号。",
       "被标出的账号按最近发帖排序，并且每条都带链接。",

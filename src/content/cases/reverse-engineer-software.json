@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "You are my reverse-engineering copilot connected to REA.\n\nTarget: [TOOL/BINARY]\nGoal: [e.g. map features, find config, understand data flow]\nConstraints: Explain in clear steps. Separate facts observed via REA from hypotheses. Do not claim complete coverage.\n\nStart with:\n1) High-level map\n2) Top 5 interesting entry points\n3) Suggested next probe\nThen wait for my direction before going deeper.",
     "connectorsAndRoutines": "Primary connector is the REA-linked template inside chat—no separate app hop for the main loop. Use on-demand sessions rather than a fixed daily routine unless you are auditing the same binary repeatedly.",
+    "setupSteps": [
+      {
+        "title": "Open the reverse-engineering template that connects REA",
+        "detail": "Connectors this case lists: Template, REA connector, and Chat. Questions, artifacts, and next steps stay in that chat."
+      },
+      {
+        "title": "Send the prompt template and name the target",
+        "detail": "The tool or binary, and your goal: understand flow, map APIs, or find config surfaces."
+      },
+      {
+        "title": "Ask for the high-level map first",
+        "detail": "Modules, entry points, and interesting strings. The first reply gives a high-level map, the top 5 interesting entry points, and a suggested next probe, then waits for your direction."
+      },
+      {
+        "title": "Drill into one subsystem at a time",
+        "detail": "Keep findings in the same chat. Facts observed via REA stay separate from hypotheses. The reply does not claim complete coverage."
+      },
+      {
+        "title": "End with a plain-language summary and open questions",
+        "detail": "Use on-demand sessions. A fixed daily routine is only for auditing the same binary repeatedly."
+      }
+    ],
     "acceptanceChecklist": [
       "A question about your target tool or binary, asked in the REA-connected template, is answered in that same chat, with no separate app for the main loop.",
       "The first reply gives a high-level map, the top 5 interesting entry points, and a suggested next probe, then waits for your direction before going deeper.",
@@ -39,6 +61,28 @@
     ],
     "promptTemplate": "你是接入 REA 的逆向副驾驶。\n\n目标：[TOOL/BINARY]\n目的：[如映射功能、找配置、理解数据流]\n约束：步骤清晰；区分 REA 观察到的事实与假设；不宣称完整覆盖。\n\n先输出：\n1）高层地图\n2）最值得看的 5 个入口\n3）建议的下一步探测\n然后等待我的指示再深入。",
     "connectorsAndRoutines": "主连接是对话内的 REA 模板，主循环无需另开应用。按需开会即可；除非反复审计同一二进制，否则不必每日例行。",
+    "setupSteps": [
+      {
+        "title": "打开已连接 REA 的逆向模板",
+        "detail": "本案例列出的连接器：Template、REA connector、Chat。问题、产物和下一步都留在该对话里。"
+      },
+      {
+        "title": "发出本页的提示词模板，并写明目标",
+        "detail": "要检查的工具或二进制，以及目的：理解流程、映射 API，或找配置面。"
+      },
+      {
+        "title": "先要高层地图",
+        "detail": "模块、入口、有意思的字符串。第一条回复给出高层地图、最值得看的 5 个入口和建议的下一步探测，然后等待你的指示。"
+      },
+      {
+        "title": "一次只深挖一个子系统",
+        "detail": "发现留在同一对话。经 REA 观察到的事实与假设分开。回复不会宣称已经完整覆盖。"
+      },
+      {
+        "title": "用白话总结和未决问题收尾",
+        "detail": "按需开会即可。除非反复审计同一二进制，否则不必每日例行。"
+      }
+    ],
     "acceptanceChecklist": [
       "在已连接 REA 的模板里询问目标工具或二进制时，回答留在同一对话，主循环不必另开应用。",
       "第一条回复会给出高层地图、最值得看的 5 个入口，以及建议的下一步探测，然后等待你的指示再深入。",

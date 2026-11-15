@@ -9,6 +9,15 @@ const localeContent = z.object({
   workflowSteps: z.array(z.string()).min(3).max(5),
   promptTemplate: z.string(),
   connectorsAndRoutines: z.string(),
+  // Optional. Absent or empty renders no step-by-step setup on the case page.
+  setupSteps: z
+    .array(
+      z.object({
+        title: z.string(),
+        detail: z.string().optional(),
+      })
+    )
+    .optional(),
   // Optional. Absent or empty renders no checklist on the case page.
   acceptanceChecklist: z.array(z.string()).optional(),
 });

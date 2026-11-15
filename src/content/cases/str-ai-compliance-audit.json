@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "Audit this short-term rental website for AI-agent compliance:\nURL: [SITE]\n\nCheck:\n- Structured data / schema markup presence and gaps\n- Whether bots appear welcomed to read key pages\n- Clarity of facts guests and search/AI agents need (amenities, location, booking path, policies)\n\nOutput: prioritized findings + recommended WordPress edits.\nWhen I approve a fix, prepare the edit text/diff for my review. Do not publish without my confirmation.",
     "connectorsAndRoutines": "Web audit in chat, then review-first WordPress edit prep. Optional monthly routine to re-audit the live URL. Publishing stays manual.",
+    "setupSteps": [
+      {
+        "title": "Send the prompt template with your short-term rental site URL",
+        "detail": "Ask for an AI-agent compliance audit focused on structured data and schema. Connectors this case lists: Web audit, WordPress edits (review-first), and Chat."
+      },
+      {
+        "title": "Read the prioritized findings",
+        "detail": "Structured data and schema gaps, whether bots can read key pages, and how clear amenities, location, the booking path, and policies are. The audit also lists recommended WordPress edits."
+      },
+      {
+        "title": "Tell the bot which WordPress changes to prepare",
+        "detail": "After you approve a fix, it prepares the edit text or diff for your review. It does not publish without your confirmation."
+      },
+      {
+        "title": "Review the proposed edit before publishing",
+        "detail": "Publishing stays manual."
+      },
+      {
+        "title": "Re-run the audit after you deploy",
+        "detail": "Check whether the gaps you cared about are addressed. The optional monthly routine re-audits the live URL."
+      }
+    ],
     "acceptanceChecklist": [
       "Giving the bot your short-term rental site URL returns prioritized findings on structured data and schema gaps, whether bots can read key pages, and how clear amenities, location, the booking path, and policies are.",
       "The same audit lists recommended WordPress edits.",
@@ -40,6 +62,28 @@
     ],
     "promptTemplate": "请审计此短租网站的 AI Agent 合规性：\nURL：[SITE]\n\n检查：\n- 结构化数据 / schema 是否存在及缺口\n- 关键页面是否欢迎机器人读取\n- 访客与搜索/AI Agent 需要的事实是否清晰（设施、位置、预订路径、政策）\n\n输出：按优先级排序的发现 + 建议的 WordPress 修改。\n我批准某项修复后，准备供审阅的编辑文本/差异。未经确认不得发布。",
     "connectorsAndRoutines": "对话内网页审计，再以审阅优先方式准备 WordPress 修改。可选每月例行复查线上 URL。发布保持人工。",
+    "setupSteps": [
+      {
+        "title": "把短租站点 URL 填进本页提示词并发出",
+        "detail": "要求做聚焦结构化数据与 schema 的 AI Agent 合规审计。本案例列出的连接器：Web audit、WordPress edits (review-first)、Chat。"
+      },
+      {
+        "title": "阅读按优先级排列的发现",
+        "detail": "结构化数据与 schema 缺口、关键页面是否欢迎机器人读取，以及设施、位置、预订路径和政策是否清晰。同一次审计会列出建议的 WordPress 修改。"
+      },
+      {
+        "title": "告诉 Bot 要准备哪些 WordPress 修改",
+        "detail": "你批准某项修复后，它准备供你审阅的编辑文本或差异。未经你确认不会发布。"
+      },
+      {
+        "title": "发布前审阅拟议编辑",
+        "detail": "发布保持人工。"
+      },
+      {
+        "title": "上线后再跑一遍审计",
+        "detail": "确认你关心的缺口是否已经处理。可选的每月例行会重新审计线上 URL。"
+      }
+    ],
     "acceptanceChecklist": [
       "把短租站点 URL 交给 Bot 后，会返回按优先级排列的发现：结构化数据与 schema 缺口、关键页面是否欢迎机器人读取，以及设施、位置、预订路径和政策是否清晰。",
       "同一次审计会列出建议的 WordPress 修改。",

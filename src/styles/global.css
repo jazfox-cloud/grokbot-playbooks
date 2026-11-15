@@ -474,6 +474,34 @@ img {
   gap: 0.65rem;
 }
 
+.setup-steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.85rem;
+  color: var(--ink);
+}
+
+.setup-steps li {
+  min-width: 0;
+  color: var(--ink);
+}
+
+.setup-steps__title,
+.setup-steps__detail {
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.setup-steps__title {
+  font-weight: 700;
+}
+
+.setup-steps__detail {
+  margin-top: 0.25rem;
+}
+
 .checklist__form {
   margin: 0;
   min-width: 0;

@@ -18,6 +18,28 @@
     ],
     "promptTemplate": "You manage free trials and unused subscriptions.\n\nMode A — Trial guard:\nWhen I log a trial, store: service, start date, end/bill date, cancel path, remind N days before.\nOn schedule, remind me and outline cancel steps. Never cancel without my yes.\n\nMode B — Unused subscriptions:\nHelp me list plans I may not use. For each, ask before any cancel draft.\n\nAlways confirm before changing anything.",
     "connectorsAndRoutines": "Use a before-renewal routine for reminders. Optional Gmail/bot inbox for trial confirmations and receipts. Every cancel path is confirm-before-change.",
+    "setupSteps": [
+      {
+        "title": "Create a trial-guard bot and send the prompt template",
+        "detail": "It stores service, start date, end or bill date, cancel path, and how many days before to remind you. Connectors this case lists: Routine (before renewal), Confirm-before-change, and Gmail."
+      },
+      {
+        "title": "Log a trial as soon as you start it",
+        "detail": "Optional Gmail or bot inbox can take trial confirmations and receipts."
+      },
+      {
+        "title": "Schedule the before-renewal routine",
+        "detail": "It reminds you and outlines the cancel steps. It does not cancel unless you say yes."
+      },
+      {
+        "title": "Run the unused-subscription pass",
+        "detail": "It lists plans you may not be using and asks before it drafts a cancellation."
+      },
+      {
+        "title": "Confirm before any change",
+        "detail": "The bot asks before it marks anything canceled, drafts a cancel action, or changes anything. Every cancel path is confirm-before-change."
+      }
+    ],
     "acceptanceChecklist": [
       "Logging a trial stores the service, start date, end or bill date, cancel path, and the remind-before window you set.",
       "The before-renewal routine reminds you and outlines the cancel steps, and it does not cancel unless you say yes.",
@@ -39,6 +61,28 @@
     ],
     "promptTemplate": "你负责管理免费试用与闲置订阅。\n\n模式 A — 试用守卫：\n我登记试用时，记录：服务、开始日、结束/扣费日、取消路径、提前 N 天提醒。\n到期前按日程提醒并列出取消步骤。未经我说「可以」不得取消。\n\n模式 B — 闲置订阅：\n帮我列出可能不用的方案。每一项在起草取消前都要询问。\n\n任何变更前必须确认。",
     "connectorsAndRoutines": "用续费前例行做提醒。可选 Gmail/Bot 收件箱承接试用确认与收据。所有取消路径均为确认后执行。",
+    "setupSteps": [
+      {
+        "title": "创建试用守卫 Bot，并发出本页提示词",
+        "detail": "它会记下服务、开始日、结束或扣费日、取消路径，以及提前多少天提醒。本案例列出的连接器：Routine (before renewal)、Confirm-before-change、Gmail。"
+      },
+      {
+        "title": "每次开通试用立刻登记",
+        "detail": "可选：用 Gmail 或 Bot 收件箱承接试用确认与收据。"
+      },
+      {
+        "title": "安排续费前的例行",
+        "detail": "它会提醒你并列出取消步骤。未经你说可以，不会取消。"
+      },
+      {
+        "title": "再跑一遍闲置订阅",
+        "detail": "列出你可能没在用的方案，起草取消前会询问。"
+      },
+      {
+        "title": "任何改动前先确认",
+        "detail": "标记为已取消、起草取消动作，或改动任何内容之前，Bot 都会先问你。所有取消路径都是确认后执行。"
+      }
+    ],
     "acceptanceChecklist": [
       "登记一次试用后，会记下服务、开始日、结束或扣费日、取消路径，以及你设定的提前提醒窗口。",
       "续费前的例行会提醒你并列出取消步骤，未经你说可以就不会取消。",
