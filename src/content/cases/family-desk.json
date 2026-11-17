@@ -1,0 +1,132 @@
+{
+  "slug": "family-desk",
+  "publishedAt": "2026-11-11",
+  "order": 15,
+  "tags": ["family", "mail", "calendar", "bills", "approval"],
+  "connectors": [
+    "Gmail",
+    "Bot email",
+    "Google Calendar",
+    "Dashboard Page",
+    "Notion if connected"
+  ],
+  "difficulty": "intermediate",
+  "setupMinutes": 25,
+  "en": {
+    "title": "Family Desk: family mail becomes a calendar, a to-do list, and a bills list",
+    "category": "Family & Life Admin",
+    "summary": "Author demonstration and template self-description; long-term real-world effectiveness not independently verified. School, doctor, bill, and package mail is turned into a calendar, a task list, and a bills list, and each next step waits for the owner’s explicit approval on that exact item.",
+    "whyItWorks": "Author demonstration and template self-description; long-term real-world effectiveness not independently verified.\n\nThe X post uses the display name Texas Twins Dad (@Texas_Twins_Dad). The public template page is titled “Family Desk by Brian.” This page keeps those attributions separate and does not establish them as the same person. The post, and the source record of its video, are the author’s demonstration. The template page is the template’s self-description. This site did not watch the video or run the assistant.\n\nThe shared job is to turn school, doctor, bill, and package mail into calendar events, one task list, and one bills list, and to prepare the next step. Each send, payment, form submit, booking, signature, or cancellation waits for the owner’s explicit approval on that exact item. A vague or passing remark leaves the action waiting. The post’s phrase “Truly hands off” means the parent is not the one chasing inboxes and bots. The action itself still waits for that per-item yes.\n\nThe first-run story differs by source. The source record describes the video as asking three questions — “Who is in the family?”, “Which inboxes should we watch?”, and “What should we never miss?” — then showing buttons labeled Mail, Calendar, and Workspace, and saying one sign-in sets up filter and forwarding. The template page says the first run loads family-desk-getting-started, asks two short questions, shows connect cards one at a time, turns its routines on itself, and ends with a 3-line recap. Filter and forwarding remain a claim from the demonstration. This site did not set them up.\n\nThe same source record describes a morning safety-net mail check, a phone quick-add (“Desk: add Saturday practice”), and a monthly wrap-up. The template page does not mention a monthly wrap-up. Prepared items in that video description — a prefilled school form, a payment-page link, a teacher reply draft, RSVP and gift ideas, a return label, and a refill reminder — are demonstration examples, not verified guarantees for every family. The difficulty and setup-time labels on this page are editorial estimates, not figures from the post or the template.",
+    "workflowSteps": [
+      "Open the public template Family Desk by Brian from the follow-up post’s link. This page does not install it or enable its routines.",
+      "Read the first-run difference: the template page says two short questions and one connect card at a time; the source record of the video describes three questions and Mail, Calendar, and Workspace buttons.",
+      "Mail intake stays a source claim. The video description says filter and forwarding. The template says mail forwarded to the bot’s email wakes it immediately, plus a morning Gmail check of approved family senders.",
+      "Put events on the calendar (the template names Google Calendar). Put to-dos and bills on one task list and one bills list (the template names a dashboard Page, or Notion if connected).",
+      "Prepare the next step and wait. Each send, payment, form submit, booking, signature, or cancellation needs the owner’s explicit approval on that exact item."
+    ],
+    "publicTemplate": {
+      "url": "https://x.ai/bot/S9e1n5fBFGe1vwAL4ty0u",
+      "title": "Family Desk by Brian"
+    },
+    "connectorsAndRoutines": "From the public template page: Gmail for a morning check of family senders the owner approved; the bot’s own email, where forwarded mail wakes it immediately; Google Calendar for events; one dashboard Page for the task list and the bills list, or Notion if that is connected, refreshed once each morning. The template says it follows the family-desk skill, speaks English in short warm plain words, uses no sample data, and names what is missing until a connection exists.\n\nThe template says it turns these routines on itself: a morning Gmail check, a morning dashboard refresh, a morning briefing, and a Sunday evening preview. That is described source behavior. This page does not enable those routines. Its notification rules are a morning briefing of at most 5 lines plus a dashboard link and ready-to-approve items; urgent alerts when something is due tomorrow, a bill is up 25% or more, a schedule conflicts, or a return or trial closes in 3 days; and a Sunday evening top-3 preview. It says it stays quiet otherwise.\n\nThe source record of the video labels the connect buttons Mail, Calendar, and Workspace. It describes a morning safety-net check and the quick-add “Desk: add Saturday practice,” and it includes a monthly wrap-up. Those details stay with the demonstration.\n\nThe template’s stated limits: no send, payment, form submit, booking, signature, or cancellation without a yes on that exact item, even when the ask is only in passing; no deleting or archiving the owner’s mail; no changing Gmail or account settings on its own; no storing card, SSN, bank account, or policy numbers; no claim that something was written to a calendar or list that is not connected. Taxes, budgeting, and kids’ homework are outside its stated job. The line “Never say connector, MCP, cron, webhook, or routine to the owner” is the template’s own wording. It is not a rule of this site.",
+    "setupSteps": [
+      {
+        "title": "Open the public template",
+        "detail": "Use the public template link on this page: Family Desk by Brian at https://x.ai/bot/S9e1n5fBFGe1vwAL4ty0u. The follow-up post is where that link was shared. This page does not install the template, create an assistant, or turn routines on. The template page says the bot turns its routines on itself; read that before you continue."
+      },
+      {
+        "title": "Review permissions, data, and mail scope",
+        "detail": "Before connecting anything, read which mail, calendar, and pages the template asks to use. The template says a morning Gmail check covers family senders you approved, and mail forwarded to the bot’s own email wakes it immediately. The source record describes the video as saying one sign-in sets up filter and forwarding. That filter and forwarding is the demonstration’s claim. This site did not set it up."
+      },
+      {
+        "title": "Treat missing connections as missing",
+        "detail": "The template says it uses the owner’s real mail and accounts, not sample data, and that it names what is still missing. The source record describes the video’s buttons as Mail, Calendar, and Workspace. The template page describes connect cards one at a time, Google Calendar, one dashboard Page, and Notion only if you connect it. An unconnected calendar or list stays unwritten."
+      },
+      {
+        "title": "Review each prepared next step",
+        "detail": "The shared description is a calendar, one task list, and one bills list, with a next step prepared. The source record’s video examples are a prefilled school form, an opened bill-pay page, a teacher reply draft, RSVP and gift ideas, a return label, and a refill reminder. Those are demonstration examples, not a guarantee for every family. The same record describes a monthly wrap-up in the video. The template page does not mention a monthly wrap-up."
+      },
+      {
+        "title": "Approve each exact action",
+        "detail": "Sending, paying, submitting a form, booking, signing, or canceling needs your explicit approval on that exact item. A vague or passing yes is not enough. Leave mail where it is unless you asked to delete or archive that mail. Leave Gmail and account settings unchanged unless you asked for that change. Do not store card, SSN, bank account, or policy numbers. Taxes, budgeting, and children’s homework are outside the template’s stated scope."
+      }
+    ],
+    "acceptanceChecklist": [
+      "Opened the public template from this page (Family Desk by Brian) and did not copy a prompt from this page. This page did not enable any routine.",
+      "Reviewed permissions, data use, and mail scope before connecting, including the video’s filter-and-forwarding claim and the template’s Gmail and forwarded-mail description.",
+      "Can name any connection that is still missing, and did not treat an unconnected calendar or list as written.",
+      "Reviewed each prepared item before acting. Demonstration examples are not assumed for every family. A monthly wrap-up is described only for the video; the template page does not mention one.",
+      "Each send, payment, form submit, booking, signature, or cancellation has the owner’s explicit approval on that exact item."
+    ]
+  },
+  "zh": {
+    "title": "Family Desk：把家庭邮件整理成日历、待办和账单清单",
+    "category": "家庭与生活事务",
+    "summary": "作者展示/模板自述；长期实际效果未独立验证。学校、就医、账单和包裹邮件会被整理成日历、待办和账单清单，每一步都要等主人对这一条明确批准。",
+    "whyItWorks": "作者展示/模板自述；长期实际效果未独立验证。\n\nX 帖的显示名是 Texas Twins Dad（@Texas_Twins_Dad）。公开模板页面标题是 “Family Desk by Brian”。本页把这两种署名分开，并不把它们认定为同一个人。帖子以及来源记录里对该视频的描述，是作者展示。模板页是模板的自我描述。本站没有观看该视频，也没有运行这个助手。\n\n共同的工作是：把学校、就医、账单和包裹邮件变成日历事件、一份待办和一份账单清单，并准备好下一步。每一次发送、付款、提交表格、预约、签字或取消，都要等主人对这一条明确批准。含糊带过的同意不算。原帖里的 “Truly hands off” 指的是家长不用在收件箱和 Bot 之间来回追。真正动手仍须逐条点头。\n\n首次设置在两个来源里并不相同。来源记录把视频描述为三个问题——「家里有谁？」「要盯哪些收件箱？」「哪些事绝不能漏？」——然后是标为 Mail、Calendar、Workspace 的按钮，并写登录一次就会设好过滤和转发。模板页写的是首次运行加载 family-desk-getting-started，先问两个短问题，再逐个弹出连接卡片，由 Bot 自行打开例行任务，最后给三行复盘。过滤和转发仍是展示中的说法。本站没有替任何人设置。\n\n同一份来源记录还描述了早晨的 safety-net 补看邮件、手机快捷添加（“Desk: add Saturday practice”），以及 monthly wrap-up（月度总结）。模板页没有提到月度总结。视频描述里准备好的事项——已预填的学校表格、支付页链接、写给老师的回复草稿、RSVP 与礼物建议、退货标签、续开药提醒——是该展示中的例子，不是对每个家庭都成立的保证。本页上的难度和搭建时间是编辑估算，不是原帖或模板给出的数字。",
+    "workflowSteps": [
+      "从后续帖的链接打开公开模板 Family Desk by Brian。本页不安装该模板，也不替它打开例行任务。",
+      "先看清首次设置的差别：模板页是两个短问题、一次一张连接卡片；来源记录里的视频是三个问题，以及 Mail、Calendar、Workspace 按钮。",
+      "邮件入口仍是来源中的说法。视频描述写的是过滤和转发。模板写的是转发到 Bot 自己的邮箱会立刻唤醒它，外加每天早晨用 Gmail 检查主人已批准的家庭发件人。",
+      "日程放进日历（模板写明 Google Calendar）。待办和账单放进一份任务清单和一份账单清单（模板写明一张 dashboard Page；若已连接也可用 Notion）。",
+      "把下一步准备好然后等待。每一次发送、付款、提交表格、预约、签字或取消，都要主人对这一条明确批准。"
+    ],
+    "publicTemplate": {
+      "url": "https://x.ai/bot/S9e1n5fBFGe1vwAL4ty0u",
+      "title": "Family Desk by Brian"
+    },
+    "connectorsAndRoutines": "来自公开模板页：Gmail，用于早晨检查主人已批准的家庭发件人；Bot 自己的邮箱，转发到这里的邮件会立刻唤醒它；Google Calendar 放日程；一张 dashboard Page 放待办和账单清单，若已连接 Notion 也可以，每天早晨刷新一次。模板写明它按 family-desk skill 执行，用简短、温暖的英文白话说话，不用示例或演示数据，在尚未连接时会直说缺什么。\n\n模板写明这些例行任务由它自己打开：早晨 Gmail 检查、早晨 dashboard 刷新、早晨简报、周日晚间预告。这是来源描述的行为。本页不会去打开这些例行任务。模板自己的通知约定是：早晨简报最多 5 行，附 dashboard 链接和待批准事项；紧急提醒适用于明天到期、账单上涨 25% 及以上、日程冲突、退货或试用将在 3 天内结束；周日晚间给出 top-3 预告。其余时间它说自己保持安静。\n\n来源记录里的视频把连接按钮标成 Mail、Calendar、Workspace，还描述了早晨 safety-net 补看、快捷添加 “Desk: add Saturday practice”，以及月度总结。这些细节留在作者展示一侧。\n\n模板写明的界限：即便只是顺便被要求，没有对这一条的点头，也不发送、付款、提交表格、预约、签字或取消；不删除或归档主人的邮件；不擅自改 Gmail 或账户设置；不存储卡号、社保号、银行账号或保单号；未连接的日历或清单，不得声称已经写入。税务、预算和孩子作业不在它写明的职责内。「Never say connector, MCP, cron, webhook, or routine to the owner」是模板自己的用语，不是本站的规则。",
+    "setupSteps": [
+      {
+        "title": "打开公开模板",
+        "detail": "使用本页的公开模板链接：Family Desk by Brian，https://x.ai/bot/S9e1n5fBFGe1vwAL4ty0u。该链接出现在后续帖里。本页不安装模板、不创建助手、也不打开例行任务。模板页写明 Bot 会自行打开例行任务；继续之前先读这一句。"
+      },
+      {
+        "title": "核对权限、数据与邮件范围",
+        "detail": "连接任何东西之前，先看模板要使用哪些邮件、日历和页面。模板写明：早晨的 Gmail 检查覆盖你已批准的家庭发件人；转发到 Bot 自己邮箱的邮件会立刻唤醒它。来源记录把视频描述为登录一次就会设好过滤和转发。过滤和转发是展示中的说法。本站没有替任何人设置。"
+      },
+      {
+        "title": "把还没连上的东西当成还没连上",
+        "detail": "模板写明它只用主人的真实邮件和账户，不用示例数据，并且会直说还缺什么。来源记录里视频的按钮是 Mail、Calendar、Workspace。模板页写的是逐个弹出的连接卡片、Google Calendar、一张 dashboard Page，以及只有在你连接后才用的 Notion。没有连上的日历或清单，就不要当成已经写入。"
+      },
+      {
+        "title": "逐条查看准备好的下一步",
+        "detail": "共同描述是一份日历、一份待办和一份账单清单，并准备好下一步。来源记录里的视频例子包括：已预填的学校表格、已打开的账单支付页、写给老师的回复草稿、RSVP 与礼物建议、退货标签、续开药提醒。这些是展示中的例子，不是每个家庭都会得到的保证。同一记录还描述了视频中的月度总结。模板页没有提到月度总结。"
+      },
+      {
+        "title": "对每一条明确批准",
+        "detail": "发送、付款、提交表格、预约、签字或取消，都需要你对这一条的明确批准。含糊带过的同意不够。除非你要求删除或归档某一封邮件，否则让邮件留在原处。除非你要求改动 Gmail 或账户设置，否则不要改。不要存储卡号、社保号、银行账号或保单号。税务、预算和孩子作业不在模板写明的职责内。"
+      }
+    ],
+    "acceptanceChecklist": [
+      "从本页打开了公开模板（Family Desk by Brian），并且没有从本页复制提示词。本页没有打开任何例行任务。",
+      "连接之前核对了权限、数据用途和邮件范围，包括视频里关于过滤和转发的说法，以及模板里关于 Gmail 和转发邮件的描述。",
+      "能指出仍未连接的项目，并且没有把未连接的日历或清单当成已经写入。",
+      "行动前逐条看过准备好的事项。展示中的例子（包括月度总结）不假定每个家庭都会出现。模板页没有提到月度总结。",
+      "每一次发送、付款、提交表格、预约、签字或取消，都有主人对这一条的明确批准。"
+    ]
+  },
+  "source": {
+    "authorHandle": "@Texas_Twins_Dad",
+    "authorName": "Texas Twins Dad",
+    "postUrl": "https://x.com/Texas_Twins_Dad/status/2120572483837268293",
+    "postedAt": "2026-11-11T17:40:53.000Z",
+    "excerpt": "School, doctor, bill, and package mail piles up, and parents end up chasing inboxes, calendars, and bots. The post says “Truly hands off,” meaning you are not chasing bots; each send, payment, form submit, booking, signature, or cancellation still waits for a yes on that exact item."
+  },
+  "relatedPosts": [
+    {
+      "url": "https://x.com/Texas_Twins_Dad/status/2120572672677642357",
+      "label": {
+        "en": "Follow-up post that shares the public template link",
+        "zh": "给出公开模板链接的后续帖"
+      }
+    },
+    {
+      "url": "https://x.ai/bot/S9e1n5fBFGe1vwAL4ty0u",
+      "label": {
+        "en": "Public template: Family Desk by Brian",
+        "zh": "公开模板：Family Desk by Brian"
+      }
+    }
+  ]
+}

@@ -27,7 +27,8 @@ Site URL (canonical / sitemap) resolves as:
 2. Match the Zod schema in `src/content.config.ts`.
 3. Required fields:
    - `slug`, `publishedAt` (ISO date), `order`, `tags[]`, `connectors[]`
-   - `en` / `zh`: `title`, `category`, `summary`, `whyItWorks`, `workflowSteps` (3–5), `promptTemplate`, `connectorsAndRoutines`
+   - `en` / `zh`: `title`, `category`, `summary`, `whyItWorks`, `workflowSteps` (3–5), `connectorsAndRoutines`, and either a non-empty `promptTemplate` or a `publicTemplate` `{ url, title }`
+   - Use `promptTemplate` for a copyable prompt. Use `publicTemplate` when the reusable artifact is a public template link and there is no source prompt. Do not set both, and do not invent a prompt to fill `promptTemplate`.
    - `source`: `authorHandle`, `authorName`, `postUrl`, `postedAt`, `excerpt` (faithful to the source post)
 4. Keep `category` in the small fixed set (EN: Operations, Productivity, Education, Health, Finance, Development, Personal — with matching ZH names).
 5. Do not invent URLs, metrics, or claims not grounded in the source post.

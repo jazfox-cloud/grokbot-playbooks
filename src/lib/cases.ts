@@ -81,8 +81,8 @@ export function uniqueCategories(all: CaseEntry[], locale: Locale): string[] {
  *
  * - cases: one per collection entry
  * - copyablePrompts: entries whose `en.promptTemplate` or `zh.promptTemplate`
- *   is non-empty. That string is the copyable prompt. The schema has no
- *   separate config field (`localeContent.promptTemplate` in content.config.ts).
+ *   is non-empty after trim. That string is the copyable prompt. A
+ *   `publicTemplate` link is not a prompt and does not increment this count.
  * - connectors: distinct trimmed values of the top-level `connectors` array
  * - authors: distinct `source.authorHandle` values; `source.authorName` is
  *   used only when the handle is blank
