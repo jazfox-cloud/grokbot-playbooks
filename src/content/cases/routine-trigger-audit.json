@@ -1,0 +1,55 @@
+{
+  "slug": "routine-trigger-audit",
+  "publishedAt": "2026-11-10",
+  "order": 16,
+  "tags": [
+    "prompt",
+    "routines",
+    "triggers"
+  ],
+  "connectors": [],
+  "en": {
+    "title": "A read-only prompt that audits whether your routines should use a schedule, an event, or a webhook",
+    "category": "Triggers & Automation",
+    "summary": "The author published a copy-paste, read-only Grok Bot prompt that asks the bot to inspect accessible routines and recommend whether each one should stay on a schedule, move to an event trigger, or use a webhook. This write-up did not run the prompt or inspect any routines. The reusable artifact is the verbatim prompt, not a measured usage saving.",
+    "whyItWorks": "The author argues that some routines run on a schedule just to check whether something has happened, and that waiting for an actual event could cut unnecessary checks. The hourly customer-enquiry example and the daily morning briefing that “probably belongs on a schedule” are the author’s illustrations, not results measured in this review. This write-up did not execute the prompt, inspect any account’s routines, or verify event-trigger support.",
+    "workflowSteps": [
+      "Read the author’s three trigger options in the source post: a schedule (a specific time or interval, described as ideal for morning briefings, daily reports, and weekly reviews); an event trigger (when a supported event happens; the post names an important email arriving or a specific Slack message being posted); or a webhook (an external app or automation sends a request to the routine’s webhook URL).",
+      "The same post says a common mistake is a routine that checks every hour for new customer enquiries — 24 scheduled checks a day even when nothing has happened — and that an event trigger or webhook could start that routine only when a new enquiry arrives. It also says not every routine should change, and that a daily morning briefing probably belongs on a schedule. Those are the author’s illustrations, not results measured in this review.",
+      "Paste the read-only audit prompt from the post (preserved verbatim in promptTemplate) into your Grok Bot. The prompt asks for a table or page with Routine, Current trigger, Recommended trigger, Reason, Potential benefit, and Setup required, strongest opportunities first. It also says to estimate any reduction only from available evidence, not to invent usage savings, and not to change, disable, or create routines without your approval. This review did not run that prompt.",
+      "Review the output yourself, then decide whether to change any routine. This review did not run the audit or change any routines, and a later write-up should not run it on Jazfox’s accounts either."
+    ],
+    "promptTemplate": "Run a read-only trigger audit across my Grok Bot team.\n\nInspect every routine you can access, including its current trigger, schedule, purpose and recent run history where available.\n\nFor each routine:\n\n1 - Identify whether it needs to run at a fixed time or in response to an event.\n\n2 - Flag schedules that repeatedly check whether something has happened.\n\n3 - Check whether a built-in event trigger could replace those checks.\n\n4 - If not, investigate whether a webhook would be appropriate and what integration would be needed.\n\n5 - Estimate the potential reduction in unnecessary runs using available evidence. Don't invent usage savings.\n\n6 - Identify any risks, including missed events, duplicate runs or unsupported integrations.\n\nGive me a table or page showing:\n\nRoutine | Current trigger | Recommended trigger | Reason | Potential benefit | Setup required\n\nRank the strongest opportunities first.\n\nDo not change, disable or create any routines without my approval.",
+    "connectorsAndRoutines": "The prompt audits existing routine triggers; it does not itself enable a connector or create a routine. The post’s event-trigger examples are an important email arriving, or a specific Slack message being posted. A webhook is described as an external app or automation calling the routine’s webhook URL. This review did not enable any connector, webhook, or routine, and did not check whether a given account actually supports those event triggers."
+  },
+  "zh": {
+    "title": "一条只读 Prompt，用来审计 Routine 该用定时、事件还是 Webhook",
+    "category": "触发器与自动化",
+    "summary": "作者公开发布了一条可复制、只读的 Grok Bot Prompt，要求检查能访问到的 Routine，并建议每一条该继续用定时、改成事件触发，还是改用 Webhook。本稿没有运行这条 Prompt，也没有检查任何 Routine。可复用的是原样保存的 Prompt，不是一次测到的用量节省。",
+    "whyItWorks": "作者认为，有些 Routine 只是为了检查“事情有没有发生”就按时间表运行，若能等到事件真正发生再开工，就有可能减少无效检查。每小时检查客户咨询，以及每日早晨简报“很可能仍然适合放在定时上”，都是作者的说明性例子，不是本轮测到的结果。本稿没有执行该 Prompt，没有检查任何账户的 Routine，也没有核实事件触发是否可用。",
+    "workflowSteps": [
+      "先看原帖里作者归纳的三种触发方式：定时（在特定时间或按间隔运行，作者说适合晨间简报、日报和周回顾）；事件触发（在支持的事件发生时运行；原帖举例是重要邮件到达，或 Slack 里出现特定消息）；或 Webhook（由外部应用或自动化向该 Routine 的 Webhook URL 发送请求）。",
+      "同一篇原帖写的常见误用是：一个 Routine 每小时检查一次有没有新的客户咨询——即使什么都没发生，一天也是 24 次定时检查——而事件触发或 Webhook 可以只在新咨询到来时才启动。原帖也写了：不是每个 Routine 都该改；每日早晨简报很可能仍然适合放在定时上。这些都是作者的说明性例子，不是本轮测到的结果。",
+      "把原帖里的只读审计 Prompt（已原样保存在 promptTemplate）发给你的 Grok Bot。Prompt 要求输出一张表或一页，列 Routine、当前触发、建议触发、理由、潜在收益和所需设置，并把最值得改的机会排在前面。它还要求只根据已有证据估计可能减少的无效运行、不要编造用量节省，并且未经你批准不得更改、停用或新建任何 Routine。本轮没有运行这条 Prompt。",
+      "你自己看完结果，再决定要不要改某个 Routine。本轮没有实际运行这条审计，也没有改任何 Routine；后续写稿时也不要在 Jazfox 的账户上运行或改动。"
+    ],
+    "promptTemplate": "Run a read-only trigger audit across my Grok Bot team.\n\nInspect every routine you can access, including its current trigger, schedule, purpose and recent run history where available.\n\nFor each routine:\n\n1 - Identify whether it needs to run at a fixed time or in response to an event.\n\n2 - Flag schedules that repeatedly check whether something has happened.\n\n3 - Check whether a built-in event trigger could replace those checks.\n\n4 - If not, investigate whether a webhook would be appropriate and what integration would be needed.\n\n5 - Estimate the potential reduction in unnecessary runs using available evidence. Don't invent usage savings.\n\n6 - Identify any risks, including missed events, duplicate runs or unsupported integrations.\n\nGive me a table or page showing:\n\nRoutine | Current trigger | Recommended trigger | Reason | Potential benefit | Setup required\n\nRank the strongest opportunities first.\n\nDo not change, disable or create any routines without my approval.",
+    "connectorsAndRoutines": "这条 Prompt 审计的是已有 Routine 的触发方式，它本身不会启用连接器或新建 Routine。原帖对事件触发的举例是：重要邮件到达，或 Slack 里出现特定消息。Webhook 被描述为外部应用或自动化调用该 Routine 的 Webhook URL。本轮没有启用任何连接器、Webhook 或 Routine，也没有检查某个账户是否真的支持这些事件触发。"
+  },
+  "source": {
+    "authorHandle": "@Michael_Fenech_",
+    "authorName": "Michael | AI + Agents",
+    "postUrl": "https://x.com/Michael_Fenech_/status/2120097635092537752",
+    "postedAt": "2026-11-10T10:14:00.000Z",
+    "excerpt": "Grok Bot could be wasting your usage allowance because your routines have the WRONG triggers.\n\nSome routines run every hour just to check whether something has happened.\n\nBut what if Grok Bot could wait until the event actually happens before starting work?\n\nYou could potentially eliminate unnecessary checks, get faster responses and reduce wasted usage.\n\nHere's how to find out, including a prompt to audit your entire setup."
+  },
+  "relatedPosts": [
+    {
+      "url": "https://x.com/Michael_Fenech_/status/2118383590446624846",
+      "label": {
+        "en": "Same author, already published as the iPhone alarm webhook daily briefing case (Playbooks PR #6). Different post, task, and prompt: that case is one webhook-triggered briefing, not this read-only trigger-audit prompt.",
+        "zh": "同一作者，已作为 iPhone 闹钟 Webhook 每日简报案例发布（Playbooks PR #6）。那是另一篇帖子、另一项任务和另一条 Prompt：它是单个 Webhook 触发的简报，不是这条只读触发审计 Prompt。"
+      }
+    }
+  ]
+}
