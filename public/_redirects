@@ -1,0 +1,2 @@
+# Crawlers often request /sitemap.xml. The URL list stays in sitemap-index.xml.
+/sitemap.xml /sitemap-index.xml 301
