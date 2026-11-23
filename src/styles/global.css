@@ -606,6 +606,11 @@ img {
   letter-spacing: -0.02em;
 }
 
+.panel p,
+.detail-hero__summary {
+  overflow-wrap: anywhere;
+}
+
 .steps {
   margin: 0;
   padding-left: 1.25rem;
@@ -716,6 +721,31 @@ img {
 }
 
 .checklist__list span {
+  overflow-wrap: anywhere;
+}
+
+.template-link {
+  margin: 0.75rem 0 0;
+}
+
+.template-link__note {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.template-link a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  max-width: 100%;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.template-link__url {
+  font-weight: 600;
+  font-size: 0.92rem;
   overflow-wrap: anywhere;
 }
 

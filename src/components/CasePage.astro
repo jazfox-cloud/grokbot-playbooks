@@ -25,6 +25,9 @@ const loc = localeContent(entry, locale);
 const related = relatedCases(all, entry, 3);
 const next = nextCase(all, entry);
 const promptId = `prompt-${entry.data.slug}`;
+const promptText = loc.promptTemplate ?? '';
+const hasPrompt = promptText.trim().length > 0;
+const publicTemplate = hasPrompt ? undefined : loc.publicTemplate;
 const checklist = (loc.acceptanceChecklist ?? [])
   .map((item) => item.trim())
   .filter((item) => item.length > 0);
@@ -43,6 +46,8 @@ const ui =
         steps: '工作流步骤',
         setup: '分步操作',
         prompt: '提示词 / 例行模板',
+        templateHeading: '公开模板',
+        templateNote: '这是公开模板入口，不是可复制的提示词。',
         checklist: '验收清单',
         reset: '重置',
         copy: '复制',
@@ -60,6 +65,8 @@ const ui =
         steps: 'Workflow steps',
         setup: 'Step-by-step setup',
         prompt: 'Prompt / routine template',
+        templateHeading: 'Public template',
+        templateNote: 'This is the public template entry. It is not a prompt to copy.',
         checklist: 'Acceptance checklist',
         reset: 'Reset',
         copy: 'Copy',
@@ -75,6 +82,14 @@ const ui =
 
 const enPath = `/cases/${entry.data.slug}/`;
 const zhPath = `/zh/cases/${entry.data.slug}/`;
+
+function paragraphs(text: string): string[] {
+  const parts = text
+    .split(/\n\s*\n/)
+    .map((part) => part.trim())
+    .filter((part) => part.length > 0);
+  return parts.length > 0 ? parts : [text];
+}
 ---
 
 <BaseLayout
@@ -105,7 +120,7 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
 
     <section class="panel">
       <h2>{ui.why}</h2>
-      <p>{loc.whyItWorks}</p>
+      {paragraphs(loc.whyItWorks).map((paragraph) => <p>{paragraph}</p>)}
     </section>
 
     {
@@ -121,13 +136,32 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
 
     <SetupSteps steps={setupSteps} heading={ui.setup} slug={entry.data.slug} />
 
-    <section class="panel">
-      <h2>{ui.prompt}</h2>
-      <div class="prompt">
-        <pre id={promptId}>{loc.promptTemplate}</pre>
-        <CopyButton label={ui.copy} copiedLabel={ui.copied} targetId={promptId} />
-      </div>
-    </section>
+    {
+      hasPrompt && (
+        <section class="panel">
+          <h2>{ui.prompt}</h2>
+          <div class="prompt">
+            <pre id={promptId}>{promptText}</pre>
+            <CopyButton label={ui.copy} copiedLabel={ui.copied} targetId={promptId} />
+          </div>
+        </section>
+      )
+    }
+
+    {
+      publicTemplate && (
+        <section class="panel">
+          <h2>{ui.templateHeading}</h2>
+          <p class="template-link__note">{ui.templateNote}</p>
+          <p class="template-link">
+            <a href={publicTemplate.url} target="_blank" rel="noopener noreferrer">
+              {publicTemplate.title}
+              <span class="template-link__url">{publicTemplate.url}</span>
+            </a>
+          </p>
+        </section>
+      )
+    }
 
     {
       checklist.length > 0 && (
@@ -143,7 +177,7 @@ const zhPath = `/zh/cases/${entry.data.slug}/`;
 
     <section class="panel">
       <h2>{ui.connectors}</h2>
-      <p>{loc.connectorsAndRoutines}</p>
+      {paragraphs(loc.connectorsAndRoutines).map((paragraph) => <p>{paragraph}</p>)}
     </section>
 
     <section class="panel">
