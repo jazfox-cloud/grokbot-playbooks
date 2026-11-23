@@ -1,0 +1,62 @@
+{
+  "slug": "finance-three-levels-authority",
+  "publishedAt": "2026-11-23",
+  "order": 18,
+  "tags": [
+    "prompt",
+    "finance",
+    "approvals"
+  ],
+  "connectors": [],
+  "en": {
+    "title": "A finance assistant with three levels of authority: see it, prepare it, you approve it",
+    "category": "Finance",
+    "summary": "The author describes a Grok Bot finance-admin setup with three levels of authority: SEE IT (read-only review), PREPARE IT (drafts only), and APPROVE IT (the user decides). The post includes a copyable setup prompt. Budget warnings and per-transaction approval are the author's stated design; this review did not test them.",
+    "whyItWorks": "The author argues the bot can handle financial admin while the user keeps control of every transaction: permission to see money and prepare actions, but zero independent authority to move money. That principle, and whether a given setup can actually enforce budget warnings or per-transaction approval, was not independently tested in this review.",
+    "workflowSteps": [
+      "As described by the author — SEE IT (bot works alone, read-only): collect receipts and invoices from the inbox; review P&L, cash position and overdue invoices; flag duplicate charges, price increases and forgotten subscriptions; deliver a weekly money review.",
+      "As described by the author — PREPARE IT (bot drafts, you check): draft invoices and payment reminders, prepare subscription cancellations, compare bills and draft negotiation emails, and build carts ready for checkout. The author states that nothing is sent, cancelled or purchased automatically.",
+      "As described by the author — APPROVE IT (you decide): every payment, refund, transfer or purchase needs explicit approval and should show the exact amount first; monthly budgets are meant to warn before overspending; completed transactions are logged with confirmation details. Budget warnings and per-transaction approval are the author's stated structure, not independently tested in this review.",
+      "Paste the setup prompt, fill in the bracketed placeholders, and review the bot's proposed setup, access list and approval flow before approving any build. The prompt itself says not to store financial credentials or card details in chat or memory."
+    ],
+    "promptTemplate": "Help me build a Grok Bot finance assistant using three levels of authority.\n\nSEE IT: Monitor [Gmail receipts, Xero, QuickBooks or other approved sources]. Deliver a weekly financial review on [day/time], highlighting unusual charges, savings opportunities and anything requiring attention.\n\nPREPARE IT: Help with [invoices, payment reminders, subscription cancellations, bill comparisons]. Prepare drafts for my review. Never send or execute them without approval.\n\nAPPROVE IT: Every payment, refund, transfer or purchase requires my explicit approval. My monthly budget is [$amount]. Record transaction confirmations in [Notion/Sheet].\n\nNever store financial credentials or card details in chat or memory. Never independently move money or bypass an approval step.\n\nUse only access and permissions I explicitly authorise. If a safeguard cannot be enforced, tell me before proceeding.\n\nBefore creating anything, show me your proposed setup, what access you need, how each approval works and what remains under my control. Wait for my approval before building.",
+    "connectorsAndRoutines": "The setup prompt names Gmail receipts, Xero, QuickBooks or other approved sources, and Notion or a Sheet, only as fill-in placeholders. A weekly review time is also a placeholder. This review did not connect those services, invent an access method, or create a bot or routine."
+  },
+  "zh": {
+    "title": "三级权限的财务助手：能看、能备、你来批",
+    "category": "财务",
+    "summary": "作者描述了一套财务行政助手的三级权限：能看（只读回顾）、能备（只起草）、你来批（由你决定），并附有可复制的设置 Prompt。预算预警和逐笔审批是作者自述的设计，本轮未做测试。",
+    "whyItWorks": "作者的主张是：让 Bot 处理财务行政，同时由你控制每一笔交易——可以看钱、可以准备操作，但不能独立动钱。这一原则，以及具体配置能否真正执行预算预警或逐笔审批，本轮均未独立测试。",
+    "workflowSteps": [
+      "按作者的划分——能看（Bot 独立完成，只读）：从邮箱收集收据和发票；查看损益、现金情况和逾期发票；标出重复扣费、涨价和被遗忘的订阅；每周交一份财务回顾。",
+      "按作者的划分——能备（Bot 起草，你检查）：起草发票和催款提醒，准备订阅取消，比较账单并起草议价邮件，把购物车备到结账前。作者写明不会自动发送、取消或购买。",
+      "按作者的划分——你来批（你做决定）：每笔付款、退款、转账或购买都要明确批准，并应先显示确切金额；月度预算用于在超支前预警；完成的交易连同确认信息一起记录。预算预警和逐笔审批是作者自述的结构，本轮未独立测试。",
+      "粘贴英文设置 Prompt，填好方括号中的占位，先看 Bot 提出的方案、所需权限和审批方式，确认后再让它搭建。Prompt 本身要求不在聊天或记忆中保存财务凭据或卡号。"
+    ],
+    "promptTemplate": "Help me build a Grok Bot finance assistant using three levels of authority.\n\nSEE IT: Monitor [Gmail receipts, Xero, QuickBooks or other approved sources]. Deliver a weekly financial review on [day/time], highlighting unusual charges, savings opportunities and anything requiring attention.\n\nPREPARE IT: Help with [invoices, payment reminders, subscription cancellations, bill comparisons]. Prepare drafts for my review. Never send or execute them without approval.\n\nAPPROVE IT: Every payment, refund, transfer or purchase requires my explicit approval. My monthly budget is [$amount]. Record transaction confirmations in [Notion/Sheet].\n\nNever store financial credentials or card details in chat or memory. Never independently move money or bypass an approval step.\n\nUse only access and permissions I explicitly authorise. If a safeguard cannot be enforced, tell me before proceeding.\n\nBefore creating anything, show me your proposed setup, what access you need, how each approval works and what remains under my control. Wait for my approval before building.",
+    "connectorsAndRoutines": "设置 Prompt 里的 Gmail 收据、Xero、QuickBooks 或其他授权来源，以及 Notion 或表格，都只是填写占位；每周回顾时间同样需要自行填写。本轮未连接这些服务，未补编访问方式，也未创建 Bot 或 Routine。"
+  },
+  "source": {
+    "authorHandle": "@Michael_Fenech_",
+    "authorName": "Michael",
+    "postUrl": "https://x.com/Michael_Fenech_/status/2124528079246672034",
+    "postedAt": "2026-11-22T15:39:00.000Z",
+    "excerpt": "Grok Bot can help manage your money without ever being allowed to move it.\n\nThe goal is simple: let your bot do the financial admin while you keep control of every transaction."
+  },
+  "relatedPosts": [
+    {
+      "url": "https://playbooks.ai-slang.com/cases/iphone-alarm-webhook-daily-briefing/",
+      "label": {
+        "en": "Same author, already published as the iPhone alarm webhook daily briefing case (Playbooks PR #6). Different post, task, and prompt.",
+        "zh": "同一作者，已作为 iPhone 闹钟 Webhook 每日简报案例发布（Playbooks PR #6）。那是另一篇帖子、另一项任务和另一条 Prompt。"
+      }
+    },
+    {
+      "url": "https://playbooks.ai-slang.com/cases/routine-trigger-audit/",
+      "label": {
+        "en": "Same author, already published as the routine trigger audit case (Playbooks PR #12). Different post, task, and prompt: that case is a read-only trigger audit, not this finance-admin structure.",
+        "zh": "同一作者，已作为例行触发审计案例发布（Playbooks PR #12）。那是另一篇帖子、另一项任务和另一条 Prompt：它是只读触发审计，不是本条财务三级权限结构。"
+      }
+    }
+  ]
+}
